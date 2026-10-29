@@ -209,7 +209,15 @@ export const Footer: React.FC<FooterProps> = ({ openModalWithOption }) => {
             <p>India’s Premier 50/50 EV Infrastructure Network</p>
             <span className="hidden sm:inline text-slate-700">•</span>
             <p className="text-slate-300">
-              Designed by <span className="font-semibold text-emerald-400">Sunseaz Technologiye Private Limited</span>
+              Designed by the{' '}
+              <a
+                href="https://sunseaz.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-emerald-400 hover:text-emerald-300 hover:underline transition-colors"
+              >
+                Sunseaz
+              </a>
             </p>
           </div>
 
