@@ -1,73 +1,121 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
-  ShieldCheck,
-  Leaf,
   Users,
-  Lightbulb,
-  Handshake,
-  UserCheck,
-  MapPin,
-  BatteryCharging,
-  Headphones,
   Flag,
   Factory,
   Zap,
   Globe,
-  Award,
-  Box,
-  HeartHandshake,
   ChevronRight,
-  Target,
   Home,
-  ArrowUpRight
+  ArrowUpRight,
+  MapPin,
+  Handshake,
+  Headphones
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { VisionMissionSection } from '../components/sections/VisionMissionSection';
+
+const AnimatedCounter: React.FC<{ target: number; suffix?: string; isVisible: boolean }> = ({
+  target,
+  suffix = '+',
+  isVisible
+}) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    let startTimestamp: number | null = null;
+    const duration = 1800;
+
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(easeOut * target));
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        setCount(target);
+      }
+    };
+
+    const animId = window.requestAnimationFrame(step);
+    return () => window.cancelAnimationFrame(animId);
+  }, [isVisible, target]);
+
+  return (
+    <span>
+      {count}
+      {suffix}
+    </span>
+  );
+};
 
 interface AboutPageProps {
   openModalWithOption: (option: string) => void;
 }
 
 export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => {
+  const [statsVisible, setStatsVisible] = useState(false);
+  const statsRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setStatsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-['Plus_Jakarta_Sans',sans-serif]">
+    <div className="bg-white text-slate-900 font-['Plus_Jakarta_Sans',sans-serif]">
 
       {/* 1. CINEMATIC BREADCRUMB HERO BANNER WITH OFFICIAL EVOLTEK DC FAST CHARGER */}
-      <section className="relative w-full text-white overflow-hidden pt-16 sm:pt-20 lg:pt-24 pb-24 sm:pb-32 lg:pb-36 bg-slate-900">
+      <section className="relative w-full text-white overflow-hidden py-12 sm:py-14 lg:py-16 bg-[#040906]">
         {/* Background EV Charging Station with Official EVOLTEK DC Fast Charger */}
         <div
           className="absolute inset-0 bg-cover bg-center sm:bg-[position:78%_center] bg-no-repeat pointer-events-none brightness-105"
           style={{ backgroundImage: `url('/breadcrumb.png')` }}
         />
         {/* Directional gradient restricted to the left for text contrast, keeping the charger and car bright and vibrant */}
-        <div className="absolute inset-y-0 left-0 w-full sm:w-[60%] lg:w-[52%] bg-gradient-to-r from-black/90 via-black/60 to-transparent pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-full sm:w-[65%] lg:w-[54%] bg-gradient-to-r from-black/95 via-black/80 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
 
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="max-w-2xl space-y-4 sm:space-y-5">
-            {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/45 backdrop-blur-md border border-white/15 text-xs font-bold tracking-widest uppercase text-white shadow-md">
+            {/* Tagline / Pill Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/15 text-xs font-bold tracking-widest uppercase text-white shadow-md">
               <span className="w-2 h-2 rounded-full bg-[#32aa15]" />
               <span>WHO WE ARE</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08] font-['Wix_Madefor_Display',sans-serif]">
+            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-black text-white tracking-tight leading-[1.08] font-['Wix_Madefor_Display',sans-serif]">
               About <span className="text-[#32aa15]">EVOLTEK</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed max-w-xl">
+            <p className="text-sm sm:text-base text-slate-200 font-normal leading-relaxed max-w-xl">
               Building reliable, connected EV charging infrastructure for a cleaner, smarter journey.
             </p>
 
-            {/* Breadcrumb Glass Pill */}
-            <div className="pt-2">
-              <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-black/55 backdrop-blur-md border border-white/15 text-sm shadow-xl">
+            <div className="pt-1">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/15 text-xs shadow-lg text-white">
                 <Link
                   to="/"
-                  className="text-white hover:text-[#32aa15] transition-colors flex items-center gap-1.5 font-medium"
+                  className="flex items-center gap-1.5 hover:text-[#32aa15] transition-colors font-medium"
                 >
-                  <Home className="w-4 h-4 text-white" />
+                  <Home className="w-3.5 h-3.5 text-white" />
                   <span>Home</span>
                 </Link>
                 <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
@@ -75,22 +123,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Bottom Smooth Curved Wave Mask */}
-        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
-          <svg
-            viewBox="0 0 1440 120"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="relative block w-full h-[50px] sm:h-[75px] lg:h-[105px]"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,40 C320,115 760,125 1120,50 C1280,18 1380,35 1440,50 L1440,120 L0,120 Z"
-              fill="#ffffff"
-            />
-          </svg>
         </div>
       </section>
 
@@ -281,117 +313,62 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
         </div>
       </section>
 
-      {/* 3. OUR PURPOSE SECTION */}
-      <section className="py-12 sm:py-16 bg-[#edf6eb]/70">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-
-          {/* Header */}
-          <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#32aa15] font-['Wix_Madefor_Display',sans-serif]">
-              Our Purpose
-            </h2>
-            <div className="w-10 h-0.5 bg-[#32aa15] mx-auto mt-2 rounded-full" />
-          </div>
-
-          {/* 2 Big White Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {/* Vision Card */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/60 flex items-start gap-5 hover:shadow-md transition-shadow">
-              <div className="w-16 h-16 rounded-full bg-[#e3f4e0] text-[#32aa15] flex items-center justify-center shrink-0">
-                {/* Binoculars SVG Icon */}
-                <svg className="w-8 h-8 fill-none stroke-current stroke-[2]" viewBox="0 0 24 24">
-                  <path d="M10 10h4" />
-                  <path d="M19 7V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3" />
-                  <path d="M9 7V4a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3" />
-                  <circle cx="7" cy="14" r="5" />
-                  <circle cx="17" cy="14" r="5" />
-                </svg>
-              </div>
-
-              <div className="space-y-2">
-                <span className="text-xs font-black tracking-widest text-[#32aa15] uppercase block">
-                  OUR VISION
-                </span>
-                <p className="text-base sm:text-lg font-bold text-slate-900 leading-snug font-['Wix_Madefor_Display',sans-serif]">
-                  A future where every journey is cleaner, smarter and easier.
-                </p>
-                <div className="w-8 h-0.5 bg-[#32aa15] pt-0.5 rounded-full" />
-              </div>
-            </div>
-
-            {/* Mission Card */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/60 flex items-start gap-5 hover:shadow-md transition-shadow">
-              <div className="w-16 h-16 rounded-full bg-[#e3f4e0] text-[#32aa15] flex items-center justify-center shrink-0">
-                <Target className="w-8 h-8 text-[#32aa15]" />
-              </div>
-
-              <div className="space-y-2">
-                <span className="text-xs font-black tracking-widest text-[#32aa15] uppercase block">
-                  OUR MISSION
-                </span>
-                <p className="text-base sm:text-lg font-bold text-slate-900 leading-snug font-['Wix_Madefor_Display',sans-serif]">
-                  To expand accessible, dependable charging infrastructure and help communities transition to electric mobility.
-                </p>
-                <div className="w-8 h-0.5 bg-[#32aa15] pt-0.5 rounded-full" />
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
+      {/* 3. VISION & MISSION SECTION (MATCHING INDEX PAGE) */}
+      <VisionMissionSection />
 
       {/* 4. VALUES THAT DRIVE US */}
       <section className="py-14 sm:py-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#32aa15] font-['Wix_Madefor_Display',sans-serif]">
               Values That Drive Us
             </h2>
             <div className="w-10 h-0.5 bg-[#32aa15] mx-auto mt-2 rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {[
               {
-                icon: <Leaf className="w-6 h-6 text-[#32aa15]" />,
+                iconSrc: '/icon_3d_val_sustainability.png',
                 title: 'Sustainability',
-                desc: 'We build solutions that protect the planet and promote a greener future.'
+                desc: 'We build a cleaner, greener tomorrow with sustainable practices and a healthier planet for future generations.'
               },
               {
-                icon: <ShieldCheck className="w-6 h-6 text-[#32aa15]" />,
+                iconSrc: '/icon_3d_val_reliability.png',
                 title: 'Reliability',
-                desc: 'Dependable infrastructure and service you can count on, always.'
+                desc: 'Dependable infrastructure and services you can count on, always.'
               },
               {
-                icon: <Lightbulb className="w-6 h-6 text-[#32aa15]" />,
+                iconSrc: '/icon_3d_val_innovation.png',
                 title: 'Innovation',
-                desc: 'We embrace new ideas and technologies to deliver smarter solutions.'
+                desc: 'We turn new ideas into real solutions and deliver smarter, cleaner outcomes.'
               },
               {
-                icon: <Handshake className="w-6 h-6 text-[#32aa15]" />,
+                iconSrc: '/icon_3d_val_partnership.png',
                 title: 'Partnership',
-                desc: 'We grow together with our partners, communities and customers.'
-              },
-              {
-                icon: <UserCheck className="w-6 h-6 text-[#32aa15]" />,
-                title: 'Customer Focus',
-                desc: 'Our customers are at the heart of everything we do.'
+                desc: 'We grow together with our partners, customers and communities.'
               }
             ].map((val, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-[#32aa15]/40 transition-all text-center flex flex-col items-center group"
+                className="bg-white rounded-[22px] p-5 sm:p-6 text-center flex flex-col items-center justify-between group cursor-pointer transition-all duration-300 h-full min-h-[285px] sm:min-h-[295px] border-2 border-slate-200/80 hover:border-[#00b853] shadow-sm hover:shadow-xl hover:shadow-[#00b853]/15 hover:-translate-y-1.5"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#edf6eb] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  {val.icon}
+                <div className="w-16 h-16 sm:w-20 sm:h-20 mb-3.5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <img
+                    src={val.iconSrc}
+                    alt={val.title}
+                    className="w-full h-full object-contain filter drop-shadow-sm"
+                  />
                 </div>
-                <h4 className="text-base font-bold text-slate-900 mb-2 font-['Wix_Madefor_Display',sans-serif]">
-                  {val.title}
-                </h4>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  {val.desc}
-                </p>
+                <div className="flex-1 flex flex-col items-center justify-start">
+                  <h4 className="text-base sm:text-lg font-bold mb-2 font-['Wix_Madefor_Display',sans-serif] text-slate-900 group-hover:text-[#00b853] transition-colors duration-300">
+                    {val.title}
+                  </h4>
+                  <p className="text-[13px] sm:text-[13.5px] text-slate-500 leading-relaxed font-normal max-w-[220px]">
+                    {val.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -399,79 +376,119 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
         </div>
       </section>
 
-      {/* 5. DRIVING THE FUTURE OF MOBILITY (DARK GREEN BANNER) */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 my-6">
-        <div className="bg-[#0b1f13] text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl border border-[#32aa15]/20">
-
-          {/* Subtle background overlay of night canopy */}
+      {/* 5. DRIVING THE FUTURE OF MOBILITY (CINEMATIC INTERACTIVE BANNER - SLEEK COMPACT SIZE) */}
+      <section ref={statsRef} className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 my-8 sm:my-12">
+        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/20 min-h-[380px] sm:min-h-[400px] lg:min-h-[430px] flex flex-col justify-center items-center py-8 sm:py-10 lg:py-12 px-4 sm:px-6 lg:px-8">
+          {/* Background Image: Sunset EV station with car */}
           <div
-            className="absolute inset-0 bg-cover bg-right opacity-15 mix-blend-screen pointer-events-none"
-            style={{ backgroundImage: `url('/about_cta_green_canopy.jpg')` }}
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
+            style={{ backgroundImage: `url('/mobility_sunset_clean_bg.jpg')` }}
           />
+          {/* Natural Atmospheric Overlay preserving golden hour & greenery */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/25 pointer-events-none" />
 
-          <div className="relative z-10">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-['Wix_Madefor_Display',sans-serif]">
-                Driving the Future of Mobility
+          {/* Centered Content Wrapper (Positioned in the Middle) */}
+          <div className="relative z-10 w-full flex flex-col items-center justify-center my-auto space-y-5 sm:space-y-6 lg:space-y-7">
+            
+            {/* Top Center Headline */}
+            <div className="text-center max-w-3xl mx-auto">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[34px] font-bold text-white tracking-normal font-['Wix_Madefor_Display',sans-serif] drop-shadow-md">
+                Driving the <span className="text-[#34d399]">Future</span> of Mobility
               </h2>
-              <div className="w-10 h-0.5 bg-[#32aa15] mx-auto mt-2 rounded-full" />
+              <div className="w-12 sm:w-14 h-1 bg-[#10b981] mx-auto mt-2 rounded-full shadow-[0_0_12px_rgba(16,185,129,0.7)]" />
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-white/10">
-              {/* Stat 1 */}
-              <div className="pt-4 lg:pt-0 flex flex-col items-center">
-                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-3 text-[#4ade80]">
-                  <MapPin className="w-5 h-5" />
+            {/* 4 Frosted Emerald Glass Stat Cards (Sleeker Compact Size) */}
+            <div className="w-full max-w-[1240px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 lg:gap-5 items-center">
+              
+              {/* Card 1: 50+ Charging Locations */}
+              <div
+                style={{
+                  background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(16, 185, 129, 0.08) 50%, rgba(6, 46, 26, 0.22) 100%)'
+                }}
+                className="backdrop-blur-md border border-white/35 rounded-2xl p-4 sm:p-4.5 lg:p-5 text-center text-white hover:border-[#34d399]/80 hover:bg-white/[0.18] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center min-h-[160px] sm:min-h-[175px] group cursor-default"
+              >
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#10b981] flex items-center justify-center text-white mb-2 shadow-[0_0_14px_rgba(16,185,129,0.55)] group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="w-5 h-5 stroke-[2.2] text-white" />
                 </div>
-                <p className="text-3xl sm:text-4xl font-black text-white font-['Wix_Madefor_Display',sans-serif]">
-                  50+
+                <div className="text-2xl sm:text-3xl lg:text-[32px] font-extrabold tracking-tight leading-none font-['Wix_Madefor_Display',sans-serif] drop-shadow-md">
+                  <AnimatedCounter target={50} suffix="+" isVisible={statsVisible} />
+                </div>
+                <p className="font-bold text-xs sm:text-[13.5px] mt-1.5 leading-tight drop-shadow-sm">
+                  Charging Locations
                 </p>
-                <p className="text-xs text-slate-300 mt-1 max-w-[160px]">
-                  Charging Locations (Deployed &amp; Growing)
+                <p className="text-white/90 text-[11px] sm:text-xs mt-0.5 font-medium drop-shadow-sm">
+                  (Deployed &amp; Growing)
                 </p>
               </div>
 
-              {/* Stat 2 */}
-              <div className="pt-4 lg:pt-0 flex flex-col items-center">
-                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-3 text-[#4ade80]">
-                  <BatteryCharging className="w-5 h-5" />
+              {/* Card 2: 200+ DC & AC Chargers Installed */}
+              <div
+                style={{
+                  background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(16, 185, 129, 0.08) 50%, rgba(6, 46, 26, 0.22) 100%)'
+                }}
+                className="backdrop-blur-md border border-white/35 rounded-2xl p-4 sm:p-4.5 lg:p-5 text-center text-white hover:border-[#34d399]/80 hover:bg-white/[0.18] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center min-h-[160px] sm:min-h-[175px] group cursor-default"
+              >
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#10b981] flex items-center justify-center text-white mb-2 shadow-[0_0_14px_rgba(16,185,129,0.55)] group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex items-center justify-center gap-0.5 text-white font-mono font-bold">
+                    <span className="text-sm font-black opacity-90">[</span>
+                    <Zap className="w-4 h-4 text-white fill-white stroke-[1.5]" />
+                    <span className="text-sm font-black opacity-90">]</span>
+                  </div>
                 </div>
-                <p className="text-3xl sm:text-4xl font-black text-white font-['Wix_Madefor_Display',sans-serif]">
-                  200+
-                </p>
-                <p className="text-xs text-slate-300 mt-1 max-w-[160px]">
+                <div className="text-2xl sm:text-3xl lg:text-[32px] font-extrabold tracking-tight leading-none font-['Wix_Madefor_Display',sans-serif] drop-shadow-md">
+                  <AnimatedCounter target={200} suffix="+" isVisible={statsVisible} />
+                </div>
+                <p className="font-bold text-xs sm:text-[13.5px] mt-1.5 leading-tight max-w-[190px] drop-shadow-sm">
                   DC &amp; AC Chargers Installed
                 </p>
               </div>
 
-              {/* Stat 3 */}
-              <div className="pt-4 lg:pt-0 flex flex-col items-center">
-                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-3 text-[#4ade80]">
-                  <Handshake className="w-5 h-5" />
+              {/* Card 3: 25+ Partner Collaborations */}
+              <div
+                style={{
+                  background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(16, 185, 129, 0.08) 50%, rgba(6, 46, 26, 0.22) 100%)'
+                }}
+                className="backdrop-blur-md border border-white/35 rounded-2xl p-4 sm:p-4.5 lg:p-5 text-center text-white hover:border-[#34d399]/80 hover:bg-white/[0.18] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center min-h-[160px] sm:min-h-[175px] group cursor-default"
+              >
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#10b981] flex items-center justify-center text-white mb-2 shadow-[0_0_14px_rgba(16,185,129,0.55)] group-hover:scale-110 transition-transform duration-300">
+                  <Handshake className="w-5 h-5 stroke-[2.2] text-white" />
                 </div>
-                <p className="text-3xl sm:text-4xl font-black text-white font-['Wix_Madefor_Display',sans-serif]">
-                  25+
+                <div className="text-2xl sm:text-3xl lg:text-[32px] font-extrabold tracking-tight leading-none font-['Wix_Madefor_Display',sans-serif] drop-shadow-md">
+                  <AnimatedCounter target={25} suffix="+" isVisible={statsVisible} />
+                </div>
+                <p className="font-bold text-xs sm:text-[13.5px] mt-1.5 leading-tight drop-shadow-sm">
+                  Partner Collaborations
                 </p>
-                <p className="text-xs text-slate-300 mt-1 max-w-[160px]">
-                  Partner Collaborations Across India
+                <p className="text-white/90 text-[11px] sm:text-xs mt-0.5 font-medium drop-shadow-sm">
+                  Across India
                 </p>
               </div>
 
-              {/* Stat 4 */}
-              <div className="pt-4 lg:pt-0 flex flex-col items-center">
-                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-3 text-[#4ade80]">
-                  <Headphones className="w-5 h-5" />
+              {/* Card 4: 24/7 Monitoring & Support */}
+              <div
+                style={{
+                  background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(16, 185, 129, 0.08) 50%, rgba(6, 46, 26, 0.22) 100%)'
+                }}
+                className="backdrop-blur-md border border-white/35 rounded-2xl p-4 sm:p-4.5 lg:p-5 text-center text-white hover:border-[#34d399]/80 hover:bg-white/[0.18] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center min-h-[160px] sm:min-h-[175px] group cursor-default"
+              >
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#10b981] flex items-center justify-center text-white mb-2 shadow-[0_0_14px_rgba(16,185,129,0.55)] group-hover:scale-110 transition-transform duration-300">
+                  <Headphones className="w-5 h-5 stroke-[2.2] text-white" />
                 </div>
-                <p className="text-3xl sm:text-4xl font-black text-white font-['Wix_Madefor_Display',sans-serif]">
+                <div className="text-2xl sm:text-3xl lg:text-[32px] font-extrabold tracking-tight leading-none font-['Wix_Madefor_Display',sans-serif] drop-shadow-md">
                   24/7
+                </div>
+                <p className="font-bold text-xs sm:text-[13.5px] mt-1.5 leading-tight drop-shadow-sm">
+                  Monitoring &amp; Support
                 </p>
-                <p className="text-xs text-slate-300 mt-1 max-w-[160px]">
-                  Monitoring &amp; Support Always On
+                <p className="text-white/90 text-[11px] sm:text-xs mt-0.5 font-medium drop-shadow-sm">
+                  Always On
                 </p>
               </div>
-            </div>
-          </div>
 
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -488,57 +505,57 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
 
           <div className="relative">
             {/* Horizontal Connecting Dashed Line on Large Screens */}
-            <div className="hidden lg:block absolute top-7 left-[10%] right-[10%] h-0.5 border-t-2 border-dashed border-slate-300 pointer-events-none" />
+            <div className="hidden lg:block absolute top-10 sm:top-11 left-[10%] right-[10%] h-0.5 border-t-2 border-dashed border-slate-300 pointer-events-none" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 relative z-10">
               {[
                 {
                   step: '01',
-                  icon: <Flag className="w-6 h-6 text-[#32aa15]" />,
+                  icon: <Flag className="w-9 h-9 sm:w-10 sm:h-10 text-[#32aa15] stroke-[2.2]" />,
                   title: 'The Beginning',
                   desc: 'Evoltek was founded with a mission to make EV charging simple, reliable and accessible for everyone.'
                 },
                 {
                   step: '02',
-                  icon: <Factory className="w-6 h-6 text-[#32aa15]" />,
+                  icon: <Factory className="w-9 h-9 sm:w-10 sm:h-10 text-[#32aa15] stroke-[2.2]" />,
                   title: 'Built to Deliver',
                   desc: 'We started manufacturing advanced charging equipment and building in-house technology platforms.'
                 },
                 {
                   step: '03',
-                  icon: <Zap className="w-6 h-6 text-[#32aa15]" />,
+                  icon: <Zap className="w-9 h-9 sm:w-10 sm:h-10 text-[#32aa15] stroke-[2.2]" />,
                   title: 'Expanding Impact',
                   desc: 'We expanded our solutions across cities, businesses, highways and communities across India.'
                 },
                 {
                   step: '04',
-                  icon: <Users className="w-6 h-6 text-[#32aa15]" />,
+                  icon: <Users className="w-9 h-9 sm:w-10 sm:h-10 text-[#32aa15] stroke-[2.2]" />,
                   title: 'Stronger Together',
                   desc: 'We partner with landowners, investors and businesses to create a stronger charging ecosystem.'
                 },
                 {
                   step: '05',
-                  icon: <Globe className="w-6 h-6 text-[#32aa15]" />,
+                  icon: <Globe className="w-9 h-9 sm:w-10 sm:h-10 text-[#32aa15] stroke-[2.2]" />,
                   title: 'Future Ready',
                   desc: 'We continue to innovate, expand and drive the future of electric mobility together.'
                 }
               ].map((item, idx) => (
-                <div key={idx} className="flex flex-col items-center text-center space-y-3">
+                <div key={idx} className="flex flex-col items-center text-center space-y-3 group cursor-default">
                   {/* Circular Icon with Badge */}
                   <div className="relative">
-                    <div className="w-14 h-14 rounded-full bg-[#edf6eb] border-2 border-white shadow-md flex items-center justify-center text-[#32aa15]">
+                    <div className="w-20 h-20 sm:w-22 sm:h-22 rounded-full bg-[#edf6eb] border-4 border-white shadow-lg flex items-center justify-center text-[#32aa15] group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
                       {item.icon}
                     </div>
-                    <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-[#32aa15] text-white text-[10px] font-black shadow-sm">
+                    <span className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-[#32aa15] text-white text-xs font-black shadow-md">
                       {item.step}
                     </span>
                   </div>
 
-                  <div className="pt-2">
-                    <h4 className="text-base font-bold text-slate-900 font-['Wix_Madefor_Display',sans-serif]">
+                  <div className="pt-3">
+                    <h4 className="text-base sm:text-lg font-bold text-slate-900 font-['Wix_Madefor_Display',sans-serif] group-hover:text-[#32aa15] transition-colors">
                       {item.title}
                     </h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed max-w-[220px]">
+                    <p className="text-xs sm:text-[13px] text-slate-600 mt-1.5 leading-relaxed max-w-[220px]">
                       {item.desc}
                     </p>
                   </div>
@@ -551,7 +568,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
       </section>
 
       {/* 7. "LET'S BUILD A GREENER TOMORROW" CTA BANNER */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 my-4">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 my-6">
         <div className="bg-[#0b1f13] rounded-3xl overflow-hidden shadow-2xl border border-[#32aa15]/20 grid grid-cols-1 lg:grid-cols-12 items-center">
 
           {/* Left Text */}
@@ -564,8 +581,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
             </p>
             <div className="pt-2">
               <button
+                type="button"
                 onClick={() => openModalWithOption('Partner With Us')}
-                className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-bold text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer"
+                className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-bold text-sm shadow-md transition-all inline-flex items-center gap-2 cursor-pointer"
               >
                 <span>Partner With Us</span>
                 <ChevronRight className="w-4 h-4 text-slate-800" />
@@ -574,7 +592,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
           </div>
 
           {/* Right EV Canopy Image */}
-          <div className="lg:col-span-6 h-[260px] sm:h-[320px] lg:h-full relative overflow-hidden">
+          <div className="lg:col-span-6 h-[260px] sm:h-[320px] lg:h-full min-h-[260px] relative overflow-hidden">
             <img
               src="/about_cta_green_canopy.jpg"
               alt="Electric car charging at twilight under illuminated green canopy"
@@ -589,42 +607,66 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
       {/* 8. BOTTOM TRUST STRIP */}
       <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 my-8 pb-10">
         <div className="bg-[#edf6eb] rounded-2xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-xl bg-white shadow-sm flex items-center justify-center text-[#32aa15] shrink-0">
-              <ShieldCheck className="w-6 h-6" />
+          <div className="flex items-center gap-4 group cursor-pointer">
+            <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center p-2 shrink-0 group-hover:scale-105 transition-transform duration-300">
+              <img
+                src="/icon_3d_trust_solutions.png"
+                alt="End-to-End Solutions"
+                className="w-full h-full object-contain filter drop-shadow-sm"
+              />
             </div>
             <div>
-              <p className="text-sm font-bold text-slate-900 leading-tight">End-to-End Solutions</p>
+              <p className="text-sm sm:text-base font-bold text-slate-900 leading-tight group-hover:text-[#32aa15] transition-colors">
+                End-to-End Solutions
+              </p>
               <p className="text-xs text-slate-600 mt-0.5">From equipment to power-on.</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-xl bg-white shadow-sm flex items-center justify-center text-[#32aa15] shrink-0">
-              <Award className="w-6 h-6" />
+          <div className="flex items-center gap-4 group cursor-pointer">
+            <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center p-2 shrink-0 group-hover:scale-105 transition-transform duration-300">
+              <img
+                src="/icon_3d_trust_quality.png"
+                alt="Quality Assured"
+                className="w-full h-full object-contain filter drop-shadow-sm"
+              />
             </div>
             <div>
-              <p className="text-sm font-bold text-slate-900 leading-tight">Quality Assured</p>
+              <p className="text-sm sm:text-base font-bold text-slate-900 leading-tight group-hover:text-[#32aa15] transition-colors">
+                Quality Assured
+              </p>
               <p className="text-xs text-slate-600 mt-0.5">Tested. Trusted. Reliable.</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-xl bg-white shadow-sm flex items-center justify-center text-[#32aa15] shrink-0">
-              <Box className="w-6 h-6" />
+          <div className="flex items-center gap-4 group cursor-pointer">
+            <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center p-2 shrink-0 group-hover:scale-105 transition-transform duration-300">
+              <img
+                src="/icon_3d_trust_future.png"
+                alt="Future Ready"
+                className="w-full h-full object-contain filter drop-shadow-sm"
+              />
             </div>
             <div>
-              <p className="text-sm font-bold text-slate-900 leading-tight">Future Ready</p>
+              <p className="text-sm sm:text-base font-bold text-slate-900 leading-tight group-hover:text-[#32aa15] transition-colors">
+                Future Ready
+              </p>
               <p className="text-xs text-slate-600 mt-0.5">Scalable for tomorrow.</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-xl bg-white shadow-sm flex items-center justify-center text-[#32aa15] shrink-0">
-              <HeartHandshake className="w-6 h-6" />
+          <div className="flex items-center gap-4 group cursor-pointer">
+            <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center p-2 shrink-0 group-hover:scale-105 transition-transform duration-300">
+              <img
+                src="/icon_3d_trust_support.png"
+                alt="Support You Can Count On"
+                className="w-full h-full object-contain filter drop-shadow-sm"
+              />
             </div>
             <div>
-              <p className="text-sm font-bold text-slate-900 leading-tight">Support You Can Count On</p>
+              <p className="text-sm sm:text-base font-bold text-slate-900 leading-tight group-hover:text-[#32aa15] transition-colors">
+                Support You Can Count On
+              </p>
               <p className="text-xs text-slate-600 mt-0.5">Always here, always caring.</p>
             </div>
           </div>

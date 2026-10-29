@@ -19,18 +19,21 @@ export const Header: React.FC<HeaderProps> = ({
 
   const NAV_LINKS = [
     { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
+    { label: 'About Us', path: '/about' },
     { label: 'Charging Solutions', path: '/charging-stations' },
     { label: 'Investment', path: '/investment' },
-    { label: 'Evoltek Franchise Model', path: '/franchise' },
-    { label: 'ROI Calculator', path: '/roi-calculator' },
-    { label: 'Contact', path: '/contact' }
+    { label: 'Franchise', path: '/franchise' },
+    { label: 'App & Network', path: '/app-network' },
+    { label: 'Contact Us', path: '/contact' }
   ];
 
   const isActive = (path: string) => {
     if (path === '/') return location.pathname === '/';
     if (path === '/charging-stations') {
       return location.pathname === '/charging-stations' || location.pathname === '/charging-solutions';
+    }
+    if (path === '/app-network') {
+      return location.pathname === '/app-network' || location.pathname === '/roi-calculator';
     }
     return location.pathname === path;
   };
@@ -49,47 +52,35 @@ export const Header: React.FC<HeaderProps> = ({
             <img
               src="/logo.png"
               alt="Evoltek Logo"
-              className={`w-auto max-w-[200px] sm:max-w-[260px] md:max-w-[320px] lg:max-w-[380px] object-contain group-hover:scale-105 transition-all duration-300 ${
-                isScrolled ? 'h-10 sm:h-12 md:h-13 lg:h-14' : 'h-12 sm:h-14 md:h-16 lg:h-18'
+              className={`w-auto max-w-[190px] sm:max-w-[240px] md:max-w-[280px] lg:max-w-[320px] object-contain group-hover:scale-105 transition-all duration-300 ${
+                isScrolled ? 'h-10 sm:h-12 md:h-13 lg:h-14' : 'h-12 sm:h-14 md:h-15 lg:h-16'
               }`}
             />
           </Link>
 
           {/* Navigation Links (Right) */}
-          <div className="hidden lg:flex items-center gap-5 xl:gap-7 ml-auto">
-            <nav className="flex items-center gap-5 xl:gap-7">
-              {NAV_LINKS.map((link) => {
-                const active = isActive(link.path);
-                return (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className={`text-[12px] xl:text-[13px] uppercase font-bold transition-colors relative py-1 group tracking-wide whitespace-nowrap ${
-                      active ? 'text-[#32aa15]' : 'text-slate-700 hover:text-[#32aa15]'
+          <nav className="hidden lg:flex items-center gap-3.5 xl:gap-5.5 ml-auto">
+            {NAV_LINKS.map((link) => {
+              const active = isActive(link.path);
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-[11px] xl:text-[12.5px] uppercase font-bold transition-colors relative py-1 group tracking-wide whitespace-nowrap ${
+                    active ? 'text-[#32aa15]' : 'text-slate-700 hover:text-[#32aa15]'
+                  }`}
+                >
+                  {link.label}
+                  <span
+                    className={`absolute bottom-0 left-0 h-0.5 bg-[#32aa15] rounded-full transition-all duration-300 ${
+                      active ? 'w-full' : 'w-0 group-hover:w-full'
                     }`}
-                  >
-                    {link.label}
-                    <span
-                      className={`absolute bottom-0 left-0 h-0.5 bg-[#32aa15] rounded-full transition-all duration-300 ${
-                        active ? 'w-full' : 'w-0 group-hover:w-full'
-                      }`}
-                    />
-                  </Link>
-                );
-              })}
-            </nav>
+                  />
+                </Link>
+              );
+            })}
 
-            {/* Partner With Us Button */}
-            {openModalWithOption && (
-              <button
-                onClick={() => openModalWithOption('Partner With Us')}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#32aa15] hover:bg-[#288c10] text-white text-xs font-bold transition-all shadow-sm cursor-pointer whitespace-nowrap"
-              >
-                <span>Partner With Us</span>
-                <span className="text-white/80">&gt;</span>
-              </button>
-            )}
-          </div>
+          </nav>
 
           {/* Mobile Menu Button */}
           <button

@@ -9,7 +9,7 @@ import { AboutPage } from './pages/AboutPage';
 import { ChargingStationsPage } from './pages/ChargingStationsPage';
 import { InvestmentPage } from './pages/InvestmentPage';
 import { FranchisePage } from './pages/FranchisePage';
-import { RoiCalculatorPage } from './pages/RoiCalculatorPage';
+import { AppNetworkPage } from './pages/AppNetworkPage';
 import { ContactPage } from './pages/ContactPage';
 import type { RoiCalculatorState } from './types';
 import { HERO_SLIDES } from './data/siteData';
@@ -102,8 +102,12 @@ export default function App() {
             element={<FranchisePage openModalWithOption={openModalWithOption} />}
           />
           <Route
+            path="/app-network"
+            element={<AppNetworkPage openModalWithOption={openModalWithOption} />}
+          />
+          <Route
             path="/roi-calculator"
-            element={<RoiCalculatorPage openModalWithOption={openModalWithOption} />}
+            element={<AppNetworkPage openModalWithOption={openModalWithOption} />}
           />
           <Route
             path="/contact"
