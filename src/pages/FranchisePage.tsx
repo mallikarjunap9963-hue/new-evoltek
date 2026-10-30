@@ -13,7 +13,8 @@ import {
   Fuel,
   Home,
   Bed,
-  Gamepad2
+  Gamepad2,
+  Zap
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { InvestCtaBanner } from '../components/common/InvestCtaBanner';
@@ -82,107 +83,18 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
 
 
       {/* =========================================================================
-          2. WHY CHOOSE EVOLTEK FRANCHISE?
+          3. OUR FRANCHISE MODELS: "Choose the Right Model for Your Goals"
           ========================================================================= */}
       <section className="w-full bg-white py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
-
-            {/* Left Column Text (5 cols) */}
-            <div className="lg:col-span-5 space-y-2.5">
-              <span className="text-slate-500 text-xs font-bold uppercase tracking-wider block">
-                Why Choose Evoltek Franchise?
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
-                A Profitable Opportunity.
-                <br />
-                A <span className="text-[#32aa15]">Greener Tomorrow.</span>
-              </h2>
-              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed pt-1">
-                Be a part of a trusted EV charging network and build a long-term, sustainable business with the support of EVOLTEK. Our franchise model is designed for individuals, businesses and landowners who want to invest in the future of mobility.
-              </p>
-            </div>
-
-            {/* Right Column: 4 Cards Grid (7 cols) */}
-            <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4">
-
-              {/* Card 1: High Demand */}
-              <div className="bg-[#f9fbf9] rounded-2xl p-4 sm:p-5 border border-slate-100/90 shadow-2xs flex flex-col items-center text-center group hover:shadow-md hover:border-[#32aa15]/30 transition-all duration-300">
-                <div className="w-18 h-18 sm:w-20 sm:h-20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <img
-                    src="/icon_3d_high_demand.png"
-                    alt="High Demand"
-                    className="w-full h-full object-contain filter drop-shadow-md"
-                  />
-                </div>
-                <h3 className="font-bold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">High Demand</h3>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-1 leading-snug">
-                  Rising EV adoption creating strong growth potential.
-                </p>
-              </div>
-
-              {/* Card 2: Attractive Returns */}
-              <div className="bg-[#f9fbf9] rounded-2xl p-4 sm:p-5 border border-slate-100/90 shadow-2xs flex flex-col items-center text-center group hover:shadow-md hover:border-[#32aa15]/30 transition-all duration-300">
-                <div className="w-18 h-18 sm:w-20 sm:h-20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <img
-                    src="/icon_3d_flexible_returns.png"
-                    alt="Attractive Returns"
-                    className="w-full h-full object-contain filter drop-shadow-md"
-                  />
-                </div>
-                <h3 className="font-bold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">Attractive Returns</h3>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-1 leading-snug">
-                  Profitable business model with long-term revenue.
-                </p>
-              </div>
-
-              {/* Card 3: Trusted Brand */}
-              <div className="bg-[#f9fbf9] rounded-2xl p-4 sm:p-5 border border-slate-100/90 shadow-2xs flex flex-col items-center text-center group hover:shadow-md hover:border-[#32aa15]/30 transition-all duration-300">
-                <div className="w-18 h-18 sm:w-20 sm:h-20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <img
-                    src="/icon_3d_trusted_brand.png"
-                    alt="Trusted Brand"
-                    className="w-full h-full object-contain filter drop-shadow-md"
-                  />
-                </div>
-                <h3 className="font-bold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">Trusted Brand</h3>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-1 leading-snug">
-                  Be part of a reliable and innovative EV ecosystem.
-                </p>
-              </div>
-
-              {/* Card 4: Complete Support */}
-              <div className="bg-[#f9fbf9] rounded-2xl p-4 sm:p-5 border border-slate-100/90 shadow-2xs flex flex-col items-center text-center group hover:shadow-md hover:border-[#32aa15]/30 transition-all duration-300">
-                <div className="w-18 h-18 sm:w-20 sm:h-20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <img
-                    src="/icon_3d_complete_support.png"
-                    alt="Complete Support"
-                    className="w-full h-full object-contain filter drop-shadow-md"
-                  />
-                </div>
-                <h3 className="font-bold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">Complete Support</h3>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-1 leading-snug">
-                  End-to-end support from site selection to operations.
-                </p>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-
-      {/* =========================================================================
-          3. OUR FRANCHISE MODELS: "Choose the Right Model for Your Goals"
-          ========================================================================= */}
-      <section className="w-full bg-[#fbfdfa] py-8 sm:py-12 border-b border-slate-100">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="mb-6 sm:mb-8">
-            <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-1">
-              OUR FRANCHISE MODELS
-            </span>
+            <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em] mb-1">
+              <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+              <span>OUR FRANCHISE MODELS</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
               Choose the Right Model for Your Goals
             </h2>
@@ -214,7 +126,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
                       <h3 className="text-lg sm:text-xl font-black text-slate-900 font-['Wix_Madefor_Display',sans-serif] leading-tight">
                         City Franchise
                       </h3>
-                      <p className="text-xs text-slate-500 mt-0.5 leading-snug">
+                      <p className="text-sm text-slate-500 mt-0.5 leading-snug">
                         Ideal for malls, offices, residential complexes and public locations.
                       </p>
                     </div>
@@ -276,7 +188,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
                       <h3 className="text-lg sm:text-xl font-black text-slate-900 font-['Wix_Madefor_Display',sans-serif] leading-tight">
                         Highway Franchise
                       </h3>
-                      <p className="text-xs text-slate-500 mt-0.5 leading-snug">
+                      <p className="text-sm text-slate-500 mt-0.5 leading-snug">
                         Perfect for highways, travel hubs and large commercial locations.
                       </p>
                     </div>
@@ -324,43 +236,87 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
       {/* =========================================================================
           4. WHAT YOU GET AS AN EVOLTEK FRANCHISE PARTNER
           ========================================================================= */}
-      <section className="w-full bg-white py-8 sm:py-12 border-b border-slate-100">
+      <section className="w-full bg-white py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="mb-6 sm:mb-8 text-center sm:text-left">
+            <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em] mb-1">
+              <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+              <span>THE EVOLTEK ADVANTAGE</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
-              What You Get as an Evoltek Franchise Partner
+              A Smarter Way to Build Your EV Business
             </h2>
+            <p className="mt-3 max-w-3xl text-sm sm:text-base leading-relaxed text-slate-600">
+              Share the investment, build with an experienced operating partner, and create new opportunities around fast EV charging.
+            </p>
           </div>
 
-          {/* 8 Cards Row */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-3.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {[
-              { title: 'Site Selection Support', iconSrc: '/icon_3d_trust_solutions.png' },
-              { title: 'Design & Civil Guidance', iconSrc: '/icon_3d_trust_quality.png' },
-              { title: 'EV Charging Equipment', iconSrc: '/icon_3d_charging.png' },
-              { title: 'Installation & Commissioning', iconSrc: '/icon_3d_hassle_free.jpg' },
-              { title: 'Software & Backend Access', iconSrc: '/icon_3d_digital_transparency.jpg' },
-              { title: 'Marketing & Brand Support', iconSrc: '/icon_3d_trust_future.png' },
-              { title: 'Operations Training', iconSrc: '/icon_3d_val_customer_focus.png' },
-              { title: 'Ongoing Maintenance Support', iconSrc: '/icon_3d_trust_support.png' }
-            ].map((item, idx) => (
+              {
+                title: 'Shared Investment',
+                desc: 'Evoltek funds half of the project, helping you launch with a shared commitment.',
+                icon: Users
+              },
+              {
+                title: 'Flexible Return Options',
+                desc: 'Choose a percentage-based or fixed-return model to suit your investment goals.',
+                icon: TrendingUp
+              },
+              {
+                title: 'Long-Term Security',
+                desc: 'Build on a long-term agreement of up to 10 years, with a clear foundation for your partnership.',
+                icon: ShieldCheck
+              },
+              {
+                title: 'Managed Operations',
+                desc: 'Evoltek manages technical operations and maintenance so you can focus on your business.',
+                icon: Settings
+              },
+              {
+                title: 'Fast DC Charging',
+                desc: 'Offer high-speed charging with solutions designed for both city locations and highways.',
+                icon: Fuel
+              },
+              {
+                title: 'Additional Income',
+                desc: 'Explore added revenue opportunities with amenities such as a cafe, restaurant, or gaming area.',
+                icon: Store
+              },
+              {
+                title: 'Landowner Opportunity',
+                desc: 'Put suitable land to work as a charging location and earn rental income.',
+                icon: MapPin
+              },
+              {
+                title: 'Quick Launch',
+                desc: 'With planning and setup support, your station can be ready to launch in about two months.',
+                icon: Zap
+              }
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
               <div
-                key={idx}
-                className="bg-[#f9fbf9] rounded-2xl p-3 sm:p-3.5 border border-slate-100/90 shadow-2xs flex flex-col items-center text-center group hover:border-[#32aa15]/40 hover:shadow-md hover:bg-white transition-all duration-300"
+                key={item.title}
+                className="group flex min-h-[190px] flex-col rounded-2xl border border-[#c3dc9b] bg-[#d1e7a7] p-5 sm:p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#32aa15]/50 hover:shadow-md"
               >
-                <div className="w-13 h-13 sm:w-14 sm:h-14 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
-                  <img
-                    src={item.iconSrc}
-                    alt={item.title}
-                    className="w-full h-full object-contain filter drop-shadow-sm"
-                  />
+                <div className="mb-4 flex items-center justify-between">
+                  <div className="flex h-12 w-12 items-center justify-center text-[#32aa15]">
+                    <Icon className="h-8 w-8 stroke-[1.8]" aria-hidden="true" />
+                  </div>
                 </div>
-                <h4 className="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight">
+                <h3 className="font-['Wix_Madefor_Display',sans-serif] text-base sm:text-lg font-bold leading-tight text-slate-900">
                   {item.title}
-                </h4>
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  {item.desc}
+                </p>
               </div>
-            ))}
+              );
+            })}
           </div>
 
         </div>
@@ -370,18 +326,20 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
       {/* =========================================================================
           5. MORE THAN JUST CHARGING: "Create a Charging Hub. Create More Opportunities."
           ========================================================================= */}
-      <section className="w-full bg-white py-8 sm:py-12 border-b border-slate-100">
+      <section className="w-full bg-white py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* Large Light Card Container */}
-          <div className="rounded-3xl bg-[#f8fbf8] p-6 sm:p-8 lg:p-10 border border-slate-200/90 shadow-sm text-slate-900 relative overflow-hidden">
+          <div className="text-slate-900 relative">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
 
               {/* Left Column (5 cols) */}
               <div className="lg:col-span-5 space-y-3.5">
-                <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block">
-                  MORE THAN JUST CHARGING
-                </span>
+                <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
+                  <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                  </svg>
+                  <span>MORE THAN JUST CHARGING</span>
+                </div>
 
                 <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
                   Create a Charging Hub.
@@ -389,7 +347,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
                   Create More Opportunities.
                 </h2>
 
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed pt-1">
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed pt-1">
                   Highway stations can be developed into full EV hubs with cafeteria, restaurant, gaming area, rest rooms and more — giving travellers a place to relax while their vehicle charges and helping you generate additional revenue.
                 </p>
 
@@ -405,69 +363,65 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
               </div>
 
               {/* Right Column: 4 Amenity Photo Tiles (7 cols in 2x2 Grid) */}
-              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-5 gap-y-5">
 
                 {/* Tile 1: Cafeteria & Restaurants */}
-                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] group border border-slate-200/80 shadow-md">
-                  <img
-                    src="/hub_amenity_cafe.jpg"
-                    alt="Cafeteria & Restaurants"
-                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                  <div className="absolute top-3 left-3 sm:top-3.5 sm:left-3.5 px-3.5 py-1.5 sm:py-2 rounded-2xl bg-black/75 backdrop-blur-md border border-white/20 flex items-center gap-2 sm:gap-2.5 shadow-lg group-hover:bg-black/85 transition-all">
-                    <Store className="w-4 h-4 sm:w-5 sm:h-5 text-[#4ade80] stroke-[2.2]" />
-                    <span className="text-[#4ade80] font-bold text-xs sm:text-sm tracking-wide">
-                      Cafeteria &amp; Restaurants
-                    </span>
+                <div className="group">
+                  <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] border border-slate-200/80 shadow-md">
+                    <img
+                      src="/hub_amenity_cafe.jpg"
+                      alt="Cafeteria & Restaurants"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="mt-2.5 flex items-center gap-2 text-[#32aa15]">
+                    <Store className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 stroke-[2.2]" />
+                    <span className="font-bold text-sm sm:text-base">Cafeteria &amp; Restaurants</span>
                   </div>
                 </div>
 
                 {/* Tile 2: Wi-Fi & Workspaces */}
-                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] group border border-slate-200/80 shadow-md">
-                  <img
-                    src="/hub_amenity_workspace.jpg"
-                    alt="Wi-Fi & Workspaces"
-                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                  <div className="absolute top-3 left-3 sm:top-3.5 sm:left-3.5 px-3.5 py-1.5 sm:py-2 rounded-2xl bg-black/75 backdrop-blur-md border border-white/20 flex items-center gap-2 sm:gap-2.5 shadow-lg group-hover:bg-black/85 transition-all">
-                    <Monitor className="w-4 h-4 sm:w-5 sm:h-5 text-[#4ade80] stroke-[2.2]" />
-                    <span className="text-[#4ade80] font-bold text-xs sm:text-sm tracking-wide">
-                      Wi-Fi &amp; Workspaces
-                    </span>
+                <div className="group">
+                  <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] border border-slate-200/80 shadow-md">
+                    <img
+                      src="/hub_amenity_workspace.jpg"
+                      alt="Wi-Fi & Workspaces"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="mt-2.5 flex items-center gap-2 text-[#32aa15]">
+                    <Monitor className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 stroke-[2.2]" />
+                    <span className="font-bold text-sm sm:text-base">Wi-Fi &amp; Workspaces</span>
                   </div>
                 </div>
 
                 {/* Tile 3: Rooms & Rest Facilities */}
-                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] group border border-slate-200/80 shadow-md">
-                  <img
-                    src="/hub_amenity_rest_room.jpg"
-                    alt="Rooms & Rest Facilities"
-                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                  <div className="absolute top-3 left-3 sm:top-3.5 sm:left-3.5 px-3.5 py-1.5 sm:py-2 rounded-2xl bg-black/75 backdrop-blur-md border border-white/20 flex items-center gap-2 sm:gap-2.5 shadow-lg group-hover:bg-black/85 transition-all">
-                    <Bed className="w-4 h-4 sm:w-5 sm:h-5 text-[#4ade80] stroke-[2.2]" />
-                    <span className="text-[#4ade80] font-bold text-xs sm:text-sm tracking-wide">
-                      Rooms &amp; Rest Facilities
-                    </span>
+                <div className="group">
+                  <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] border border-slate-200/80 shadow-md">
+                    <img
+                      src="/hub_amenity_rest_room.jpg"
+                      alt="Rooms & Rest Facilities"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="mt-2.5 flex items-center gap-2 text-[#32aa15]">
+                    <Bed className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 stroke-[2.2]" />
+                    <span className="font-bold text-sm sm:text-base">Rooms &amp; Rest Facilities</span>
                   </div>
                 </div>
 
                 {/* Tile 4: Gaming Area & Playzone */}
-                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] group border border-slate-200/80 shadow-md">
-                  <img
-                    src="/hub_amenity_gaming.jpg"
-                    alt="Gaming Area & Playzone"
-                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                  <div className="absolute top-3 left-3 sm:top-3.5 sm:left-3.5 px-3.5 py-1.5 sm:py-2 rounded-2xl bg-black/75 backdrop-blur-md border border-white/20 flex items-center gap-2 sm:gap-2.5 shadow-lg group-hover:bg-black/85 transition-all">
-                    <Gamepad2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#4ade80] stroke-[2.2]" />
-                    <span className="text-[#4ade80] font-bold text-xs sm:text-sm tracking-wide">
-                      Gaming Area &amp; Playzone
-                    </span>
+                <div className="group">
+                  <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] border border-slate-200/80 shadow-md">
+                    <img
+                      src="/hub_amenity_gaming.jpg"
+                      alt="Gaming Area & Playzone"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="mt-2.5 flex items-center gap-2 text-[#32aa15]">
+                    <Gamepad2 className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 stroke-[2.2]" />
+                    <span className="font-bold text-sm sm:text-base">Gaming Area &amp; Playzone</span>
                   </div>
                 </div>
 
@@ -483,17 +437,23 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
       {/* =========================================================================
           6. OUR FRANCHISE PROCESS
           ========================================================================= */}
-      <section className="w-full bg-[#fbfdfa] py-8 sm:py-12 border-b border-slate-100">
+      <section className="w-full bg-white py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+            <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em] mb-1">
+              <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+              <span>HOW IT WORKS</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
               Our Franchise Process
             </h2>
           </div>
 
-          {/* 6 Step Cards Grid with Connecting Dotted Line */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5 relative">
+          {/* Six-step timeline with large outlined icon circles */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-8 sm:gap-x-5">
             {[
               { num: '01', title: 'Apply', desc: 'Submit your franchise application.', icon: FileText },
               { num: '02', title: 'Discussion', desc: 'Our team will connect with you.', icon: Users },
@@ -505,28 +465,23 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
               const Icon = step.icon;
               return (
                 <div key={step.num} className="flex flex-col items-center text-center group relative">
-
-                  {/* Connecting Dotted Line to next step on Desktop (steps 1 to 5) */}
                   {idx < 5 && (
-                    <div className="hidden lg:flex absolute top-[16px] left-[calc(50%+40px)] right-[calc(-50%+40px)] items-center pointer-events-none z-0 px-1">
-                      <div className="w-full border-t-[2.5px] border-dotted border-[#32aa15]/60" />
+                    <div className="hidden lg:block absolute top-[64px] left-[calc(50%+64px)] right-[calc(-50%+64px)] border-t-2 border-dotted border-[#15803d] z-0">
+                      <ChevronRight className="absolute -right-2.5 -top-[11px] h-5 w-5 text-[#15803d] stroke-[2.5]" />
                     </div>
                   )}
 
-                  {/* Icon & Number Badge */}
-                  <div className="flex items-center gap-2 mb-3 relative z-10">
-                    <span className="w-7 h-7 rounded-full bg-[#32aa15] text-white text-[11px] font-black flex items-center justify-center shadow-xs">
+                  <div className="relative z-10 mb-4 flex h-32 w-32 items-center justify-center rounded-full border border-[#8bd878] bg-white shadow-[0_8px_18px_rgba(21,128,61,0.10)] transition-transform duration-300 group-hover:-translate-y-1 sm:h-[136px] sm:w-[136px]">
+                    <span className="absolute -left-1 -top-1 flex h-8 w-8 items-center justify-center rounded-full bg-[#32aa15] text-xs font-black text-white shadow-md">
                       {step.num}
                     </span>
-                    <div className="w-11 h-11 rounded-full bg-[#f0f9f1] border border-[#32aa15]/25 flex items-center justify-center text-[#32aa15] shadow-xs group-hover:scale-105 group-hover:bg-[#e4f6e6] transition-all">
-                      <Icon className="w-5 h-5 text-[#32aa15] stroke-[2.2]" />
-                    </div>
+                    <Icon className="h-12 w-12 text-[#32aa15] stroke-[1.7] transition-transform duration-300 group-hover:scale-110" />
                   </div>
 
-                  <h3 className="font-bold text-slate-900 text-xs sm:text-sm group-hover:text-[#15803d] transition-colors leading-tight">
+                  <h3 className="font-bold text-[#32aa15] text-base sm:text-lg group-hover:text-[#288c10] transition-colors leading-tight">
                     {step.title}
                   </h3>
-                  <p className="text-slate-500 text-[11px] sm:text-xs mt-1 leading-snug max-w-[170px]">
+                  <p className="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed max-w-[190px]">
                     {step.desc}
                   </p>
                 </div>
