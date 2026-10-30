@@ -214,7 +214,7 @@ export const Footer: React.FC<FooterProps> = ({ openModalWithOption }) => {
                 href="https://sunseaz.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-emerald-400 hover:text-emerald-300 hover:underline transition-colors"
+                className="font-semibold text-[#32aa15] hover:text-[#288a11] hover:underline transition-colors"
               >
                 Sunseaz
               </a>
