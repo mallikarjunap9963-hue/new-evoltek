@@ -122,7 +122,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
 
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="max-w-2xl space-y-4 sm:space-y-5">
-            
+
             {/* Tagline / Pill Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/15 text-xs font-bold tracking-widest uppercase text-white shadow-md">
               <span className="w-2 h-2 rounded-full bg-[#32aa15]" />
@@ -156,7 +156,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
               </div>
             </div>
 
-          
+
           </div>
         </div>
       </section>
@@ -167,7 +167,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
       <section className="w-full bg-[#f8fafc] py-8 sm:py-10">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-start">
-            
+
             {/* ------------------------------------------------------------------- */}
             {/* LEFT COLUMN: SEND US A MESSAGE FORM */}
             {/* ------------------------------------------------------------------- */}
@@ -324,7 +324,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
             {/* RIGHT COLUMN: VISIT OUR OFFICE + FIND US ON MAP */}
             {/* ------------------------------------------------------------------- */}
             <div className="lg:col-span-6 space-y-5">
-              
+
               {/* CARD 1: VISIT OUR OFFICE (Crisp Image Card with No White Overlay) */}
               <div className="rounded-3xl overflow-hidden bg-white border border-slate-200/80 shadow-lg shadow-slate-200/50 flex flex-col sm:flex-row items-stretch min-h-[230px]">
                 {/* Left Content (Text & Contact Items) */}
@@ -454,7 +454,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
       {/* ========================================================================= */}
       <section className="w-full bg-[#f8fafc] py-12 border-t border-slate-200/70">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Header Row */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div>
@@ -469,12 +469,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
               </p>
             </div>
 
-            
+
           </div>
 
           {/* 2-Column FAQs Grid (4 on left, 4 on right) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            
+
             {/* Left Column (Indices 0-3) */}
             <div className="space-y-4">
               {faqsLeft.map((faq, idx) => {
@@ -544,7 +544,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
           ========================================================================= */}
       <section className="w-full bg-white py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div
             className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden min-h-[250px] sm:min-h-[290px] lg:min-h-[330px] shadow-2xl bg-cover bg-[position:center_70%] bg-no-repeat flex items-center justify-between p-6 sm:p-10 lg:p-12 text-white"
             style={{ backgroundImage: `url('/breadcrumb.png')` }}
@@ -586,7 +586,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
               </div>
             </div>
 
-            
+
 
           </div>
 

@@ -30,35 +30,36 @@ export const ReturnsSection: React.FC<ReturnsSectionProps> = ({ openModalWithOpt
           </p>
         </div>
 
-        {/* CENTERED OPTION A CARD */}
-        <div className="max-w-xl mx-auto w-full">
+        {/* OPTION A: RETURN CARD WITH BENEFITS */}
+        <div className="max-w-5xl mx-auto w-full">
 
           {/* ================= OPTION A: PERCENTAGE RETURN ================= */}
-          <div className="bg-[#d1e7a7] rounded-[32px] rounded-br-sm p-5 sm:p-7 md:p-8 flex flex-col justify-between shadow-xl hover:shadow-2xl transition-all duration-300 border border-[#32aa15]/20 group relative w-full">
+          <div className="bg-[#d1e7a7] rounded-[28px] sm:rounded-[32px] p-4 sm:p-6 md:p-8 shadow-xl border border-[#32aa15]/20 transition-shadow duration-300 hover:shadow-2xl">
+            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-5 sm:gap-6 lg:gap-8">
+              {/* Return summary card */}
+              <div className="bg-white rounded-[24px] sm:rounded-[26px] p-5 sm:p-7 shadow-sm border border-emerald-100/80 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-4 mb-3">
+                    <div>
+                      <span className="text-[#32aa15] font-extrabold text-xs uppercase tracking-widest block mb-1">
+                        OPTION A
+                      </span>
+                      <h3 className="text-2xl sm:text-3xl font-semibold text-slate-900 tracking-tight font-['Wix_Madefor_Display',sans-serif]">
+                        Percentage Return
+                      </h3>
+                    </div>
+                    <div className="w-12 h-12 rounded-2xl bg-[#32aa15]/10 flex items-center justify-center text-[#32aa15] shrink-0">
+                      <Zap className="w-6 h-6 fill-[#32aa15]" />
+                    </div>
+                  </div>
 
-            <div>
-              {/* White Inner Top Header Card */}
-              <div className="bg-white rounded-[26px] p-6 sm:p-8 shadow-sm border border-emerald-100/80 mb-6 sm:mb-8 relative">
-                <div className="flex items-center justify-between gap-4 mb-3">
-                  <div>
-                    <span className="text-[#32aa15] font-extrabold text-xs uppercase tracking-widest block mb-1">
-                      OPTION A
-                    </span>
-                    <h3 className="text-2xl sm:text-3xl font-medium text-slate-900 tracking-tight font-['Wix_Madefor_Display',sans-serif]">
-                      Percentage Return
-                    </h3>
-                  </div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#32aa15]/10 flex items-center justify-center text-[#32aa15] shrink-0">
-                    <Zap className="w-6 h-6 fill-[#32aa15]" />
-                  </div>
+                  <p className="text-slate-500 text-sm font-medium mb-6">
+                    High annual yield potential backed by long-term EV charging growth.
+                  </p>
                 </div>
 
-                <p className="text-slate-500 text-sm font-medium mb-6">
-                  High annual yield potential backed by long-term EV charging growth.
-                </p>
-
                 {/* Giant Metric Display */}
-                <div className="flex items-baseline gap-2 pt-2 border-t border-slate-100">
+                <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 pt-3 border-t border-slate-100">
                   <span className="text-5xl sm:text-6xl font-black text-slate-900 tracking-tight">
                     28%
                   </span>
@@ -68,8 +69,12 @@ export const ReturnsSection: React.FC<ReturnsSectionProps> = ({ openModalWithOpt
                 </div>
               </div>
 
-              {/* Feature Bullet List */}
-              <div className="space-y-4 px-2 sm:px-4 mb-8">
+              {/* Partnership benefits */}
+              <div className="flex flex-col justify-center py-2 sm:py-4 lg:py-6 lg:pl-2">
+                <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 sm:mb-5">
+                  Partnership benefits
+                </h4>
+                <div className="grid gap-3 sm:gap-4">
                 {[
                   '28% Per TurnOver',
                   '10-Year Agreement',
@@ -79,24 +84,25 @@ export const ReturnsSection: React.FC<ReturnsSectionProps> = ({ openModalWithOpt
                   'Real-time App Performance Monitoring'
                 ].map((feature, idx) => (
                   <div key={idx} className="flex items-center gap-3.5 text-slate-800 font-semibold text-sm sm:text-base">
-                    <div className="w-6 h-6 rounded-full bg-[#32aa15] flex items-center justify-center text-white shrink-0 shadow-sm">
+                    <div className="w-7 h-7 rounded-full bg-[#32aa15] flex items-center justify-center text-white shrink-0 shadow-sm">
                       <Check className="w-3.5 h-3.5 stroke-[3]" />
                     </div>
                     <span>{feature}</span>
                   </div>
                 ))}
+                </div>
               </div>
             </div>
 
             {/* Bottom CTA Button */}
-            <div className="pt-2">
+            <div className="pt-5 sm:pt-6">
               <button
                 type="button"
                 onClick={() => openModalWithOption('Option A: 28% Percentage Return')}
-                className="w-full py-4 px-6 bg-[#171E23] hover:bg-[#32aa15] text-white font-bold text-base rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-md group-hover:shadow-lg cursor-pointer"
+                className="w-full py-4 px-6 bg-[#171E23] hover:bg-[#32aa15] text-white font-bold text-sm sm:text-base rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
               >
                 <span>CHOOSE PERCENTAGE MODEL</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 transition-transform hover:translate-x-1" />
               </button>
             </div>
 

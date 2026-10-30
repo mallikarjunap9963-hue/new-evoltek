@@ -41,7 +41,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
 
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="max-w-2xl space-y-4 sm:space-y-5">
-            
+
             {/* Tagline / Pill Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/15 text-xs font-bold tracking-widest uppercase text-white shadow-md">
               <span className="w-2 h-2 rounded-full bg-[#32aa15]" />
@@ -87,7 +87,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
       <section className="w-full bg-white py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
-            
+
             {/* Left Column Text (5 cols) */}
             <div className="lg:col-span-5 space-y-2.5">
               <span className="text-slate-500 text-xs font-bold uppercase tracking-wider block">
@@ -105,7 +105,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
 
             {/* Right Column: 4 Cards Grid (7 cols) */}
             <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4">
-              
+
               {/* Card 1: High Demand */}
               <div className="bg-[#f9fbf9] rounded-2xl p-4 sm:p-5 border border-slate-100/90 shadow-2xs flex flex-col items-center text-center group hover:shadow-md hover:border-[#32aa15]/30 transition-all duration-300">
                 <div className="w-18 h-18 sm:w-20 sm:h-20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
@@ -178,7 +178,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
           ========================================================================= */}
       <section className="w-full bg-[#fbfdfa] py-8 sm:py-12 border-b border-slate-100">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="mb-6 sm:mb-8">
             <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-1">
               OUR FRANCHISE MODELS
@@ -190,10 +190,10 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
 
           {/* 2 Big Models Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
-            
+
             {/* Model 1: City Franchise (Separate Image & Separate Content) */}
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-3.5 sm:gap-4 items-stretch">
-              
+
               {/* Separate Image Card (5 cols) */}
               <div className="sm:col-span-5 rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm relative group min-h-[220px] sm:min-h-full bg-white">
                 <img
@@ -255,7 +255,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
 
             {/* Model 2: Highway Franchise (Separate Image & Separate Content) */}
             <div className="grid grid-cols-1 sm:grid-cols-12 gap-3.5 sm:gap-4 items-stretch">
-              
+
               {/* Separate Image Card (5 cols) */}
               <div className="sm:col-span-5 rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm relative group min-h-[220px] sm:min-h-full bg-white">
                 <img
@@ -326,7 +326,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
           ========================================================================= */}
       <section className="w-full bg-white py-8 sm:py-12 border-b border-slate-100">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="mb-6 sm:mb-8 text-center sm:text-left">
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-['Wix_Madefor_Display',sans-serif]">
               What You Get as an Evoltek Franchise Partner
@@ -372,11 +372,11 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
           ========================================================================= */}
       <section className="w-full bg-white py-8 sm:py-12 border-b border-slate-100">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Large Light Card Container */}
           <div className="rounded-3xl bg-[#f8fbf8] p-6 sm:p-8 lg:p-10 border border-slate-200/90 shadow-sm text-slate-900 relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
-              
+
               {/* Left Column (5 cols) */}
               <div className="lg:col-span-5 space-y-3.5">
                 <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block">
@@ -406,7 +406,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
 
               {/* Right Column: 4 Amenity Photo Tiles (7 cols in 2x2 Grid) */}
               <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                
+
                 {/* Tile 1: Cafeteria & Restaurants */}
                 <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] group border border-slate-200/80 shadow-md">
                   <img
@@ -485,7 +485,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
           ========================================================================= */}
       <section className="w-full bg-[#fbfdfa] py-8 sm:py-12 border-b border-slate-100">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-['Wix_Madefor_Display',sans-serif]">
               Our Franchise Process
@@ -505,7 +505,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
               const Icon = step.icon;
               return (
                 <div key={step.num} className="flex flex-col items-center text-center group relative">
-                  
+
                   {/* Connecting Dotted Line to next step on Desktop (steps 1 to 5) */}
                   {idx < 5 && (
                     <div className="hidden lg:flex absolute top-[16px] left-[calc(50%+40px)] right-[calc(-50%+40px)] items-center pointer-events-none z-0 px-1">

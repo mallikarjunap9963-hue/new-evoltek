@@ -78,8 +78,8 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
   const tenYearReturn = Math.round(investmentAmount * 0.28 * 10);
 
   // Estimated ROI % = (Net Profit * 10 - Investment) / Investment * 100 or 10-year cumulative ROI
-  const estimatedRoiPercent = investmentAmount > 0 
-    ? Math.round(((netAnnualProfit * 10) / investmentAmount) * 100) 
+  const estimatedRoiPercent = investmentAmount > 0
+    ? Math.round(((netAnnualProfit * 10) / investmentAmount) * 100)
     : 0;
 
   const formatCurrency = (val: number) => {
@@ -152,7 +152,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
       <section className="w-full bg-white py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
-            
+
             {/* Left Column Text (5 cols) */}
             <div className="lg:col-span-5 space-y-3">
               <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block">
@@ -170,7 +170,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
 
             {/* Right Column: 4 Feature Cards (7 cols) */}
             <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
-              
+
               {/* Card 1 */}
               <div className="flex flex-col items-center text-center group cursor-default">
                 <div className="w-16 h-16 sm:w-18 sm:h-18 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
@@ -243,7 +243,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
           ========================================================================= */}
       <section className="w-full bg-[#fbfdfa] py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
             <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-2">
               OUR INVESTMENT MODEL
@@ -258,11 +258,11 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
 
           {/* 2 Column Layout: Dual-Pill Card + Partner Handshake Photo */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
-            
+
             {/* Left Dual-Pill Card (7 cols) */}
             <div className="lg:col-span-7 relative flex flex-col justify-center">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 relative items-stretch h-full">
-                
+
                 {/* Left Sub-card: EVOLTEK 50% */}
                 <div className="bg-[#eaf7ec] rounded-3xl p-6 sm:p-7 sm:pr-14 lg:pr-16 flex flex-col justify-between border border-[#32aa15]/20 shadow-xs">
                   <div>
@@ -361,7 +361,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
       <section className="w-full bg-white py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-            
+
             {/* Left Photo: Wide Station Canopy with Cars Charging (6 cols) */}
             <div className="lg:col-span-6 rounded-3xl overflow-hidden border border-slate-200 shadow-md h-full min-h-[300px] sm:min-h-[360px] relative group">
               <img
@@ -378,7 +378,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
               </span>
 
               <div className="space-y-4 sm:space-y-4.5">
-                
+
                 {/* Benefit 1 */}
                 <div className="flex items-center gap-3.5 sm:gap-4 group">
                   <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#f0fdf4] border border-[#32aa15]/30 text-[#15803d] flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 group-hover:bg-[#e6f9ea] transition-all">
@@ -444,7 +444,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
       <section className="w-full bg-[#fbfdfa] py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
-            
+
             {/* Left Card: 28% Return (7 cols) */}
             <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col justify-between relative overflow-hidden">
               <div>
@@ -453,7 +453,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
                 </span>
 
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 sm:gap-8">
-                  
+
                   {/* Left Content with Large Circular Icon Badge */}
                   <div className="flex items-center gap-4 sm:gap-5">
                     {/* Big Circular Chart Icon */}
@@ -529,7 +529,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
           ========================================================================= */}
       <section id="roi-calculator-section" className="w-full bg-white py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="mb-6 sm:mb-8">
             <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-1">
               ROI CALCULATOR
@@ -543,10 +543,10 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
+
             {/* Left Inputs Column (6 cols) */}
             <div className="lg:col-span-6 bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-sm space-y-5">
-              
+
               {/* Row 1: Number of Chargers + Charger Capacity */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
@@ -708,7 +708,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
 
               {/* 6 Grid Metric Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                
+
                 {/* 1. Total Investment */}
                 <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-2xs">
                   <span className="text-xs text-slate-500 font-medium block mb-1">
@@ -795,7 +795,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
           ========================================================================= */}
       <section className="w-full bg-[#fbfdfa] py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-8">
             <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-2">
               HOW TO GET STARTED
@@ -836,7 +836,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
               const Icon = step.icon;
               return (
                 <div key={step.num} className="flex flex-col items-center text-center group relative">
-                  
+
                   {/* Connecting Dotted Line to next step on Desktop (steps 1, 2, 3) */}
                   {idx < 3 && (
                     <div className="hidden lg:flex absolute top-[23px] left-[calc(50%+52px)] right-[calc(-50%+52px)] items-center pointer-events-none z-0 px-2">
@@ -881,7 +881,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
           ========================================================================= */}
       <section className="w-full bg-white py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div
             className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden min-h-[250px] sm:min-h-[290px] lg:min-h-[330px] shadow-2xl bg-cover bg-[position:center_70%] bg-no-repeat flex items-center justify-between p-6 sm:p-10 lg:p-12 text-white"
             style={{ backgroundImage: `url('/breadcrumb.png')` }}

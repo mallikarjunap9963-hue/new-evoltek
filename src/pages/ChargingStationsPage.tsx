@@ -77,7 +77,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
       <section className="w-full bg-white pt-6 pb-6">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#fbfcfb] rounded-[24px] p-5 sm:p-7 border border-slate-200/80 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8 shadow-sm">
-            
+
             {/* 4 Feature Items (Vertically stacked icon, title, subtitle matching reference) */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full lg:w-auto flex-1">
               {/* Feature 1 */}
@@ -178,7 +178,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
       <section className="w-full bg-white py-10 sm:py-14">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-            
+
             {/* 1. Highway Charging Station Card */}
             <div
               id="highway-stations"
@@ -373,7 +373,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
           ========================================================================= */}
       <section className="w-full bg-[#f4faf4] py-14 sm:py-20 border-y border-emerald-100/60">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-2">
             <span className="text-[#32aa15] font-extrabold text-xs sm:text-sm uppercase tracking-wider block">
@@ -389,7 +389,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
 
           {/* 5 Charger Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
-            
+
             {/* Charger 1: 60 kW */}
             <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#32aa15] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
               <div>
@@ -552,7 +552,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
       <section className="w-full bg-white py-16 sm:py-24 lg:py-28">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-            
+
             {/* Left Content Column */}
             <div className="lg:col-span-4 space-y-5">
               <span className="text-[#32aa15] font-extrabold text-xs sm:text-sm uppercase tracking-wider block">
@@ -578,7 +578,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
 
             {/* Right Amenities & Photos Column */}
             <div className="lg:col-span-8 space-y-5">
-              
+
               {/* 5 Amenity Badges with 3D Glossy Icons */}
               <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-3.5">
                 {/* Amenity 1 */}

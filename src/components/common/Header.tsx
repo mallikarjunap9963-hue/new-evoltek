@@ -59,23 +59,21 @@ export const Header: React.FC<HeaderProps> = ({
           </Link>
 
           {/* Navigation Links (Right) */}
-          <nav className="hidden lg:flex items-center gap-3.5 xl:gap-5.5 ml-auto">
+          <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-1 xl:gap-1.5 ml-auto">
             {NAV_LINKS.map((link) => {
               const active = isActive(link.path);
               return (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-[11px] xl:text-[12.5px] uppercase font-bold transition-colors relative py-1 group tracking-wide whitespace-nowrap ${
-                    active ? 'text-[#32aa15]' : 'text-slate-700 hover:text-[#32aa15]'
+                  aria-current={active ? 'page' : undefined}
+                  className={`inline-flex items-center rounded-full px-2.5 xl:px-3 py-2 text-xs xl:text-[13px] font-semibold whitespace-nowrap transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#32aa15] focus-visible:ring-offset-2 ${
+                    active
+                      ? 'bg-[#32aa15]/10 text-[#278510]'
+                      : 'text-slate-700 hover:bg-slate-100 hover:text-[#278510]'
                   }`}
                 >
                   {link.label}
-                  <span
-                    className={`absolute bottom-0 left-0 h-0.5 bg-[#32aa15] rounded-full transition-all duration-300 ${
-                      active ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`}
-                  />
                 </Link>
               );
             })}
@@ -87,6 +85,8 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 text-slate-800 hover:text-[#32aa15] transition-colors ml-auto cursor-pointer"
             aria-label="Toggle Navigation Menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-primary-navigation"
           >
             {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
@@ -95,22 +95,30 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 animate-in slide-in-from-top duration-200 text-slate-900 absolute top-[68px] left-0 right-0 z-40 shadow-xl rounded-b-2xl">
-          {NAV_LINKS.map((link) => {
-            const active = isActive(link.path);
-            return (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block text-base transition-colors ${
-                  active ? 'font-bold text-[#32aa15]' : 'font-semibold text-slate-800 hover:text-[#32aa15]'
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
+        <div
+          id="mobile-primary-navigation"
+          className="lg:hidden bg-white border-b border-slate-200 px-6 py-5 animate-in slide-in-from-top duration-200 text-slate-900 absolute top-[68px] left-0 right-0 z-40 shadow-xl rounded-b-2xl"
+        >
+          <nav aria-label="Mobile navigation" className="space-y-1">
+            {NAV_LINKS.map((link) => {
+              const active = isActive(link.path);
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  aria-current={active ? 'page' : undefined}
+                  className={`block rounded-lg px-3 py-2.5 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#32aa15] ${
+                    active
+                      ? 'bg-[#32aa15]/10 font-bold text-[#278510]'
+                      : 'font-medium text-slate-700 hover:bg-slate-100 hover:text-[#278510]'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
           {openModalWithOption && (
             <div className="pt-2">
               <button

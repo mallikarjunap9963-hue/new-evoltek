@@ -122,8 +122,8 @@ export const InvestmentModel: React.FC = () => {
                     <path d="M32 15L34.5 21.5L41 24L34.5 26.5L32 33L29.5 26.5L23 24L29.5 21.5L32 15Z" fill="#fef08a" />
                   </svg>
                 </div>
-                <h4 className="text-base sm:text-lg font-medium text-[#1C2029] leading-snug font-['Wix_Madefor_Display',sans-serif]">
-                  Shared<br />Investment
+                <h4 className="text-base sm:text-lg font-bold text-[#1C2029] leading-snug font-['Wix_Madefor_Display',sans-serif]">
+                  Shared Investment
                 </h4>
                 <p className="text-sm text-slate-900 font-medium leading-relaxed max-w-[210px]">
                   You invest only half the cost, and Evoltek invests the other half.
@@ -139,8 +139,8 @@ export const InvestmentModel: React.FC = () => {
                     className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <h4 className="text-base sm:text-lg font-medium text-[#1C2029] leading-snug font-['Wix_Madefor_Display',sans-serif]">
-                  Hassle-free<br />Maintenance
+                <h4 className="text-base sm:text-lg font-bold text-[#1C2029] leading-snug font-['Wix_Madefor_Display',sans-serif]">
+                  Hassle-free Maintenance
                 </h4>
                 <p className="text-sm text-slate-900 font-medium leading-relaxed max-w-[210px]">
                   Evoltek takes care of setup, operations and station maintenance.
@@ -156,8 +156,8 @@ export const InvestmentModel: React.FC = () => {
                     className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <h4 className="text-base sm:text-lg font-medium text-[#1C2029] leading-snug font-['Wix_Madefor_Display',sans-serif]">
-                  Secure<br />Agreements
+                <h4 className="text-base sm:text-lg font-bold text-[#1C2029] leading-snug font-['Wix_Madefor_Display',sans-serif]">
+                  Secure Agreements
                 </h4>
                 <p className="text-sm text-slate-900 font-medium leading-relaxed max-w-[210px]">
                   Long-term agreement of 5 or 10 years, renewable.
@@ -205,8 +205,8 @@ export const InvestmentModel: React.FC = () => {
                     <circle cx="41" cy="26" r="1.5" fill="#fef08a" />
                   </svg>
                 </div>
-                <h4 className="text-base sm:text-lg font-medium text-[#1C2029] leading-snug font-['Wix_Madefor_Display',sans-serif]">
-                  Transparency<br />with App
+                <h4 className="text-base sm:text-lg font-bold text-[#1C2029] leading-snug font-['Wix_Madefor_Display',sans-serif]">
+                  Transparency with App
                 </h4>
                 <p className="text-sm text-slate-900 font-medium leading-relaxed max-w-[210px]">
                   Track your station's performance through the Evoltek mobile app.

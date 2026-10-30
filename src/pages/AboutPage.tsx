@@ -84,7 +84,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
       <section className="relative w-full text-white overflow-hidden py-12 sm:py-14 lg:py-16 bg-[#040906]">
         {/* Background EV Charging Station with Official EVOLTEK DC Fast Charger */}
         <div
-          className="absolute inset-0 bg-cover bg-center sm:bg-[position:78%_center] bg-no-repeat pointer-events-none brightness-105"
+          className="absolute inset-0 bg-cover bg-center sm:bg-[position:78%_100%] bg-no-repeat pointer-events-none brightness-105"
           style={{ backgroundImage: `url('/breadcrumb.png')` }}
         />
         {/* Directional gradient restricted to the left for text contrast, keeping the charger and car bright and vibrant */}
@@ -389,7 +389,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
 
           {/* Centered Content Wrapper (Positioned in the Middle) */}
           <div className="relative z-10 w-full flex flex-col items-center justify-center my-auto space-y-5 sm:space-y-6 lg:space-y-7">
-            
+
             {/* Top Center Headline */}
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[34px] font-bold text-white tracking-normal font-['Wix_Madefor_Display',sans-serif] drop-shadow-md">
@@ -400,7 +400,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
 
             {/* 4 Frosted Emerald Glass Stat Cards (Sleeker Compact Size) */}
             <div className="w-full max-w-[1240px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 lg:gap-5 items-center">
-              
+
               {/* Card 1: 50+ Charging Locations */}
               <div
                 style={{
@@ -604,74 +604,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
         </div>
       </section>
 
-      {/* 8. BOTTOM TRUST STRIP */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 my-8 pb-10">
-        <div className="bg-[#edf6eb] rounded-2xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="flex items-center gap-4 group cursor-pointer">
-            <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center p-2 shrink-0 group-hover:scale-105 transition-transform duration-300">
-              <img
-                src="/icon_3d_trust_solutions.png"
-                alt="End-to-End Solutions"
-                className="w-full h-full object-contain filter drop-shadow-sm"
-              />
-            </div>
-            <div>
-              <p className="text-sm sm:text-base font-bold text-slate-900 leading-tight group-hover:text-[#32aa15] transition-colors">
-                End-to-End Solutions
-              </p>
-              <p className="text-xs text-slate-600 mt-0.5">From equipment to power-on.</p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-4 group cursor-pointer">
-            <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center p-2 shrink-0 group-hover:scale-105 transition-transform duration-300">
-              <img
-                src="/icon_3d_trust_quality.png"
-                alt="Quality Assured"
-                className="w-full h-full object-contain filter drop-shadow-sm"
-              />
-            </div>
-            <div>
-              <p className="text-sm sm:text-base font-bold text-slate-900 leading-tight group-hover:text-[#32aa15] transition-colors">
-                Quality Assured
-              </p>
-              <p className="text-xs text-slate-600 mt-0.5">Tested. Trusted. Reliable.</p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-4 group cursor-pointer">
-            <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center p-2 shrink-0 group-hover:scale-105 transition-transform duration-300">
-              <img
-                src="/icon_3d_trust_future.png"
-                alt="Future Ready"
-                className="w-full h-full object-contain filter drop-shadow-sm"
-              />
-            </div>
-            <div>
-              <p className="text-sm sm:text-base font-bold text-slate-900 leading-tight group-hover:text-[#32aa15] transition-colors">
-                Future Ready
-              </p>
-              <p className="text-xs text-slate-600 mt-0.5">Scalable for tomorrow.</p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-4 group cursor-pointer">
-            <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center p-2 shrink-0 group-hover:scale-105 transition-transform duration-300">
-              <img
-                src="/icon_3d_trust_support.png"
-                alt="Support You Can Count On"
-                className="w-full h-full object-contain filter drop-shadow-sm"
-              />
-            </div>
-            <div>
-              <p className="text-sm sm:text-base font-bold text-slate-900 leading-tight group-hover:text-[#32aa15] transition-colors">
-                Support You Can Count On
-              </p>
-              <p className="text-xs text-slate-600 mt-0.5">Always here, always caring.</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
     </div>
   );

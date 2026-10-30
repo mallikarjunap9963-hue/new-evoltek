@@ -21,7 +21,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div id="home" className="flex-1 min-h-0 w-full relative flex flex-col justify-between rounded-none overflow-hidden bg-[#171E23] text-white shadow-xl">
 
         {/* HERO BODY AREA */}
-        <div className="relative flex-1 flex items-end overflow-hidden py-6 sm:py-0">
+        <div className="relative flex-1 flex items-end sm:items-center overflow-hidden py-6 sm:py-0">
 
           {/* Mobile Carousel Background Images (public/mobile hero 1.png & mobile hero 2.png) */}
           {MOBILE_HERO_SLIDES.map((imgUrl, index) => (
