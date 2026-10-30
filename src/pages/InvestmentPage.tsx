@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   ShieldCheck,
   Users,
@@ -7,9 +7,7 @@ import {
   Download,
   FileText,
   Store,
-  Calculator,
   Rocket,
-  BarChart3,
   Handshake,
   Shield,
   UserCheck,
@@ -17,9 +15,13 @@ import {
   Home
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { RoiCalculatorSection } from '../components/sections/RoiCalculatorSection';
+import type { RoiCalculatorState } from '../types';
 
 interface InvestmentPageProps {
   openModalWithOption: (option: string) => void;
+  roiState: RoiCalculatorState;
+  setRoiState: React.Dispatch<React.SetStateAction<RoiCalculatorState>>;
 }
 
 const TrendingBarChartIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (
@@ -45,50 +47,11 @@ const TrendingBarChartIcon: React.FC<{ className?: string }> = ({ className = "w
   </svg>
 );
 
-export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOption }) => {
-  // Interactive ROI Calculator State matching the reference mockup defaults
-  const [numChargers, setNumChargers] = useState<number>(1);
-  const [chargerCapacity, setChargerCapacity] = useState<string>('60 KW');
-  const [investmentAmount, setInvestmentAmount] = useState<number>(2500000); // 25 Lakh
-  const [sessionsPerDay, setSessionsPerDay] = useState<number>(35);
-  const [energyPerSession, setEnergyPerSession] = useState<number>(28);
-  const [customerRate, setCustomerRate] = useState<number>(19);
-  const [energyPurchaseCost, setEnergyPurchaseCost] = useState<number>(8);
-  const [annualOpex, setAnnualOpex] = useState<number>(600000);
-
-  // Dynamic calculations matching reference
-  // Daily Energy Sold = sessionsPerDay * energyPerSession * numChargers
-  const dailyEnergyKwh = sessionsPerDay * energyPerSession * numChargers;
-  const annualEnergyKwh = dailyEnergyKwh * 365;
-
-  // Annual Revenue = Annual Energy Sold * customerRate
-  const annualRevenue = Math.round(annualEnergyKwh * customerRate);
-
-  // Annual Energy Cost = Annual Energy Sold * energyPurchaseCost
-  const annualEnergyCost = Math.round(annualEnergyKwh * energyPurchaseCost);
-
-  // Net Annual Profit = Annual Revenue - Annual Energy Cost - annualOpex
-  const netAnnualProfit = Math.max(0, annualRevenue - annualEnergyCost - annualOpex);
-
-  // Payback Period (years) = Investment / Net Annual Profit
-  const paybackPeriodYears = netAnnualProfit > 0 ? (investmentAmount / netAnnualProfit).toFixed(1) : '0';
-
-  // 10 Year Return (28% guaranteed annual partnership return) = investmentAmount * 0.28 * 10
-  const tenYearReturn = Math.round(investmentAmount * 0.28 * 10);
-
-  // Estimated ROI % = (Net Profit * 10 - Investment) / Investment * 100 or 10-year cumulative ROI
-  const estimatedRoiPercent = investmentAmount > 0
-    ? Math.round(((netAnnualProfit * 10) / investmentAmount) * 100)
-    : 0;
-
-  const formatCurrency = (val: number) => {
-    return '₹' + val.toLocaleString('en-IN');
-  };
-
-  const formatLakhsPill = (val: number) => {
-    const lakhs = val / 100000;
-    return `₹${lakhs} Lakh`;
-  };
+export const InvestmentPage: React.FC<InvestmentPageProps> = ({
+  openModalWithOption,
+  roiState,
+  setRoiState
+}) => {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-['Plus_Jakarta_Sans',sans-serif]">
@@ -146,220 +109,11 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
 
 
       {/* =========================================================================
-          2. WHY INVEST IN EV CHARGING?
-          ========================================================================= */}
-      <section className="w-full bg-white py-8 sm:py-12">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
-
-            {/* Left Column Text (5 cols) */}
-            <div className="lg:col-span-5 space-y-3">
-              <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block">
-                WHY INVEST IN EV CHARGING?
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
-                A High-Growth Opportunity
-                <br />
-                for a <span className="text-[#32aa15]">Cleaner Future</span>
-              </h2>
-              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed pt-1">
-                The EV revolution is accelerating, and charging infrastructure is at the core of it. Investing with Evoltek means being part of a future-ready industry with long-term growth, stable returns and a positive impact on the environment.
-              </p>
-            </div>
-
-            {/* Right Column: 4 Feature Cards (7 cols) */}
-            <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
-
-              {/* Card 1 */}
-              <div className="flex flex-col items-center text-center group cursor-default">
-                <div className="w-16 h-16 sm:w-18 sm:h-18 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <img
-                    src="/icon_3d_scalable_network.png"
-                    alt="High Growth Potential"
-                    className="w-full h-full object-contain filter drop-shadow-md"
-                  />
-                </div>
-                <h3 className="font-bold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">High Growth Potential</h3>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-1.5 leading-snug">
-                  Rising EV adoption is driving demand for charging infrastructure.
-                </p>
-              </div>
-
-              {/* Card 2 */}
-              <div className="flex flex-col items-center text-center group cursor-default">
-                <div className="w-16 h-16 sm:w-18 sm:h-18 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <img
-                    src="/icon_3d_flexible_returns.jpg"
-                    alt="Attractive Returns"
-                    className="w-full h-full object-contain filter drop-shadow-md"
-                  />
-                </div>
-                <h3 className="font-bold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">Attractive Returns</h3>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-1.5 leading-snug">
-                  Earn 28% return on a 10-year agreement.
-                </p>
-              </div>
-
-              {/* Card 3 */}
-              <div className="flex flex-col items-center text-center group cursor-default">
-                <div className="w-16 h-16 sm:w-18 sm:h-18 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <img
-                    src="/icon_3d_val_sustainability.png"
-                    alt="Future-Proof Investment"
-                    className="w-full h-full object-contain filter drop-shadow-md"
-                  />
-                </div>
-                <h3 className="font-bold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">Future-Proof Investment</h3>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-1.5 leading-snug">
-                  Be part of a sustainable ecosystem shaping the future.
-                </p>
-              </div>
-
-              {/* Card 4 */}
-              <div className="flex flex-col items-center text-center group cursor-default">
-                <div className="w-16 h-16 sm:w-18 sm:h-18 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <img
-                    src="/icon_3d_val_partnership.png"
-                    alt="Partner With Experts"
-                    className="w-full h-full object-contain filter drop-shadow-md"
-                  />
-                </div>
-                <h3 className="font-bold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">Partner With Experts</h3>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-1.5 leading-snug">
-                  End-to-end support from planning to operations and beyond.
-                </p>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-
-      {/* =========================================================================
-          3. OUR INVESTMENT MODEL: "Shared Investment. Shared Success."
-          ========================================================================= */}
-      <section className="w-full bg-[#fbfdfa] py-8 sm:py-12">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-
-          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
-            <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-2">
-              OUR INVESTMENT MODEL
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
-              Shared Investment. Shared Success.
-            </h2>
-            <p className="text-slate-600 text-xs sm:text-sm mt-2 max-w-2xl mx-auto leading-relaxed">
-              Evoltek and the investor contribute equally to set up a charging station, creating a profitable and sustainable business together.
-            </p>
-          </div>
-
-          {/* 2 Column Layout: Dual-Pill Card + Partner Handshake Photo */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
-
-            {/* Left Dual-Pill Card (7 cols) */}
-            <div className="lg:col-span-7 relative flex flex-col justify-center">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 relative items-stretch h-full">
-
-                {/* Left Sub-card: EVOLTEK 50% */}
-                <div className="bg-[#eaf7ec] rounded-3xl p-6 sm:p-7 sm:pr-14 lg:pr-16 flex flex-col justify-between border border-[#32aa15]/20 shadow-xs">
-                  <div>
-                    <div className="flex items-center gap-4 mb-5">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#15803d] text-white flex items-center justify-center shrink-0 shadow-md">
-                        <Handshake className="w-8 h-8 sm:w-9 sm:h-9 text-white stroke-[2.2]" />
-                      </div>
-                      <div>
-                        <span className="text-xs uppercase font-extrabold text-[#15803d] tracking-wider block">
-                          EVOLTEK
-                        </span>
-                        <h4 className="text-3xl sm:text-4xl font-black text-[#15803d] leading-none mt-0.5">
-                          50%
-                        </h4>
-                      </div>
-                    </div>
-
-                    <ul className="space-y-3 text-xs sm:text-sm font-medium text-slate-800">
-                      <li className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4.5 h-4.5 text-[#15803d] fill-[#15803d] text-white shrink-0 mt-0.5" />
-                        <span>Co-invests</span>
-                      </li>
-                      <li className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4.5 h-4.5 text-[#15803d] fill-[#15803d] text-white shrink-0 mt-0.5" />
-                        <span>Sets up and runs the station</span>
-                      </li>
-                      <li className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4.5 h-4.5 text-[#15803d] fill-[#15803d] text-white shrink-0 mt-0.5" />
-                        <span>Handles operations and maintenance</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Center Floating Handshake Badge (Desktop sm+) - Increased Size */}
-                <div className="hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-22 h-22 sm:w-26 sm:h-26 rounded-full bg-[#15803d] shadow-2xl items-center justify-center text-white border-4 border-white hover:scale-105 transition-transform duration-300">
-                  <Handshake className="w-11 h-11 sm:w-13 sm:h-13 text-white stroke-[2.3]" />
-                </div>
-
-                {/* Right Sub-card: INVESTOR 50% */}
-                <div className="bg-[#eaf7ec] rounded-3xl p-6 sm:p-7 sm:pl-14 lg:pl-16 flex flex-col justify-between border border-[#32aa15]/20 shadow-xs">
-                  <div>
-                    <div className="flex items-center gap-4 mb-5">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-[#15803d] bg-white text-[#15803d] flex items-center justify-center shrink-0 shadow-md">
-                        <Users className="w-8 h-8 sm:w-9 sm:h-9 text-[#15803d] stroke-[2.2]" />
-                      </div>
-                      <div>
-                        <span className="text-xs uppercase font-extrabold text-[#15803d] tracking-wider block">
-                          INVESTOR
-                        </span>
-                        <h4 className="text-3xl sm:text-4xl font-black text-[#15803d] leading-none mt-0.5">
-                          50%
-                        </h4>
-                      </div>
-                    </div>
-
-                    <ul className="space-y-3 text-xs sm:text-sm font-medium text-slate-800">
-                      <li className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4.5 h-4.5 text-[#15803d] fill-[#15803d] text-white shrink-0 mt-0.5" />
-                        <span>Co-invests</span>
-                      </li>
-                      <li className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4.5 h-4.5 text-[#15803d] fill-[#15803d] text-white shrink-0 mt-0.5" />
-                        <span>Provides location and capital</span>
-                      </li>
-                      <li className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4.5 h-4.5 text-[#15803d] fill-[#15803d] text-white shrink-0 mt-0.5" />
-                        <span>Earns attractive returns</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            {/* Right Photo: Partners Handshake in front of Charger (5 cols) */}
-            <div className="lg:col-span-5 rounded-3xl overflow-hidden border border-slate-200 shadow-md min-h-[280px] sm:min-h-[320px] relative group">
-              <img
-                src="/investor_handshake_evoltek.png"
-                alt="Business partners handshake in front of Evoltek EV charging station"
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* =========================================================================
           4. YOUR INVESTMENT, MULTIPLE BENEFITS & STATION SHOWCASE
           ========================================================================= */}
       <section className="w-full bg-white py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
 
             {/* Left Photo: Wide Station Canopy with Cars Charging (6 cols) */}
             <div className="lg:col-span-6 rounded-3xl overflow-hidden border border-slate-200 shadow-md h-full min-h-[300px] sm:min-h-[360px] relative group">
@@ -372,58 +126,61 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
 
             {/* Right Column: 5 Benefit Items (6 cols) */}
             <div className="lg:col-span-6 space-y-5 lg:pl-2">
-              <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-2">
-                YOUR INVESTMENT, MULTIPLE BENEFITS
-              </span>
+              <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em] mb-2">
+                <svg className="w-4 h-4 text-[#32aa15] fill-[#32aa15] shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+                <span>YOUR INVESTMENT, MULTIPLE BENEFITS</span>
+              </div>
 
               <div className="space-y-4 sm:space-y-4.5">
 
                 {/* Benefit 1 */}
                 <div className="flex items-center gap-3.5 sm:gap-4 group">
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#f0fdf4] border border-[#32aa15]/30 text-[#15803d] flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 group-hover:bg-[#e6f9ea] transition-all">
-                    <UserCheck className="w-5 h-5 sm:w-6 sm:h-6 text-[#15803d] stroke-[2.2]" />
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 text-[#32aa15] flex items-center justify-center shrink-0">
+                    <UserCheck className="w-5 h-5 sm:w-6 sm:h-6 text-[#32aa15] stroke-[2.2]" />
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-700 leading-normal">
+                  <p className="text-sm sm:text-[15px] text-slate-700 leading-normal">
                     <strong className="font-bold text-slate-900">Shared investment</strong> – You invest only half the cost.
                   </p>
                 </div>
 
                 {/* Benefit 2 */}
                 <div className="flex items-center gap-3.5 sm:gap-4 group">
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#f0fdf4] border border-[#32aa15]/30 text-[#15803d] flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 group-hover:bg-[#e6f9ea] transition-all">
-                    <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-[#15803d] stroke-[2.2]" />
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 text-[#32aa15] flex items-center justify-center shrink-0">
+                    <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-[#32aa15] stroke-[2.2]" />
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-700 leading-normal">
+                  <p className="text-sm sm:text-[15px] text-slate-700 leading-normal">
                     <strong className="font-bold text-slate-900">Hassle-free maintenance</strong> – Evoltek takes care of setup, operations and station maintenance.
                   </p>
                 </div>
 
                 {/* Benefit 3 */}
                 <div className="flex items-center gap-3.5 sm:gap-4 group">
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#f0fdf4] border border-[#32aa15]/30 text-[#15803d] flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 group-hover:bg-[#e6f9ea] transition-all">
-                    <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-[#15803d] stroke-[2.2]" />
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 text-[#32aa15] flex items-center justify-center shrink-0">
+                    <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-[#32aa15] stroke-[2.2]" />
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-700 leading-normal">
+                  <p className="text-sm sm:text-[15px] text-slate-700 leading-normal">
                     <strong className="font-bold text-slate-900">Secure agreement</strong> – 10-year agreement with renewal option.
                   </p>
                 </div>
 
                 {/* Benefit 4 */}
                 <div className="flex items-center gap-3.5 sm:gap-4 group">
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#f0fdf4] border border-[#32aa15]/30 text-[#15803d] flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 group-hover:bg-[#e6f9ea] transition-all">
-                    <Compass className="w-5 h-5 sm:w-6 sm:h-6 text-[#15803d] stroke-[2.2]" />
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 text-[#32aa15] flex items-center justify-center shrink-0">
+                    <Compass className="w-5 h-5 sm:w-6 sm:h-6 text-[#32aa15] stroke-[2.2]" />
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-700 leading-normal">
+                  <p className="text-sm sm:text-[15px] text-slate-700 leading-normal">
                     <strong className="font-bold text-slate-900">Transparency</strong> – Track your station's performance through the Evoltek mobile app.
                   </p>
                 </div>
 
                 {/* Benefit 5 */}
                 <div className="flex items-center gap-3.5 sm:gap-4 group">
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#f0fdf4] border border-[#32aa15]/30 text-[#15803d] flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 group-hover:bg-[#e6f9ea] transition-all">
-                    <Store className="w-5 h-5 sm:w-6 sm:h-6 text-[#15803d] stroke-[2.2]" />
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 text-[#32aa15] flex items-center justify-center shrink-0">
+                    <Store className="w-5 h-5 sm:w-6 sm:h-6 text-[#32aa15] stroke-[2.2]" />
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-700 leading-normal">
+                  <p className="text-sm sm:text-[15px] text-slate-700 leading-normal">
                     <strong className="font-bold text-slate-900">Extra income potential</strong> – Highway hubs can include cafeteria, restaurant or gaming area.
                   </p>
                 </div>
@@ -440,14 +197,17 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
       {/* =========================================================================
           5. RETURNS AND AGREEMENT & "INVEST IN CLEAN ENERGY" BANNER
           ========================================================================= */}
-      <section className="w-full bg-[#fbfdfa] py-8 sm:py-12">
+      <section className="w-full bg-white py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
 
             {/* Left Card: 28% Return (7 cols) */}
             <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col justify-between relative overflow-hidden">
               <div>
-                <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-5">
+                <span className="inline-flex items-center gap-2 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em] mb-5">
+                  <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                  </svg>
                   RETURNS AND AGREEMENT
                 </span>
 
@@ -457,26 +217,26 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
                   <div className="flex items-center gap-4 sm:gap-5">
                     {/* Big Circular Chart Icon */}
                     <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#e8f7ea] border border-[#32aa15]/20 flex items-center justify-center shrink-0 shadow-xs">
-                      <TrendingBarChartIcon className="w-11 h-11 sm:w-13 sm:h-13 text-[#16a34a]" />
+                      <TrendingBarChartIcon className="w-11 h-11 sm:w-13 sm:h-13 text-[#32aa15]" />
                     </div>
 
                     {/* Text Block */}
                     <div className="space-y-1">
-                      <span className="text-xs sm:text-sm font-bold text-[#15803d] block">
+                      <span className="text-xs sm:text-sm font-bold text-[#32aa15] block">
                         Option: Percentage Return
                       </span>
 
-                      <h3 className="text-3xl sm:text-4xl lg:text-[40px] font-black text-[#15803d] font-['Wix_Madefor_Display',sans-serif] tracking-tight leading-tight">
+                      <h3 className="text-3xl sm:text-4xl lg:text-[40px] font-black text-[#32aa15] font-['Wix_Madefor_Display',sans-serif] tracking-tight leading-tight">
                         28% Return
                       </h3>
 
                       <ul className="space-y-1.5 text-xs sm:text-sm text-slate-700 pt-1">
                         <li className="flex items-center gap-2 font-medium">
-                          <CheckCircle2 className="w-4.5 h-4.5 text-[#16a34a] fill-[#16a34a] text-white shrink-0" />
+                          <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0" />
                           <span>10-year agreement</span>
                         </li>
                         <li className="flex items-center gap-2 font-medium">
-                          <CheckCircle2 className="w-4.5 h-4.5 text-[#16a34a] fill-[#16a34a] text-white shrink-0" />
+                          <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0" />
                           <span>Renewal after 10 years</span>
                         </li>
                       </ul>
@@ -524,263 +284,220 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
 
 
       {/* =========================================================================
-          6. ROI CALCULATOR ("Calculate Your ROI Potential")
+          6. WHY INVEST IN EV CHARGING?
           ========================================================================= */}
-      <section id="roi-calculator-section" className="w-full bg-white py-8 sm:py-12">
+      <section className="w-full bg-white py-10 sm:py-14">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
-          <div className="mb-6 sm:mb-8">
-            <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-1">
-              ROI CALCULATOR
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
-              Calculate Your ROI Potential
-            </h2>
-            <p className="text-slate-600 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
-              Compare normal charging with Evoltek charging and see what your investment can earn. Enter the details below to view estimated returns.
-            </p>
-          </div>
+            {/* Left Column Text (5 cols) */}
+            <div className="lg:col-span-5 space-y-3">
+              <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
+                <svg className="w-4 h-4 text-[#32aa15] fill-[#32aa15] shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+                <span>WHY INVEST IN EV CHARGING?</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
+                A High-Growth Opportunity
+                <br />
+                for a <span className="text-[#32aa15]">Cleaner Future</span>
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed pt-1">
+                The EV revolution is accelerating, and charging infrastructure is at the core of it. Investing with Evoltek means being part of a future-ready industry with long-term growth, stable returns and a positive impact on the environment.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Right Column: 4 Feature Cards (7 cols) */}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
 
-            {/* Left Inputs Column (6 cols) */}
-            <div className="lg:col-span-6 bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-sm space-y-5">
-
-              {/* Row 1: Number of Chargers + Charger Capacity */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                    Number of Chargers
-                  </label>
-                  <input
-                    type="number"
-                    min={1}
-                    max={20}
-                    value={numChargers}
-                    onChange={(e) => setNumChargers(Math.max(1, Number(e.target.value)))}
-                    className="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-slate-200 rounded-xl focus:outline-none focus:border-[#32aa15] text-slate-900 bg-slate-50/50"
+              {/* Card 1 */}
+              <div className="flex items-start gap-3.5 rounded-2xl border border-[#32aa15]/25 bg-[#d1e7a7] p-4 sm:p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#32aa15]/50 hover:shadow-md">
+                <div className="w-14 h-14 shrink-0 rounded-xl bg-[#f0f9e8] flex items-center justify-center">
+                  <img
+                    src="/icon_3d_scalable_network.png"
+                    alt="High Growth Potential"
+                    className="w-11 h-11 object-contain filter drop-shadow-sm"
                   />
                 </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                    Charger Capacity
-                  </label>
-                  <select
-                    value={chargerCapacity}
-                    onChange={(e) => setChargerCapacity(e.target.value)}
-                    className="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-slate-200 rounded-xl focus:outline-none focus:border-[#32aa15] text-slate-900 bg-white"
-                  >
-                    <option value="60 KW">60 KW</option>
-                    <option value="120 KW">120 KW</option>
-                    <option value="240 KW">240 KW</option>
-                    <option value="360 KW">360 KW</option>
-                    <option value="480 KW">480 KW</option>
-                  </select>
+                <div className="min-w-0">
+                  <h3 className="font-bold text-slate-900 text-sm sm:text-base font-['Wix_Madefor_Display',sans-serif]">High Growth Potential</h3>
+                  <p className="text-slate-600 text-xs sm:text-sm mt-1.5 leading-relaxed">
+                    Rising EV adoption is driving demand for charging infrastructure.
+                  </p>
                 </div>
               </div>
 
-              {/* Row 2: Investment Amount (Slider + Pill) + Sessions per day */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <label className="text-xs font-semibold text-slate-700">
-                      Investment Amount
-                    </label>
-                    <span className="px-2 py-0.5 rounded-full bg-[#f0f9f1] text-[#32aa15] font-bold text-xs border border-[#32aa15]/20">
-                      {formatLakhsPill(investmentAmount)}
-                    </span>
-                  </div>
-                  <input
-                    type="range"
-                    min={1000000}
-                    max={10000000}
-                    step={500000}
-                    value={investmentAmount}
-                    onChange={(e) => setInvestmentAmount(Number(e.target.value))}
-                    className="w-full accent-[#32aa15] cursor-pointer"
+              {/* Card 2 */}
+              <div className="flex items-start gap-3.5 rounded-2xl border border-[#32aa15]/25 bg-[#d1e7a7] p-4 sm:p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#32aa15]/50 hover:shadow-md">
+                <div className="w-14 h-14 shrink-0 rounded-xl bg-[#f0f9e8] flex items-center justify-center">
+                  <img
+                    src="/icon_3d_flexible_returns.jpg"
+                    alt="Attractive Returns"
+                    className="w-11 h-11 object-contain filter drop-shadow-sm"
                   />
                 </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                    Sessions per day
-                  </label>
-                  <input
-                    type="number"
-                    min={5}
-                    max={200}
-                    value={sessionsPerDay}
-                    onChange={(e) => setSessionsPerDay(Number(e.target.value))}
-                    className="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-slate-200 rounded-xl focus:outline-none focus:border-[#32aa15] text-slate-900 bg-slate-50/50"
-                  />
+                <div className="min-w-0">
+                  <h3 className="font-bold text-slate-900 text-sm sm:text-base font-['Wix_Madefor_Display',sans-serif]">Attractive Returns</h3>
+                  <p className="text-slate-600 text-xs sm:text-sm mt-1.5 leading-relaxed">
+                    Earn 28% return on a 10-year agreement.
+                  </p>
                 </div>
               </div>
 
-              {/* Row 3: Energy per session + Customer rate */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                    Energy per session (kWh)
-                  </label>
-                  <input
-                    type="number"
-                    min={10}
-                    max={150}
-                    value={energyPerSession}
-                    onChange={(e) => setEnergyPerSession(Number(e.target.value))}
-                    className="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-slate-200 rounded-xl focus:outline-none focus:border-[#32aa15] text-slate-900 bg-slate-50/50"
+              {/* Card 3 */}
+              <div className="flex items-start gap-3.5 rounded-2xl border border-[#32aa15]/25 bg-[#d1e7a7] p-4 sm:p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#32aa15]/50 hover:shadow-md">
+                <div className="w-14 h-14 shrink-0 rounded-xl bg-[#f0f9e8] flex items-center justify-center">
+                  <img
+                    src="/icon_3d_val_sustainability.png"
+                    alt="Future-Proof Investment"
+                    className="w-11 h-11 object-contain filter drop-shadow-sm"
                   />
                 </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                    Customer rate (₹ / kWh)
-                  </label>
-                  <input
-                    type="number"
-                    min={10}
-                    max={50}
-                    value={customerRate}
-                    onChange={(e) => setCustomerRate(Number(e.target.value))}
-                    className="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-slate-200 rounded-xl focus:outline-none focus:border-[#32aa15] text-slate-900 bg-slate-50/50"
-                  />
+                <div className="min-w-0">
+                  <h3 className="font-bold text-slate-900 text-sm sm:text-base font-['Wix_Madefor_Display',sans-serif]">Future-Proof Investment</h3>
+                  <p className="text-slate-600 text-xs sm:text-sm mt-1.5 leading-relaxed">
+                    Be part of a sustainable ecosystem shaping the future.
+                  </p>
                 </div>
               </div>
 
-              {/* Row 4: Energy purchase cost + Annual operating costs */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <label className="text-xs font-semibold text-slate-700">
-                      Energy purchase cost (₹/kWh)
-                    </label>
-                    <span className="text-xs font-bold text-slate-900">
-                      ₹{energyPurchaseCost}
-                    </span>
-                  </div>
-                  <input
-                    type="range"
-                    min={4}
-                    max={15}
-                    step={1}
-                    value={energyPurchaseCost}
-                    onChange={(e) => setEnergyPurchaseCost(Number(e.target.value))}
-                    className="w-full accent-[#32aa15] cursor-pointer"
+              {/* Card 4 */}
+              <div className="flex items-start gap-3.5 rounded-2xl border border-[#32aa15]/25 bg-[#d1e7a7] p-4 sm:p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#32aa15]/50 hover:shadow-md">
+                <div className="w-14 h-14 shrink-0 rounded-xl bg-[#f0f9e8] flex items-center justify-center">
+                  <img
+                    src="/icon_3d_val_partnership.png"
+                    alt="Partner With Experts"
+                    className="w-11 h-11 object-contain filter drop-shadow-sm"
                   />
                 </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                    Annual operating costs (₹)
-                  </label>
-                  <input
-                    type="number"
-                    min={100000}
-                    max={2000000}
-                    step={50000}
-                    value={annualOpex}
-                    onChange={(e) => setAnnualOpex(Number(e.target.value))}
-                    className="w-full px-3.5 py-2.5 text-xs sm:text-sm border border-slate-200 rounded-xl focus:outline-none focus:border-[#32aa15] text-slate-900 bg-slate-50/50"
-                  />
+                <div className="min-w-0">
+                  <h3 className="font-bold text-slate-900 text-sm sm:text-base font-['Wix_Madefor_Display',sans-serif]">Partner With Experts</h3>
+                  <p className="text-slate-600 text-xs sm:text-sm mt-1.5 leading-relaxed">
+                    End-to-end support from planning to operations and beyond.
+                  </p>
                 </div>
-              </div>
-
-              {/* Action Button: Calculate ROI */}
-              <div className="pt-2">
-                <button
-                  onClick={() => openModalWithOption('ROI Calculation Inquiry')}
-                  className="w-auto px-6 py-3 rounded-xl bg-[#32aa15] hover:bg-[#288c10] text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-md hover:shadow-[#32aa15]/30 transition-all cursor-pointer"
-                >
-                  <span>Calculate ROI</span>
-                  <Calculator className="w-4 h-4" />
-                </button>
               </div>
 
             </div>
 
-            {/* Right Results Column: ESTIMATED RETURNS OVERVIEW (6 cols) */}
-            <div className="lg:col-span-6 space-y-4">
-              <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block">
-                ESTIMATED RETURNS OVERVIEW
-              </span>
+          </div>
+        </div>
+      </section>
 
-              {/* 6 Grid Metric Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
 
-                {/* 1. Total Investment */}
-                <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-2xs">
-                  <span className="text-xs text-slate-500 font-medium block mb-1">
-                    Total Investment
-                  </span>
-                  <span className="text-xl sm:text-2xl font-black text-slate-900 font-['Wix_Madefor_Display',sans-serif]">
-                    {formatCurrency(investmentAmount)}
-                  </span>
-                </div>
+      {/* =========================================================================
+          7. OUR INVESTMENT MODEL: "Shared Investment. Shared Success."
+          ========================================================================= */}
+      <section className="w-full bg-white py-8 sm:py-12">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
-                {/* 2. Annual Revenue */}
-                <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-2xs">
-                  <span className="text-xs text-slate-500 font-medium block mb-1">
-                    Annual Revenue
-                  </span>
-                  <span className="text-xl sm:text-2xl font-black text-slate-900 font-['Wix_Madefor_Display',sans-serif]">
-                    {formatCurrency(annualRevenue)}
-                  </span>
-                </div>
+          <div className="text-center max-w-5xl mx-auto space-y-2.5 mb-6 sm:mb-8">
+            <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
+              <svg className="w-4 h-4 text-[#32aa15] fill-[#32aa15] shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+              <span>OUR INVESTMENT MODEL</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
+              Shared Investment. Shared Success.
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl mx-auto leading-relaxed">
+              Evoltek and the investor contribute equally to set up a charging station, creating a profitable and sustainable business together.
+            </p>
+          </div>
 
-                {/* 3. Net Annual Profit (Green Card) */}
-                <div className="bg-[#009b3a] text-white rounded-2xl p-5 shadow-sm">
-                  <span className="text-xs text-emerald-100 font-medium block mb-1">
-                    Net Annual Profit
-                  </span>
-                  <span className="text-xl sm:text-2xl font-black text-white font-['Wix_Madefor_Display',sans-serif]">
-                    {formatCurrency(netAnnualProfit)}
-                  </span>
-                </div>
+          {/* 2 Column Layout: Dual-Pill Card + Partner Handshake Photo */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
 
-                {/* 4. Payback Period (Dark Green Card) */}
-                <div className="bg-[#062c16] text-white rounded-2xl p-5 shadow-sm">
-                  <span className="text-xs text-emerald-200 font-medium block mb-1">
-                    Payback Period
-                  </span>
-                  <span className="text-xl sm:text-2xl font-black text-white font-['Wix_Madefor_Display',sans-serif]">
-                    {paybackPeriodYears} years
-                  </span>
-                </div>
+            {/* Left Dual-Pill Card (7 cols) */}
+            <div className="lg:col-span-7 relative flex flex-col justify-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 relative items-stretch h-full">
 
-                {/* 5. 10 Year Return (28%) */}
-                <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-2xs flex items-center justify-between">
-                  <div>
-                    <span className="text-xs text-slate-500 font-medium block mb-1">
-                      10 Year Return (28%)
-                    </span>
-                    <span className="text-xl sm:text-2xl font-black text-[#15803d] font-['Wix_Madefor_Display',sans-serif]">
-                      {formatCurrency(tenYearReturn)}+
-                    </span>
+                {/* Left Sub-card: EVOLTEK 50% */}
+                <div className="bg-[#d1e7a7] rounded-3xl p-6 sm:p-7 sm:pr-14 lg:pr-16 flex flex-col justify-center border border-[#32aa15]/20 shadow-xs">
+                  <div className="flex flex-col justify-center">
+                    <div className="flex items-center gap-4 mb-5">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-[#32aa15] bg-white text-[#32aa15] flex items-center justify-center shrink-0 shadow-md">
+                        <Handshake className="w-8 h-8 sm:w-9 sm:h-9 text-[#32aa15] stroke-[2.2]" />
+                      </div>
+                      <div className="min-w-0">
+                        <span className="text-xs uppercase font-extrabold text-[#32aa15] tracking-wider block leading-tight">
+                          EVOLTEK
+                        </span>
+                        <h4 className="text-3xl sm:text-4xl font-black text-[#32aa15] leading-none mt-0.5">
+                          50%
+                        </h4>
+                      </div>
+                    </div>
+
+                    <ul className="space-y-3 text-sm sm:text-[15px] font-medium text-slate-800">
+                      <li className="flex items-start gap-2.5 leading-snug">
+                        <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0 mt-0.5" />
+                        <span className="min-w-0">Co-invests</span>
+                      </li>
+                      <li className="flex items-start gap-2.5 leading-snug">
+                        <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0 mt-0.5" />
+                        <span className="min-w-0">Sets up and runs the station</span>
+                      </li>
+                      <li className="flex items-start gap-2.5 leading-snug">
+                        <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0 mt-0.5" />
+                        <span className="min-w-0">Handles operations and maintenance</span>
+                      </li>
+                    </ul>
                   </div>
-                  <BarChart3 className="w-6 h-6 text-[#15803d] shrink-0" />
                 </div>
 
-                {/* 6. Estimated ROI */}
-                <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-2xs flex items-center justify-between">
-                  <div>
-                    <span className="text-xs text-slate-500 font-medium block mb-1">
-                      Estimated ROI
-                    </span>
-                    <span className="text-xl sm:text-2xl font-black text-[#15803d] font-['Wix_Madefor_Display',sans-serif]">
-                      {estimatedRoiPercent}%
-                    </span>
+                {/* Center Floating Handshake Badge (Desktop sm+) - Increased Size */}
+                <div className="hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-22 h-22 sm:w-26 sm:h-26 rounded-full bg-[#32aa15] shadow-2xl items-center justify-center text-white border-4 border-white hover:scale-105 transition-transform duration-300">
+                  <Handshake className="w-11 h-11 sm:w-13 sm:h-13 text-white stroke-[2.3]" />
+                </div>
+
+                {/* Right Sub-card: INVESTOR 50% */}
+                <div className="bg-[#d1e7a7] rounded-3xl p-6 sm:p-7 sm:pl-14 lg:pl-16 flex flex-col justify-center border border-[#32aa15]/20 shadow-xs">
+                  <div className="flex flex-col justify-center">
+                    <div className="flex items-center gap-4 mb-5">
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-[#32aa15] bg-white text-[#32aa15] flex items-center justify-center shrink-0 shadow-md">
+                        <Users className="w-8 h-8 sm:w-9 sm:h-9 text-[#32aa15] stroke-[2.2]" />
+                      </div>
+                      <div className="min-w-0">
+                        <span className="text-xs uppercase font-extrabold text-[#32aa15] tracking-wider block leading-tight">
+                          INVESTOR
+                        </span>
+                        <h4 className="text-3xl sm:text-4xl font-black text-[#32aa15] leading-none mt-0.5">
+                          50%
+                        </h4>
+                      </div>
+                    </div>
+
+                    <ul className="space-y-3 text-sm sm:text-[15px] font-medium text-slate-800">
+                      <li className="flex items-start gap-2.5 leading-snug">
+                        <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0 mt-0.5" />
+                        <span className="min-w-0">Co-invests</span>
+                      </li>
+                      <li className="flex items-start gap-2.5 leading-snug">
+                        <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0 mt-0.5" />
+                        <span className="min-w-0">Provides location and capital</span>
+                      </li>
+                      <li className="flex items-start gap-2.5 leading-snug">
+                        <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0 mt-0.5" />
+                        <span className="min-w-0">Earns attractive returns</span>
+                      </li>
+                    </ul>
                   </div>
-                  <BarChart3 className="w-6 h-6 text-[#15803d] shrink-0" />
                 </div>
 
               </div>
+            </div>
 
-              {/* Disclaimer */}
-              <p className="text-[11px] text-slate-400 leading-relaxed pt-1">
-                Estimate only. Actual returns vary by utilization, uptime, taxes, financing, demand charges and site specific tariffs.
-              </p>
-
+            {/* Right Photo: Partners Handshake in front of Charger (5 cols) */}
+            <div className="lg:col-span-5 rounded-3xl overflow-hidden border border-slate-200 shadow-md min-h-[280px] sm:min-h-[320px] relative group">
+              <img
+                src="/investor_handshake_evoltek.png"
+                alt="Business partners handshake in front of Evoltek EV charging station"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
             </div>
 
           </div>
@@ -790,22 +507,35 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
 
 
       {/* =========================================================================
-          7. HOW TO GET STARTED ("Simple Steps to Your EV Charging Business")
+          8. ROI CALCULATOR ("Calculate Your ROI Potential")
           ========================================================================= */}
-      <section className="w-full bg-[#fbfdfa] py-8 sm:py-12">
+      <RoiCalculatorSection
+        roiState={roiState}
+        setRoiState={setRoiState}
+        openModalWithOption={openModalWithOption}
+      />
+
+
+      {/* =========================================================================
+          9. HOW TO GET STARTED ("Simple Steps to Your EV Charging Business")
+          ========================================================================= */}
+      <section className="w-full bg-white py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="text-center max-w-3xl mx-auto mb-8">
-            <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-2">
-              HOW TO GET STARTED
-            </span>
+          <div className="text-center max-w-5xl mx-auto space-y-2.5 mb-10 sm:mb-14 lg:mb-16">
+            <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
+              <svg className="w-4 h-4 text-[#32aa15] fill-[#32aa15] shrink-0" viewBox="0 0 24 24">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+              <span>HOW TO GET STARTED</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
               Simple Steps to Your EV Charging Business
             </h2>
           </div>
 
           {/* 4 Process Steps connected with dotted lines */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 lg:gap-6 relative">
             {[
               {
                 num: '01',
@@ -836,34 +566,28 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
               return (
                 <div key={step.num} className="flex flex-col items-center text-center group relative">
 
-                  {/* Connecting Dotted Line to next step on Desktop (steps 1, 2, 3) */}
+                  {/* Dotted arrow connecting each step on desktop */}
                   {idx < 3 && (
-                    <div className="hidden lg:flex absolute top-[23px] left-[calc(50%+52px)] right-[calc(-50%+52px)] items-center pointer-events-none z-0 px-2">
-                      <div className="w-full border-t-[3px] border-dotted border-[#32aa15]/75" />
+                    <div className="hidden lg:flex absolute top-[72px] left-[calc(50%+76px)] right-[calc(-50%+76px)] items-center pointer-events-none z-0">
+                      <div className="w-full border-t-2 border-dashed border-[#15803d]" />
+                      <ChevronRight className="w-4 h-4 text-[#15803d] shrink-0 -ml-1" />
                     </div>
                   )}
 
-                  {/* Connecting Dotted Line on Tablet (step 1 -> 2, step 3 -> 4) */}
-                  {(idx === 0 || idx === 2) && (
-                    <div className="hidden sm:flex lg:hidden absolute top-[23px] left-[calc(50%+52px)] right-[calc(-50%+52px)] items-center pointer-events-none z-0 px-2">
-                      <div className="w-full border-t-[3px] border-dotted border-[#32aa15]/75" />
+                  {/* Large icon circle with overlapping step number */}
+                  <div className="relative z-10 mb-4">
+                    <div className="w-36 h-36 rounded-full border border-emerald-400 bg-white flex items-center justify-center text-[#15803d] group-hover:scale-105 transition-transform duration-300">
+                      <Icon className="w-12 h-12 text-[#32aa15] stroke-[1.8]" />
                     </div>
-                  )}
-
-                  {/* Icon & Number Badge */}
-                  <div className="flex items-center gap-2.5 mb-3 relative z-10">
-                    <span className="w-8 h-8 rounded-full bg-[#32aa15] text-white text-xs font-black flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
-                      {step.num}
+                    <span className="absolute -top-1 -left-1 w-8 h-8 rounded-full bg-[#32aa15] text-white text-sm font-bold flex items-center justify-center shadow-sm">
+                      {Number(step.num)}
                     </span>
-                    <div className="w-12 h-12 rounded-full bg-[#f0f9f1] border border-[#32aa15]/25 flex items-center justify-center text-[#32aa15] shadow-xs group-hover:scale-105 group-hover:bg-[#e4f6e6] transition-all">
-                      <Icon className="w-6 h-6 text-[#32aa15] stroke-[2.2]" />
-                    </div>
                   </div>
 
-                  <h3 className="font-bold text-slate-900 text-sm sm:text-base group-hover:text-[#15803d] transition-colors">
+                  <h3 className="font-extrabold text-[#32aa15] text-lg sm:text-xl">
                     {step.title}
                   </h3>
-                  <p className="text-slate-500 text-xs mt-1 leading-snug max-w-[200px]">
+                  <p className="text-slate-600 text-xs sm:text-sm mt-1 leading-snug max-w-[240px]">
                     {step.desc}
                   </p>
                 </div>
@@ -876,7 +600,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
 
 
       {/* =========================================================================
-          8. BOTTOM CALL-TO-ACTION BANNER ("Ready to Invest in the Future of Mobility?")
+          10. BOTTOM CALL-TO-ACTION BANNER ("Ready to Invest in the Future of Mobility?")
           ========================================================================= */}
       <section className="w-full bg-white py-8 sm:py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">

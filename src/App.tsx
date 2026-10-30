@@ -95,7 +95,13 @@ export default function App() {
           />
           <Route
             path="/investment"
-            element={<InvestmentPage openModalWithOption={openModalWithOption} />}
+            element={
+              <InvestmentPage
+                openModalWithOption={openModalWithOption}
+                roiState={roiState}
+                setRoiState={setRoiState}
+              />
+            }
           />
           <Route
             path="/franchise"

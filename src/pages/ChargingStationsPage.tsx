@@ -9,6 +9,7 @@ import {
   Fuel
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { InvestCtaBanner } from '../components/common/InvestCtaBanner';
 
 interface ChargingStationsPageProps {
   openModalWithOption: (option: string) => void;
@@ -21,7 +22,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
       {/* =========================================================================
           1. HERO BANNER WITH OFFICIAL EVOLTEK DC FAST CHARGER & WHITE SUV
           ========================================================================= */}
-      <section className="relative w-full text-white overflow-hidden pt-14 sm:pt-20 lg:pt-24 pb-14 sm:pb-18 lg:pb-22 bg-[#040906]">
+      <section className="relative w-full text-white overflow-hidden pt-12 sm:pt-16 lg:pt-18 pb-10 sm:pb-12 lg:pb-14 bg-[#040906]">
         {/* Background EV Charging Station Scene */}
         <div
           className="absolute inset-0 bg-cover bg-center sm:bg-[position:78%_center] bg-no-repeat pointer-events-none brightness-105"
@@ -69,113 +70,10 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
           </div>
         </div>
       </section>
-
-
       {/* =========================================================================
-          2. TOP FEATURES BAR & STATION SELECTOR
+          2. HIGHWAY & CITY CHARGING STATIONS SHOWCASE (HALF CONTENT, HALF IMAGE)
           ========================================================================= */}
-      <section className="w-full bg-white pt-6 pb-6">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#fbfcfb] rounded-[24px] p-5 sm:p-7 border border-slate-200/80 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8 shadow-sm">
-
-            {/* 4 Feature Items (Vertically stacked icon, title, subtitle matching reference) */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full lg:w-auto flex-1">
-              {/* Feature 1 */}
-              <div className="flex flex-col items-center text-center group cursor-default">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform duration-300">
-                  <img
-                    src="/icon_3d_multiple_options.png"
-                    alt="Multiple Power Options"
-                    className="w-full h-full object-contain filter drop-shadow-sm"
-                  />
-                </div>
-                <h4 className="font-extrabold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">
-                  Multiple Power Options
-                </h4>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-1 leading-snug">
-                  60 kW to 480 kW<br />DC fast charging
-                </p>
-              </div>
-
-              {/* Feature 2 */}
-              <div className="flex flex-col items-center text-center group cursor-default">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform duration-300">
-                  <img
-                    src="/icon_3d_val_reliability.png"
-                    alt="Safe & Reliable"
-                    className="w-full h-full object-contain filter drop-shadow-sm"
-                  />
-                </div>
-                <h4 className="font-extrabold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">
-                  Safe &amp; Reliable
-                </h4>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-1 leading-snug">
-                  Built with advanced<br />safety and reliability
-                </p>
-              </div>
-
-              {/* Feature 3 */}
-              <div className="flex flex-col items-center text-center group cursor-default">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform duration-300">
-                  <img
-                    src="/icon_3d_val_innovation.png"
-                    alt="Smart Technology"
-                    className="w-full h-full object-contain filter drop-shadow-sm"
-                  />
-                </div>
-                <h4 className="font-extrabold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">
-                  Smart Technology
-                </h4>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-1 leading-snug">
-                  App-based access, digital<br />payments and real-time monitoring
-                </p>
-              </div>
-
-              {/* Feature 4 */}
-              <div className="flex flex-col items-center text-center group cursor-default">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform duration-300">
-                  <img
-                    src="/icon_3d_val_sustainability.png"
-                    alt="Sustainable Future"
-                    className="w-full h-full object-contain filter drop-shadow-sm"
-                  />
-                </div>
-                <h4 className="font-extrabold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">
-                  Sustainable Future
-                </h4>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-1 leading-snug">
-                  Driving green mobility<br />for a better tomorrow
-                </p>
-              </div>
-            </div>
-
-            {/* Right Buttons: Stacked Highway & City Station Pills */}
-            <div className="flex flex-col gap-2.5 w-full sm:w-60 shrink-0">
-              <a
-                href="#highway-stations"
-                className="flex items-center justify-center sm:justify-start gap-3 px-5 py-3 rounded-2xl bg-[#32aa15] hover:bg-[#288c10] text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-[#32aa15]/30 transition-all cursor-pointer"
-              >
-                <Navigation className="w-4 h-4 text-white shrink-0" />
-                <span>Highway Charging Station</span>
-              </a>
-              <a
-                href="#city-stations"
-                className="flex items-center justify-center sm:justify-start gap-3 px-5 py-3 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 text-xs sm:text-sm font-bold shadow-sm transition-all cursor-pointer"
-              >
-                <Building2 className="w-4 h-4 text-[#32aa15] shrink-0" />
-                <span>City Charging Station</span>
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-
-      {/* =========================================================================
-          3. HIGHWAY & CITY CHARGING STATIONS SHOWCASE (HALF CONTENT, HALF IMAGE)
-          ========================================================================= */}
-      <section className="w-full bg-white py-10 sm:py-14">
+      <section className="w-full bg-white py-8 sm:py-10">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
 
@@ -229,7 +127,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     <Layers className="w-4.5 h-4.5 text-[#32aa15]" />
                   </div>
                   <div>
-                    <span className="text-[10px] sm:text-[11px] text-slate-400 font-bold uppercase tracking-wider block">
+                    <span className="text-[11px] sm:text-xs text-[#32aa15] font-extrabold uppercase tracking-wide block whitespace-nowrap">
                       Space Required
                     </span>
                     <span className="text-xs sm:text-sm font-extrabold text-slate-800 leading-tight block mt-0.5">
@@ -244,7 +142,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     <Zap className="w-4.5 h-4.5 text-[#32aa15]" />
                   </div>
                   <div>
-                    <span className="text-[10px] sm:text-[11px] text-slate-400 font-bold uppercase tracking-wider block">
+                    <span className="text-[10px] sm:text-[11px] text-[#32aa15] font-bold uppercase tracking-wider block">
                       Power Options
                     </span>
                     <span className="text-[11px] sm:text-xs font-extrabold text-slate-800 leading-snug block mt-0.5">
@@ -259,7 +157,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     <Fuel className="w-4.5 h-4.5 text-[#32aa15]" />
                   </div>
                   <div>
-                    <span className="text-[10px] sm:text-[11px] text-slate-400 font-bold uppercase tracking-wider block">
+                    <span className="text-[10px] sm:text-[11px] text-[#32aa15] font-bold uppercase tracking-wider block">
                       Charger Type
                     </span>
                     <span className="text-xs sm:text-sm font-extrabold text-slate-800 leading-tight block mt-0.5 whitespace-nowrap">
@@ -321,7 +219,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     <Layers className="w-4.5 h-4.5 text-[#32aa15]" />
                   </div>
                   <div>
-                    <span className="text-[10px] sm:text-[11px] text-slate-400 font-bold uppercase tracking-wider block">
+                    <span className="text-[11px] sm:text-xs text-[#32aa15] font-extrabold uppercase tracking-wide block whitespace-nowrap">
                       Space Required
                     </span>
                     <span className="text-xs sm:text-sm font-extrabold text-slate-800 leading-tight block mt-0.5">
@@ -336,7 +234,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     <Zap className="w-4.5 h-4.5 text-[#32aa15]" />
                   </div>
                   <div>
-                    <span className="text-[10px] sm:text-[11px] text-slate-400 font-bold uppercase tracking-wider block">
+                    <span className="text-[10px] sm:text-[11px] text-[#32aa15] font-bold uppercase tracking-wider block">
                       Power Options
                     </span>
                     <span className="text-[11px] sm:text-xs font-extrabold text-slate-800 leading-snug block mt-0.5">
@@ -351,7 +249,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     <Fuel className="w-4.5 h-4.5 text-[#32aa15]" />
                   </div>
                   <div>
-                    <span className="text-[10px] sm:text-[11px] text-slate-400 font-bold uppercase tracking-wider block">
+                    <span className="text-[10px] sm:text-[11px] text-[#32aa15] font-bold uppercase tracking-wider block">
                       Charger Type
                     </span>
                     <span className="text-xs sm:text-sm font-extrabold text-slate-800 leading-tight block mt-0.5 whitespace-nowrap">
@@ -371,14 +269,17 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
       {/* =========================================================================
           4. OUR CHARGING EQUIPMENT - "A Range of Charging Solutions" (5 CHARGERS)
           ========================================================================= */}
-      <section className="w-full bg-[#f4faf4] py-14 sm:py-20 border-y border-emerald-100/60">
+      <section className="w-full bg-white py-8">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-2">
-            <span className="text-[#32aa15] font-extrabold text-xs sm:text-sm uppercase tracking-wider block">
-              OUR CHARGING EQUIPMENT
-            </span>
+          <div className="text-center max-w-5xl mx-auto space-y-2.5 mb-8 sm:mb-10 lg:mb-12">
+            <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
+              <svg className="w-4 h-4 text-[#32aa15] fill-[#32aa15] shrink-0" viewBox="0 0 24 24">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+              <span>OUR CHARGING EQUIPMENT</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
               A Range of Charging Solutions
             </h2>
@@ -391,7 +292,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
 
             {/* Charger 1: 60 kW */}
-            <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#32aa15] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+            <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#32aa15] hover:-translate-y-1.5 transition-all duration-300 flex flex-col group">
               <div>
                 <div className="w-full h-44 sm:h-52 flex items-center justify-center p-2 mb-3 bg-slate-50/60 rounded-xl group-hover:scale-105 transition-transform duration-300">
                   <img
@@ -400,11 +301,11 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     className="max-h-full max-w-full object-contain filter drop-shadow-md"
                   />
                 </div>
-                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-center mb-3">
+                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-center mb-1">
                   60 kW DC Charger
                 </h3>
               </div>
-              <div className="space-y-2 pt-2 border-t border-slate-100 text-[11px] sm:text-xs">
+              <div className="mt-1 space-y-2 pt-1 border-t border-slate-100 text-[11px] sm:text-xs">
                 <div className="flex items-center gap-2 text-slate-700">
                   <Zap className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
                   <span className="font-medium">60 kW</span>
@@ -421,7 +322,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
             </div>
 
             {/* Charger 2: 120 kW */}
-            <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#32aa15] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+            <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#32aa15] hover:-translate-y-1.5 transition-all duration-300 flex flex-col group">
               <div>
                 <div className="w-full h-44 sm:h-52 flex items-center justify-center p-2 mb-3 bg-slate-50/60 rounded-xl group-hover:scale-105 transition-transform duration-300">
                   <img
@@ -430,11 +331,11 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     className="max-h-full max-w-full object-contain filter drop-shadow-md"
                   />
                 </div>
-                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-center mb-3">
+                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-center mb-1">
                   120 kW DC Charger
                 </h3>
               </div>
-              <div className="space-y-2 pt-2 border-t border-slate-100 text-[11px] sm:text-xs">
+              <div className="mt-1 space-y-2 pt-1 border-t border-slate-100 text-[11px] sm:text-xs">
                 <div className="flex items-center gap-2 text-slate-700">
                   <Zap className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
                   <span className="font-medium">120 kW</span>
@@ -451,7 +352,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
             </div>
 
             {/* Charger 3: 240 kW */}
-            <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#32aa15] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+            <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#32aa15] hover:-translate-y-1.5 transition-all duration-300 flex flex-col group">
               <div>
                 <div className="w-full h-44 sm:h-52 flex items-center justify-center p-2 mb-3 bg-slate-50/60 rounded-xl group-hover:scale-105 transition-transform duration-300">
                   <img
@@ -460,11 +361,11 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     className="max-h-full max-w-full object-contain filter drop-shadow-md"
                   />
                 </div>
-                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-center mb-3">
+                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-center mb-1">
                   240 kW DC Charger
                 </h3>
               </div>
-              <div className="space-y-2 pt-2 border-t border-slate-100 text-[11px] sm:text-xs">
+              <div className="mt-1 space-y-2 pt-1 border-t border-slate-100 text-[11px] sm:text-xs">
                 <div className="flex items-center gap-2 text-slate-700">
                   <Zap className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
                   <span className="font-medium">240 kW</span>
@@ -481,7 +382,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
             </div>
 
             {/* Charger 4: 360 kW */}
-            <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#32aa15] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+            <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#32aa15] hover:-translate-y-1.5 transition-all duration-300 flex flex-col group">
               <div>
                 <div className="w-full h-44 sm:h-52 flex items-center justify-center p-2 mb-3 bg-slate-50/60 rounded-xl group-hover:scale-105 transition-transform duration-300">
                   <img
@@ -490,11 +391,11 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     className="max-h-full max-w-full object-contain filter drop-shadow-md"
                   />
                 </div>
-                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-center mb-3">
+                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-center mb-1">
                   360 kW DC Charger
                 </h3>
               </div>
-              <div className="space-y-2 pt-2 border-t border-slate-100 text-[11px] sm:text-xs">
+              <div className="mt-1 space-y-2 pt-1 border-t border-slate-100 text-[11px] sm:text-xs">
                 <div className="flex items-center gap-2 text-slate-700">
                   <Zap className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
                   <span className="font-medium">360 kW</span>
@@ -511,7 +412,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
             </div>
 
             {/* Charger 5: 480 kW */}
-            <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#32aa15] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+            <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-[#32aa15] hover:-translate-y-1.5 transition-all duration-300 flex flex-col group">
               <div>
                 <div className="w-full h-44 sm:h-52 flex items-center justify-center p-2 mb-3 bg-slate-50/60 rounded-xl group-hover:scale-105 transition-transform duration-300">
                   <img
@@ -520,11 +421,11 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     className="max-h-full max-w-full object-contain filter drop-shadow-md"
                   />
                 </div>
-                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-center mb-3">
+                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-center mb-1">
                   480 kW DC Charger
                 </h3>
               </div>
-              <div className="space-y-2 pt-2 border-t border-slate-100 text-[11px] sm:text-xs">
+              <div className="mt-1 space-y-2 pt-1 border-t border-slate-100 text-[11px] sm:text-xs">
                 <div className="flex items-center gap-2 text-slate-700">
                   <Zap className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
                   <span className="font-medium">480 kW</span>
@@ -549,19 +450,21 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
       {/* =========================================================================
           5. EV HUBS - "More Than Just Charging" (INCREASED SIZE & 5 AMENITIES)
           ========================================================================= */}
-      <section className="w-full bg-white py-16 sm:py-24 lg:py-28">
+      <section className="w-full bg-white pt-12 pb-6 sm:pt-16 sm:pb-8 lg:pt-18 lg:pb-6">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
 
             {/* Left Content Column */}
             <div className="lg:col-span-4 space-y-5">
-              <span className="text-[#32aa15] font-extrabold text-xs sm:text-sm uppercase tracking-wider block">
-                EV HUBS
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
-                More Than <br />
-                <span className="text-[#32aa15]">Just Charging</span>
-              </h2>
+              <div className="space-y-2.5">
+                <span className="text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em] block">
+                  EV HUBS
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
+                  More Than <br />
+                  <span className="text-[#32aa15]">Just Charging</span>
+                </h2>
+              </div>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 Our highway stations can grow into full EV hubs, giving travellers a place to relax, work and recharge while their vehicle charges. These amenities also create additional revenue opportunities for our partners.
               </p>
@@ -582,7 +485,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
               {/* 5 Amenity Badges with 3D Glossy Icons */}
               <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-3.5">
                 {/* Amenity 1 */}
-                <div className="bg-[#f0f9f1] border border-[#32aa15]/15 rounded-2xl p-3.5 sm:p-4 text-center flex flex-col items-center justify-center gap-2.5 hover:bg-[#e4f5e6] hover:border-[#32aa15]/40 hover:-translate-y-1 transition-all shadow-2xs group cursor-default">
+                <div className="bg-[#d1e7a7] border border-[#32aa15]/15 rounded-2xl p-3.5 sm:p-4 text-center flex flex-col items-center justify-center gap-2.5 hover:bg-[#e4f5e6] hover:border-[#32aa15]/40 hover:-translate-y-1 transition-all shadow-2xs group cursor-default">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <img
                       src="/icon_3d_restaurant_trans.png"
@@ -596,7 +499,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                 </div>
 
                 {/* Amenity 2 */}
-                <div className="bg-[#f0f9f1] border border-[#32aa15]/15 rounded-2xl p-3.5 sm:p-4 text-center flex flex-col items-center justify-center gap-2.5 hover:bg-[#e4f5e6] hover:border-[#32aa15]/40 hover:-translate-y-1 transition-all shadow-2xs group cursor-default">
+                <div className="bg-[#d1e7a7] border border-[#32aa15]/15 rounded-2xl p-3.5 sm:p-4 text-center flex flex-col items-center justify-center gap-2.5 hover:bg-[#e4f5e6] hover:border-[#32aa15]/40 hover:-translate-y-1 transition-all shadow-2xs group cursor-default">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <img
                       src="/icon_3d_wifi_trans.png"
@@ -610,7 +513,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                 </div>
 
                 {/* Amenity 3 */}
-                <div className="bg-[#f0f9f1] border border-[#32aa15]/15 rounded-2xl p-3.5 sm:p-4 text-center flex flex-col items-center justify-center gap-2.5 hover:bg-[#e4f5e6] hover:border-[#32aa15]/40 hover:-translate-y-1 transition-all shadow-2xs group cursor-default">
+                <div className="bg-[#d1e7a7] border border-[#32aa15]/15 rounded-2xl p-3.5 sm:p-4 text-center flex flex-col items-center justify-center gap-2.5 hover:bg-[#e4f5e6] hover:border-[#32aa15]/40 hover:-translate-y-1 transition-all shadow-2xs group cursor-default">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <img
                       src="/icon_3d_park_trans.png"
@@ -624,7 +527,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                 </div>
 
                 {/* Amenity 4 */}
-                <div className="bg-[#f0f9f1] border border-[#32aa15]/15 rounded-2xl p-3.5 sm:p-4 text-center flex flex-col items-center justify-center gap-2.5 hover:bg-[#e4f5e6] hover:border-[#32aa15]/40 hover:-translate-y-1 transition-all shadow-2xs group cursor-default">
+                <div className="bg-[#d1e7a7] border border-[#32aa15]/15 rounded-2xl p-3.5 sm:p-4 text-center flex flex-col items-center justify-center gap-2.5 hover:bg-[#e4f5e6] hover:border-[#32aa15]/40 hover:-translate-y-1 transition-all shadow-2xs group cursor-default">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <img
                       src="/icon_3d_bed_trans.png"
@@ -638,7 +541,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                 </div>
 
                 {/* Amenity 5 */}
-                <div className="bg-[#f0f9f1] border border-[#32aa15]/15 rounded-2xl p-3.5 sm:p-4 text-center flex flex-col items-center justify-center gap-2.5 hover:bg-[#e4f5e6] hover:border-[#32aa15]/40 hover:-translate-y-1 transition-all shadow-2xs group cursor-default">
+                <div className="bg-[#d1e7a7] border border-[#32aa15]/15 rounded-2xl p-3.5 sm:p-4 text-center flex flex-col items-center justify-center gap-2.5 hover:bg-[#e4f5e6] hover:border-[#32aa15]/40 hover:-translate-y-1 transition-all shadow-2xs group cursor-default">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <img
                       src="/icon_3d_lounge_trans.png"
@@ -682,6 +585,8 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
           </div>
         </div>
       </section>
+
+      <InvestCtaBanner openModalWithOption={openModalWithOption} className="py-4 sm:py-6" />
 
     </div>
   );

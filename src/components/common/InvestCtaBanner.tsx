@@ -3,11 +3,15 @@ import { ChevronRight, Download } from 'lucide-react';
 
 interface InvestCtaBannerProps {
   openModalWithOption: (option: string) => void;
+  className?: string;
 }
 
-export const InvestCtaBanner: React.FC<InvestCtaBannerProps> = ({ openModalWithOption }) => {
+export const InvestCtaBanner: React.FC<InvestCtaBannerProps> = ({
+  openModalWithOption,
+  className = 'py-8 sm:py-12'
+}) => {
   return (
-    <section className="w-full bg-white py-8 sm:py-12">
+    <section className={`w-full bg-white ${className}`}>
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         
         <div

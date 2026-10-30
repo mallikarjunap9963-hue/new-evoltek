@@ -130,14 +130,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold text-white tracking-tight leading-[1.08] font-['Plus_Jakarta_Sans',sans-serif]">
+            <h1 className="text-[30px] xs:text-[36px] sm:text-5xl md:text-6xl lg:text-[68px] font-bold text-white tracking-tight leading-[0.88] sm:leading-[0.9] lg:leading-[0.92] font-['Plus_Jakarta_Sans',sans-serif]">
               Let’s Power the
               <br />
               <span className="text-[#32aa15]">Future Together.</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xs sm:text-lg text-slate-200 font-medium leading-relaxed max-w-xl">
+            <p className="text-sm sm:text-base text-slate-200 font-normal leading-relaxed max-w-xl">
               Have questions, want to invest, or need a charging solution? Our team is here to help. Get in touch with EVOLTEK and let’s build a cleaner, greener tomorrow.
             </p>
 
@@ -173,15 +173,17 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
             {/* ------------------------------------------------------------------- */}
             <div className="lg:col-span-6 bg-white rounded-3xl p-5 sm:p-6 lg:p-7 border border-slate-200/80 shadow-lg shadow-slate-200/50">
               {/* Header Label */}
-              <div className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-[#32aa15] mb-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#32aa15]" />
+              <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em] mb-2">
+                <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
                 <span>SEND US A MESSAGE</span>
               </div>
 
               <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif] mb-2">
                 We’d Love to Hear from You.
               </h2>
-              <p className="text-xs sm:text-sm text-slate-500 mb-5 font-normal">
+              <p className="text-sm sm:text-base text-slate-600 mb-5 font-normal">
                 Fill out the form below and our team will get back to you shortly.
               </p>
 
@@ -330,15 +332,17 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
                 {/* Left Content (Text & Contact Items) */}
                 <div className="w-full sm:w-[54%] p-5 sm:p-6 space-y-3 flex flex-col justify-between">
                   <div>
-                    <div className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-[#32aa15] mb-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#32aa15]" />
+                    <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em] mb-2">
+                      <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                      </svg>
                       <span>OUR OFFICE</span>
                     </div>
 
                     <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif] mb-2">
                       Visit Our Office
                     </h2>
-                    <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+                    <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
                       Come and meet our team to learn more about our solutions, investment opportunities, and partnerships.
                     </p>
                   </div>
@@ -421,9 +425,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
                 <div className="relative h-full w-full overflow-hidden group">
                   <iframe
                     title="Evoltek Hyderabad Office Map"
-                    src="https://maps.google.com/maps?q=HITEC+City,+Hyderabad,+Telangana&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                    className="w-full h-full border-0 pointer-events-auto"
-                    loading="lazy"
+                    src="https://www.google.com/maps?q=17.4435,78.3772&z=14&output=embed"
+                    className="absolute inset-0 block h-full w-full border-0 pointer-events-auto"
+                    loading="eager"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
                   />
 
                   {/* Branded EVOLTEK Pin Overlay in Center */}
@@ -458,10 +464,16 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
           {/* Header Row */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div>
+              <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em] mb-2">
+                <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+                <span>COMMON QUESTIONS</span>
+              </div>
               <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
                 Frequently Asked <span className="text-[#32aa15]">Questions</span>
               </h2>
-              <p className="text-xs sm:text-sm text-slate-500 mt-2">
+              <p className="text-sm sm:text-base text-slate-600 mt-2">
                 Quick answers to common questions. Can’t find what you’re looking for?{' '}
                 <a href="#contact-form" className="text-[#15803d] font-semibold hover:underline">
                   Contact us.
@@ -487,7 +499,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
                     <button
                       type="button"
                       onClick={() => toggleFaq(idx)}
-                      className="w-full px-5 py-4 text-left flex items-center justify-between gap-3 text-slate-900 hover:text-[#15803d] font-bold text-xs sm:text-sm cursor-pointer transition-colors"
+                      className="w-full px-5 py-4 text-left flex items-center justify-between gap-3 text-slate-900 hover:text-[#15803d] font-semibold text-sm sm:text-base cursor-pointer transition-colors"
                     >
                       <span className="leading-snug">{faq.q}</span>
                       <span className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center shrink-0 text-slate-500">
@@ -495,7 +507,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
                       </span>
                     </button>
                     {isOpen && (
-                      <div className="px-5 pb-4 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/50">
+                      <div className="px-5 pb-4 pt-1 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/50">
                         {faq.a}
                       </div>
                     )}
@@ -517,7 +529,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
                     <button
                       type="button"
                       onClick={() => toggleFaq(globalIdx)}
-                      className="w-full px-5 py-4 text-left flex items-center justify-between gap-3 text-slate-900 hover:text-[#15803d] font-bold text-xs sm:text-sm cursor-pointer transition-colors"
+                      className="w-full px-5 py-4 text-left flex items-center justify-between gap-3 text-slate-900 hover:text-[#15803d] font-semibold text-sm sm:text-base cursor-pointer transition-colors"
                     >
                       <span className="leading-snug">{faq.q}</span>
                       <span className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center shrink-0 text-slate-500">
@@ -525,7 +537,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
                       </span>
                     </button>
                     {isOpen && (
-                      <div className="px-5 pb-4 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/50">
+                      <div className="px-5 pb-4 pt-1 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/50">
                         {faq.a}
                       </div>
                     )}
@@ -561,7 +573,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
                 <span className="text-[#32aa15]">Future of Mobility?</span>
               </h2>
 
-              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-md">
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-md">
                 Partner with EVOLTEK and build a profitable, sustainable EV charging business.
               </p>
 
