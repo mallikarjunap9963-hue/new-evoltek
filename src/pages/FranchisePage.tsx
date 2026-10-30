@@ -49,7 +49,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-black text-white tracking-tight leading-[1.08] font-['Wix_Madefor_Display',sans-serif]">
+            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold text-white tracking-tight leading-[1.08] font-['Plus_Jakarta_Sans',sans-serif]">
               Build Your Future.
               <br />
               <span className="text-[#32aa15]">Power the Change.</span>
@@ -93,7 +93,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
               <span className="text-slate-500 text-xs font-bold uppercase tracking-wider block">
                 Why Choose Evoltek Franchise?
               </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight leading-snug font-['Wix_Madefor_Display',sans-serif]">
+              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
                 A Profitable Opportunity.
                 <br />
                 A <span className="text-[#32aa15]">Greener Tomorrow.</span>
@@ -183,7 +183,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
             <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-1">
               OUR FRANCHISE MODELS
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight font-['Wix_Madefor_Display',sans-serif]">
+            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
               Choose the Right Model for Your Goals
             </h2>
           </div>
@@ -328,7 +328,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="mb-6 sm:mb-8 text-center sm:text-left">
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-['Wix_Madefor_Display',sans-serif]">
+            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
               What You Get as an Evoltek Franchise Partner
             </h2>
           </div>
@@ -383,7 +383,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
                   MORE THAN JUST CHARGING
                 </span>
 
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight leading-snug font-['Wix_Madefor_Display',sans-serif]">
+                <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
                   Create a Charging Hub.
                   <br />
                   Create More Opportunities.
@@ -487,7 +487,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-['Wix_Madefor_Display',sans-serif]">
+            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
               Our Franchise Process
             </h2>
           </div>

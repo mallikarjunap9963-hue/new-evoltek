@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, Download, Leaf, BarChart3 } from 'lucide-react';
+import { ChevronRight, Download } from 'lucide-react';
 
 interface InvestCtaBannerProps {
   openModalWithOption: (option: string) => void;
@@ -48,31 +48,6 @@ export const InvestCtaBanner: React.FC<InvestCtaBannerProps> = ({ openModalWithO
                 <span>Download Brochure</span>
                 <Download className="w-4 h-4" />
               </button>
-            </div>
-          </div>
-
-          {/* Right Floating Frosted Card with Badges */}
-          <div className="relative z-20 hidden md:flex flex-col gap-3.5 p-4 sm:p-5 rounded-2xl bg-black/55 backdrop-blur-md border border-white/15 shadow-2xl w-52 sm:w-60 shrink-0">
-            {/* Item 1: Clean Energy Today */}
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#32aa15]/20 border border-[#32aa15]/40 flex items-center justify-center shrink-0">
-                <Leaf className="w-5 h-5 text-[#32aa15]" />
-              </div>
-              <div>
-                <p className="text-xs sm:text-sm font-bold text-white leading-tight">Clean Energy</p>
-                <p className="text-[11px] sm:text-xs text-slate-300">Today</p>
-              </div>
-            </div>
-
-            {/* Item 2: Stronger Tomorrow */}
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#32aa15]/20 border border-[#32aa15]/40 flex items-center justify-center shrink-0">
-                <BarChart3 className="w-5 h-5 text-[#32aa15]" />
-              </div>
-              <div>
-                <p className="text-xs sm:text-sm font-bold text-white leading-tight">Stronger</p>
-                <p className="text-[11px] sm:text-xs text-slate-300">Tomorrow</p>
-              </div>
             </div>
           </div>
 

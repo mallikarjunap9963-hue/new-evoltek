@@ -98,7 +98,7 @@ export const AppNetworkPage: React.FC<AppNetworkPageProps> = ({ openModalWithOpt
                 EVOLTEK MOBILE APP &amp; NETWORK
               </span>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.08] font-['Wix_Madefor_Display',sans-serif]">
+              <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold text-white tracking-tight leading-[1.08] font-['Plus_Jakarta_Sans',sans-serif]">
                 Smart Charging.
                 <br />
                 <span className="text-[#32aa15]">At Your Fingertips.</span>
@@ -162,7 +162,7 @@ export const AppNetworkPage: React.FC<AppNetworkPageProps> = ({ openModalWithOpt
                 <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-1">
                   APP FEATURES
                 </span>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight leading-snug font-['Wix_Madefor_Display',sans-serif]">
+                <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
                   A Smarter <span className="text-[#32aa15]">Charging Experience</span>
                 </h2>
                 <p className="text-slate-600 text-xs sm:text-sm leading-relaxed pt-1.5">
@@ -262,7 +262,7 @@ export const AppNetworkPage: React.FC<AppNetworkPageProps> = ({ openModalWithOpt
                   <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-1.5">
                     OUR CHARGING NETWORK
                   </span>
-                  <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-black text-slate-900 tracking-tight leading-tight font-['Wix_Madefor_Display',sans-serif]">
+                  <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
                     Growing Across
                     <br />
                     <span className="text-[#32aa15]">Cities &amp; Highways</span>
@@ -417,7 +417,7 @@ export const AppNetworkPage: React.FC<AppNetworkPageProps> = ({ openModalWithOpt
             <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-1">
               FOR EV DRIVERS
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-['Wix_Madefor_Display',sans-serif]">
+            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
               Why Use the Evoltek App?
             </h2>
           </div>

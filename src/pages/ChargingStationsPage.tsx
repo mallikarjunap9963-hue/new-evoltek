@@ -39,7 +39,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
             </p>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-black text-white tracking-tight leading-[1.08] font-['Wix_Madefor_Display',sans-serif]">
+            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold text-white tracking-tight leading-[1.08] font-['Plus_Jakarta_Sans',sans-serif]">
               The Right Charging
               <br />
               Solution for
@@ -379,7 +379,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
             <span className="text-[#32aa15] font-extrabold text-xs sm:text-sm uppercase tracking-wider block">
               OUR CHARGING EQUIPMENT
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-['Wix_Madefor_Display',sans-serif]">
+            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
               A Range of Charging Solutions
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm max-w-xl mx-auto pt-1 leading-relaxed">
@@ -558,7 +558,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
               <span className="text-[#32aa15] font-extrabold text-xs sm:text-sm uppercase tracking-wider block">
                 EV HUBS
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-slate-900 tracking-tight leading-[1.12] font-['Wix_Madefor_Display',sans-serif]">
+              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
                 More Than <br />
                 <span className="text-[#32aa15]">Just Charging</span>
               </h2>

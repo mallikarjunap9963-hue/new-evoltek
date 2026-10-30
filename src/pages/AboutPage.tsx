@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { VisionMissionSection } from '../components/sections/VisionMissionSection';
+import { InvestCtaBanner } from '../components/common/InvestCtaBanner';
 
 const AnimatedCounter: React.FC<{ target: number; suffix?: string; isVisible: boolean }> = ({
   target,
@@ -100,12 +101,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-black text-white tracking-tight leading-[1.08] font-['Wix_Madefor_Display',sans-serif]">
+            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold text-white tracking-tight leading-[1.08] font-['Plus_Jakarta_Sans',sans-serif]">
               About <span className="text-[#32aa15]">EVOLTEK</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-sm sm:text-base text-slate-200 font-normal leading-relaxed max-w-xl">
+            <p className="text-sm sm:text-base text-slate-200 font-medium leading-relaxed max-w-xl">
               Building reliable, connected EV charging infrastructure for a cleaner, smarter journey.
             </p>
 
@@ -127,13 +128,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
       </section>
 
       {/* 2. WHO WE ARE SECTION (MATCHING HOME PAGE SIGNATURE DESIGN) */}
-      <section className="w-full bg-white py-12 sm:py-16 lg:py-20">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-stretch">
 
             {/* Left Column: Driver Charging EV Image */}
             <div className="lg:col-span-5 flex justify-center lg:justify-start">
-              <div className="relative w-full max-w-[480px] lg:max-w-none h-[420px] sm:h-[480px] lg:h-[540px] xl:h-[560px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+              <div className="relative w-full max-w-[480px] lg:max-w-none h-[420px] sm:h-[480px] lg:h-full lg:min-h-[560px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
                 <img
                   src="/about_who_we_are_man.jpg"
                   alt="Young professional charging electric vehicle at Evoltek charging hub"
@@ -317,14 +318,19 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
       <VisionMissionSection />
 
       {/* 4. VALUES THAT DRIVE US */}
-      <section className="py-14 sm:py-20 bg-white">
+      <section className="py-12 bg-white">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#32aa15] font-['Wix_Madefor_Display',sans-serif]">
+          <div className="text-center max-w-5xl mx-auto space-y-2.5 mb-10 sm:mb-14 lg:mb-16">
+            <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
+              <svg className="w-4 h-4 text-[#32aa15] fill-[#32aa15] shrink-0" viewBox="0 0 24 24">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+              <span>OUR VALUES</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
               Values That Drive Us
             </h2>
-            <div className="w-10 h-0.5 bg-[#32aa15] mx-auto mt-2 rounded-full" />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
@@ -352,20 +358,20 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
             ].map((val, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-[22px] p-5 sm:p-6 text-center flex flex-col items-center justify-between group cursor-pointer transition-all duration-300 h-full min-h-[285px] sm:min-h-[295px] border-2 border-slate-200/80 hover:border-[#00b853] shadow-sm hover:shadow-xl hover:shadow-[#00b853]/15 hover:-translate-y-1.5"
+                className="bg-white rounded-[22px] p-5 sm:p-6 text-center flex flex-col items-center justify-start gap-2 group cursor-pointer transition-all duration-300 min-h-[280px] border-2 border-slate-200/80 hover:border-[#00b853] shadow-sm hover:shadow-xl hover:shadow-[#00b853]/15 hover:-translate-y-1.5"
               >
-                <div className="w-16 h-16 sm:w-20 sm:h-20 mb-3.5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <img
                     src={val.iconSrc}
                     alt={val.title}
                     className="w-full h-full object-contain filter drop-shadow-sm"
                   />
                 </div>
-                <div className="flex-1 flex flex-col items-center justify-start">
-                  <h4 className="text-base sm:text-lg font-bold mb-2 font-['Wix_Madefor_Display',sans-serif] text-slate-900 group-hover:text-[#00b853] transition-colors duration-300">
+                <div className="flex flex-col items-center justify-start gap-2">
+                  <h4 className="text-base sm:text-lg font-bold font-['Wix_Madefor_Display',sans-serif] text-slate-900 group-hover:text-[#00b853] transition-colors duration-300">
                     {val.title}
                   </h4>
-                  <p className="text-[13px] sm:text-[13.5px] text-slate-500 leading-relaxed font-normal max-w-[220px]">
+                  <p className="text-[13px] sm:text-[13.5px] text-slate-600 leading-relaxed font-medium max-w-[220px]">
                     {val.desc}
                   </p>
                 </div>
@@ -392,10 +398,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
 
             {/* Top Center Headline */}
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[34px] font-bold text-white tracking-normal font-['Wix_Madefor_Display',sans-serif] drop-shadow-md">
-                Driving the <span className="text-[#34d399]">Future</span> of Mobility
+              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-white tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif] drop-shadow-md">
+                Driving the Future of Mobility
               </h2>
-              <div className="w-12 sm:w-14 h-1 bg-[#10b981] mx-auto mt-2 rounded-full shadow-[0_0_12px_rgba(16,185,129,0.7)]" />
+              <div className="w-12 sm:w-14 h-1 bg-[#32aa15] mx-auto mt-2 rounded-full shadow-[0_0_12px_rgba(50,170,21,0.7)]" />
             </div>
 
             {/* 4 Frosted Emerald Glass Stat Cards (Sleeker Compact Size) */}
@@ -404,12 +410,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
               {/* Card 1: 50+ Charging Locations */}
               <div
                 style={{
-                  background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(16, 185, 129, 0.08) 50%, rgba(6, 46, 26, 0.22) 100%)'
+                  background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(50, 170, 21, 0.08) 50%, rgba(6, 46, 26, 0.22) 100%)'
                 }}
-                className="backdrop-blur-md border border-white/35 rounded-2xl p-4 sm:p-4.5 lg:p-5 text-center text-white hover:border-[#34d399]/80 hover:bg-white/[0.18] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center min-h-[160px] sm:min-h-[175px] group cursor-default"
+                className="backdrop-blur-md border border-white/35 rounded-2xl p-4 sm:p-4.5 lg:p-5 text-center text-white hover:border-[#32aa15]/80 hover:bg-white/[0.18] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center min-h-[160px] sm:min-h-[175px] group cursor-default"
               >
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#10b981] flex items-center justify-center text-white mb-2 shadow-[0_0_14px_rgba(16,185,129,0.55)] group-hover:scale-110 transition-transform duration-300">
-                  <MapPin className="w-5 h-5 stroke-[2.2] text-white" />
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#32aa15] flex items-center justify-center text-white mb-2 shadow-[0_0_14px_rgba(50,170,21,0.55)] group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="w-7 h-7 stroke-[2.2] text-white" />
                 </div>
                 <div className="text-2xl sm:text-3xl lg:text-[32px] font-extrabold tracking-tight leading-none font-['Wix_Madefor_Display',sans-serif] drop-shadow-md">
                   <AnimatedCounter target={50} suffix="+" isVisible={statsVisible} />
@@ -425,15 +431,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
               {/* Card 2: 200+ DC & AC Chargers Installed */}
               <div
                 style={{
-                  background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(16, 185, 129, 0.08) 50%, rgba(6, 46, 26, 0.22) 100%)'
+                  background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(50, 170, 21, 0.08) 50%, rgba(6, 46, 26, 0.22) 100%)'
                 }}
-                className="backdrop-blur-md border border-white/35 rounded-2xl p-4 sm:p-4.5 lg:p-5 text-center text-white hover:border-[#34d399]/80 hover:bg-white/[0.18] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center min-h-[160px] sm:min-h-[175px] group cursor-default"
+                className="backdrop-blur-md border border-white/35 rounded-2xl p-4 sm:p-4.5 lg:p-5 text-center text-white hover:border-[#32aa15]/80 hover:bg-white/[0.18] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center min-h-[160px] sm:min-h-[175px] group cursor-default"
               >
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#10b981] flex items-center justify-center text-white mb-2 shadow-[0_0_14px_rgba(16,185,129,0.55)] group-hover:scale-110 transition-transform duration-300">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#32aa15] flex items-center justify-center text-white mb-2 shadow-[0_0_14px_rgba(50,170,21,0.55)] group-hover:scale-110 transition-transform duration-300">
                   <div className="flex items-center justify-center gap-0.5 text-white font-mono font-bold">
-                    <span className="text-sm font-black opacity-90">[</span>
-                    <Zap className="w-4 h-4 text-white fill-white stroke-[1.5]" />
-                    <span className="text-sm font-black opacity-90">]</span>
+                    <Zap className="w-6 h-6 text-white fill-white stroke-[1.5]" />
                   </div>
                 </div>
                 <div className="text-2xl sm:text-3xl lg:text-[32px] font-extrabold tracking-tight leading-none font-['Wix_Madefor_Display',sans-serif] drop-shadow-md">
@@ -447,12 +451,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
               {/* Card 3: 25+ Partner Collaborations */}
               <div
                 style={{
-                  background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(16, 185, 129, 0.08) 50%, rgba(6, 46, 26, 0.22) 100%)'
+                  background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(50, 170, 21, 0.08) 50%, rgba(6, 46, 26, 0.22) 100%)'
                 }}
-                className="backdrop-blur-md border border-white/35 rounded-2xl p-4 sm:p-4.5 lg:p-5 text-center text-white hover:border-[#34d399]/80 hover:bg-white/[0.18] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center min-h-[160px] sm:min-h-[175px] group cursor-default"
+                className="backdrop-blur-md border border-white/35 rounded-2xl p-4 sm:p-4.5 lg:p-5 text-center text-white hover:border-[#32aa15]/80 hover:bg-white/[0.18] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center min-h-[160px] sm:min-h-[175px] group cursor-default"
               >
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#10b981] flex items-center justify-center text-white mb-2 shadow-[0_0_14px_rgba(16,185,129,0.55)] group-hover:scale-110 transition-transform duration-300">
-                  <Handshake className="w-5 h-5 stroke-[2.2] text-white" />
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#32aa15] flex items-center justify-center text-white mb-2 shadow-[0_0_14px_rgba(50,170,21,0.55)] group-hover:scale-110 transition-transform duration-300">
+                  <Handshake className="w-7 h-7 stroke-[2.2] text-white" />
                 </div>
                 <div className="text-2xl sm:text-3xl lg:text-[32px] font-extrabold tracking-tight leading-none font-['Wix_Madefor_Display',sans-serif] drop-shadow-md">
                   <AnimatedCounter target={25} suffix="+" isVisible={statsVisible} />
@@ -468,12 +472,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
               {/* Card 4: 24/7 Monitoring & Support */}
               <div
                 style={{
-                  background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(16, 185, 129, 0.08) 50%, rgba(6, 46, 26, 0.22) 100%)'
+                  background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(50, 170, 21, 0.08) 50%, rgba(6, 46, 26, 0.22) 100%)'
                 }}
-                className="backdrop-blur-md border border-white/35 rounded-2xl p-4 sm:p-4.5 lg:p-5 text-center text-white hover:border-[#34d399]/80 hover:bg-white/[0.18] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center min-h-[160px] sm:min-h-[175px] group cursor-default"
+                className="backdrop-blur-md border border-white/35 rounded-2xl p-4 sm:p-4.5 lg:p-5 text-center text-white hover:border-[#32aa15]/80 hover:bg-white/[0.18] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.25)] flex flex-col items-center justify-center min-h-[160px] sm:min-h-[175px] group cursor-default"
               >
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#10b981] flex items-center justify-center text-white mb-2 shadow-[0_0_14px_rgba(16,185,129,0.55)] group-hover:scale-110 transition-transform duration-300">
-                  <Headphones className="w-5 h-5 stroke-[2.2] text-white" />
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#32aa15] flex items-center justify-center text-white mb-2 shadow-[0_0_14px_rgba(50,170,21,0.55)] group-hover:scale-110 transition-transform duration-300">
+                  <Headphones className="w-7 h-7 stroke-[2.2] text-white" />
                 </div>
                 <div className="text-2xl sm:text-3xl lg:text-[32px] font-extrabold tracking-tight leading-none font-['Wix_Madefor_Display',sans-serif] drop-shadow-md">
                   24/7
@@ -493,14 +497,19 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
       </section>
 
       {/* 6. OUR JOURNEY (TIMELINE) */}
-      <section className="py-14 sm:py-20 bg-white">
+      <section className="py-12 bg-white">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="text-center mb-14">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#32aa15] font-['Wix_Madefor_Display',sans-serif]">
+          <div className="text-center max-w-5xl mx-auto space-y-2.5 mb-10 sm:mb-14 lg:mb-16">
+            <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em]">
+              <svg className="w-4 h-4 text-[#32aa15] fill-[#32aa15] shrink-0" viewBox="0 0 24 24">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+              <span>OUR STORY</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
               Our Journey
             </h2>
-            <div className="w-10 h-0.5 bg-[#32aa15] mx-auto mt-2 rounded-full" />
           </div>
 
           <div className="relative">
@@ -555,7 +564,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
                     <h4 className="text-base sm:text-lg font-bold text-slate-900 font-['Wix_Madefor_Display',sans-serif] group-hover:text-[#32aa15] transition-colors">
                       {item.title}
                     </h4>
-                    <p className="text-xs sm:text-[13px] text-slate-600 mt-1.5 leading-relaxed max-w-[220px]">
+                    <p className="text-xs sm:text-[13px] text-slate-600 mt-1.5 leading-relaxed font-medium max-w-[220px]">
                       {item.desc}
                     </p>
                   </div>
@@ -567,42 +576,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
         </div>
       </section>
 
-      {/* 7. "LET'S BUILD A GREENER TOMORROW" CTA BANNER */}
-      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 my-6">
-        <div className="bg-[#0b1f13] rounded-3xl overflow-hidden shadow-2xl border border-[#32aa15]/20 grid grid-cols-1 lg:grid-cols-12 items-center">
-
-          {/* Left Text */}
-          <div className="lg:col-span-6 p-8 sm:p-12 space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight font-['Wix_Madefor_Display',sans-serif]">
-              Let’s Build a <span className="text-[#4ade80]">Greener</span> Tomorrow.
-            </h2>
-            <p className="text-sm sm:text-base text-slate-300 font-normal">
-              Join us in building the EV charging network India can rely on.
-            </p>
-            <div className="pt-2">
-              <button
-                type="button"
-                onClick={() => openModalWithOption('Partner With Us')}
-                className="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-bold text-sm shadow-md transition-all inline-flex items-center gap-2 cursor-pointer"
-              >
-                <span>Partner With Us</span>
-                <ChevronRight className="w-4 h-4 text-slate-800" />
-              </button>
-            </div>
-          </div>
-
-          {/* Right EV Canopy Image */}
-          <div className="lg:col-span-6 h-[260px] sm:h-[320px] lg:h-full min-h-[260px] relative overflow-hidden">
-            <img
-              src="/about_cta_green_canopy.jpg"
-              alt="Electric car charging at twilight under illuminated green canopy"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0b1f13] via-transparent to-transparent lg:block hidden" />
-          </div>
-
-        </div>
-      </section>
+      {/* 7. INVESTMENT CALL-TO-ACTION BANNER */}
+      <InvestCtaBanner openModalWithOption={openModalWithOption} />
 
 
     </div>

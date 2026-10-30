@@ -50,7 +50,7 @@ export const RoiCalculatorPage: React.FC<RoiCalculatorPageProps> = ({ openModalW
               <span>Real-Time Financial Simulator</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.1] font-['Wix_Madefor_Display',sans-serif]">
+            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold text-white tracking-tight leading-[1.08] font-['Plus_Jakarta_Sans',sans-serif]">
               Estimate Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4ade80] to-[#32aa15]">50/50 EV Charging Returns</span>
             </h1>
 

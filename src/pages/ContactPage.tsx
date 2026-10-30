@@ -130,7 +130,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-[30px] xs:text-[36px] sm:text-5xl md:text-6xl lg:text-[68px] font-bold text-white tracking-tight leading-[0.92] font-['Plus_Jakarta_Sans',sans-serif]">
+            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold text-white tracking-tight leading-[1.08] font-['Plus_Jakarta_Sans',sans-serif]">
               Let’s Power the
               <br />
               <span className="text-[#32aa15]">Future Together.</span>
@@ -178,7 +178,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
                 <span>SEND US A MESSAGE</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 tracking-tight font-['Wix_Madefor_Display',sans-serif] mb-2">
+              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif] mb-2">
                 We’d Love to Hear from You.
               </h2>
               <p className="text-xs sm:text-sm text-slate-500 mb-5 font-normal">
@@ -335,7 +335,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
                       <span>OUR OFFICE</span>
                     </div>
 
-                    <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 tracking-tight font-['Wix_Madefor_Display',sans-serif] mb-2">
+                    <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif] mb-2">
                       Visit Our Office
                     </h2>
                     <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
@@ -458,7 +458,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
           {/* Header Row */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-semibold text-slate-900 tracking-tight font-['Wix_Madefor_Display',sans-serif]">
+              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
                 Frequently Asked <span className="text-[#32aa15]">Questions</span>
               </h2>
               <p className="text-xs sm:text-sm text-slate-500 mt-2">
@@ -555,7 +555,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
 
             {/* Left Content */}
             <div className="relative z-20 max-w-xl space-y-3 sm:space-y-4">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight font-['Wix_Madefor_Display',sans-serif] text-white leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold tracking-tight font-['Wix_Madefor_Display',sans-serif] text-white leading-[1.15] sm:leading-[1.18]">
                 Ready to Invest in the
                 <br />
                 <span className="text-[#32aa15]">Future of Mobility?</span>

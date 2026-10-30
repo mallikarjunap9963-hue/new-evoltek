@@ -110,76 +110,144 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
       onClick={() => setPartnerModalOpen(false)}
     >
       <div
-        className="bg-white w-full max-w-2xl rounded-3xl shadow-2xl border border-slate-200 overflow-hidden relative animate-in zoom-in-95 duration-200 max-h-[92vh] flex flex-col"
+        className="bg-white w-full max-w-6xl rounded-3xl shadow-2xl border border-slate-200 overflow-hidden relative animate-in zoom-in-95 duration-200 max-h-[92vh] md:h-[min(92vh,760px)] flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
+        <aside className="relative hidden md:flex md:w-[40%] lg:w-[42%] shrink-0 flex-col justify-between overflow-hidden bg-[#102c2e] p-7 lg:p-9 text-white">
+          <img
+            src="/breadcrumb.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-[66%_center]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/45 via-slate-950/15 to-[#06251c]/95" />
 
-        {/* Modal Header */}
-        <div className="bg-[#171E23] text-white p-5 sm:p-7 shrink-0 relative border-b border-white/10">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <div className="inline-flex items-center gap-2 text-[#32aa15] text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em]">
-                <Sparkles className="w-3.5 h-3.5 text-[#32aa15]" />
-                <span>FRANCHISE OPPORTUNITY PORTAL</span>
-              </div>
-              <h3 className="text-xl sm:text-2xl font-black text-white mt-0.5 tracking-tight">
-                Partner With Evoltek Network
-              </h3>
-              <p className="text-slate-300 text-xs sm:text-sm mt-1 max-w-lg leading-relaxed">
-                Choose the partnership form that fits you best — invest as a franchise co-owner or monetize your vacant land.
-              </p>
-            </div>
-            <button
-              onClick={() => setPartnerModalOpen(false)}
-              className="p-2 text-slate-400 hover:text-white transition-colors rounded-full hover:bg-white/10 shrink-0 cursor-pointer"
-              aria-label="Close Modal"
-            >
-              <X className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
+          <div className="relative z-10">
+            <img src="/logo.png" alt="Evoltek" className="h-10 w-auto object-contain brightness-0 invert" />
           </div>
 
-          {/* 2 Best Forms Tab Switcher */}
-          {!modalSubmitted && (
-            <div className="mt-5 grid grid-cols-2 gap-2 bg-white/10 p-1.5 rounded-2xl border border-white/10">
-              {/* Tab 1: Franchise Partner */}
-              <button
-                type="button"
-                onClick={() => {
-                  setActiveTab('franchise');
-                  setModalOption('Franchise Opportunity');
-                }}
-                className={`flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer ${
-                  activeTab === 'franchise'
-                    ? 'bg-[#32aa15] text-white shadow-md shadow-[#32aa15]/30'
-                    : 'text-slate-300 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                <Building2 className="w-4 h-4 shrink-0" />
-                <span className="truncate">1. Franchise Partner Form</span>
-              </button>
+          <div className="relative z-10 mt-auto">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#8df36f]">
+              Clean energy. Better opportunities.
+            </p>
+            <h2 className="max-w-sm text-3xl lg:text-4xl font-black leading-[1.08] tracking-tight">
+              Partner With <span className="text-[#8df36f]">Evoltek Network</span>
+            </h2>
+            <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/85">
+              Be part of India’s growing EV charging network and build a sustainable future together.
+            </p>
 
-              {/* Tab 2: Landowner Partner */}
-              <button
-                type="button"
-                onClick={() => {
-                  setActiveTab('landowner');
-                  setModalOption('Landowner Partnership');
-                }}
-                className={`flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer ${
-                  activeTab === 'landowner'
-                    ? 'bg-[#32aa15] text-white shadow-md shadow-[#32aa15]/30'
-                    : 'text-slate-300 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                <MapPin className="w-4 h-4 shrink-0" />
-                <span className="truncate">2. Landowner Partner Form</span>
-              </button>
+            <div className="mt-7 grid grid-cols-2 gap-x-4 gap-y-4 border-t border-white/20 pt-5">
+              <div className="flex items-center gap-2.5 text-xs font-semibold text-white/90">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#32aa15]/70 bg-[#32aa15]/20 text-[#8df36f]">
+                  <Building2 className="h-4 w-4" />
+                </span>
+                Growing EV market
+              </div>
+              <div className="flex items-center gap-2.5 text-xs font-semibold text-white/90">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#32aa15]/70 bg-[#32aa15]/20 text-[#8df36f]">
+                  <ShieldCheck className="h-4 w-4" />
+                </span>
+                Turnkey support
+              </div>
+              <div className="flex items-center gap-2.5 text-xs font-semibold text-white/90">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#32aa15]/70 bg-[#32aa15]/20 text-[#8df36f]">
+                  <Zap className="h-4 w-4" />
+                </span>
+                Reliable charging
+              </div>
+              <div className="flex items-center gap-2.5 text-xs font-semibold text-white/90">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#32aa15]/70 bg-[#32aa15]/20 text-[#8df36f]">
+                  <PhoneCall className="h-4 w-4" />
+                </span>
+                Long-term growth
+              </div>
             </div>
-          )}
-        </div>
+          </div>
+        </aside>
 
-        {/* Modal Scrollable Body */}
-        <div className="p-5 sm:p-7 overflow-y-auto flex-1 text-slate-800">
+        <div className="flex min-h-0 min-w-0 flex-1 flex-col">
+          <div className="relative h-28 shrink-0 overflow-hidden md:hidden">
+            <img
+              src="/breadcrumb.png"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover object-[66%_center]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/60 to-slate-950/10" />
+            <img
+              src="/logo.png"
+              alt="Evoltek"
+              className="absolute left-5 top-1/2 h-9 w-auto -translate-y-1/2 object-contain brightness-0 invert"
+            />
+          </div>
+          <div className="relative shrink-0 border-b border-slate-100 bg-white px-5 pb-4 pt-5 sm:px-7 sm:pt-7">
+            <button
+              onClick={() => setPartnerModalOpen(false)}
+              className="absolute right-4 top-4 rounded-full bg-slate-100 p-2 text-slate-500 transition-colors hover:bg-slate-200 hover:text-slate-900 cursor-pointer"
+              aria-label="Close Modal"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div className="inline-flex items-center gap-1.5 pr-10 text-[10px] font-bold uppercase tracking-[0.18em] text-[#218d12] sm:text-xs">
+              <Sparkles className="h-3.5 w-3.5 shrink-0" />
+              <span>Franchise Opportunity Portal</span>
+            </div>
+            <h3 className="mt-2 pr-8 text-2xl font-black leading-tight tracking-tight text-slate-900 sm:text-3xl">
+              Start Your <span className="text-[#168f30]">{activeTab === 'franchise' ? 'Franchise' : 'Landowner'} Journey</span>
+            </h3>
+            <p className="mt-1.5 text-sm text-slate-600">
+              Fill in your details and our team will get in touch with you.
+            </p>
+
+            {!modalSubmitted && (
+              <div className="mt-5 grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveTab('franchise');
+                    setModalOption('Franchise Opportunity');
+                  }}
+                  className={`flex min-w-0 items-center gap-2 rounded-xl border px-3 py-2.5 text-left transition-all cursor-pointer ${
+                    activeTab === 'franchise'
+                      ? 'border-[#32aa15] bg-[#32aa15] text-white shadow-md shadow-[#32aa15]/20'
+                      : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-[#32aa15]/50'
+                  }`}
+                >
+                  <Building2 className="h-5 w-5 shrink-0" />
+                  <span className="min-w-0">
+                    <span className="block truncate text-xs font-bold sm:text-sm">Franchise Partner</span>
+                    <span className={`hidden truncate text-[10px] sm:block ${activeTab === 'franchise' ? 'text-white/80' : 'text-slate-500'}`}>
+                      Set up an EV charging station
+                    </span>
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveTab('landowner');
+                    setModalOption('Landowner Partnership');
+                  }}
+                  className={`flex min-w-0 items-center gap-2 rounded-xl border px-3 py-2.5 text-left transition-all cursor-pointer ${
+                    activeTab === 'landowner'
+                      ? 'border-[#32aa15] bg-[#32aa15] text-white shadow-md shadow-[#32aa15]/20'
+                      : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-[#32aa15]/50'
+                  }`}
+                >
+                  <MapPin className="h-5 w-5 shrink-0" />
+                  <span className="min-w-0">
+                    <span className="block truncate text-xs font-bold sm:text-sm">Landowner Partner</span>
+                    <span className={`hidden truncate text-[10px] sm:block ${activeTab === 'landowner' ? 'text-white/80' : 'text-slate-500'}`}>
+                      Monetize your vacant land
+                    </span>
+                  </span>
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Modal Scrollable Body */}
+          <div className="min-h-0 flex-1 overflow-y-auto p-5 text-slate-800 sm:p-7">
           {modalSubmitted ? (
             <div className="py-8 sm:py-12 text-center space-y-5">
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-emerald-100 text-[#32aa15] rounded-full flex items-center justify-center mx-auto shadow-inner animate-in zoom-in-50 duration-300">
@@ -225,7 +293,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
             <>
               {/* FORM 1: FRANCHISE PARTNER FORM */}
               {activeTab === 'franchise' && (
-                <form onSubmit={handleFranchiseSubmit} className="space-y-4">
+                <form onSubmit={handleFranchiseSubmit} className="space-y-3">
                   <div className="bg-emerald-50/70 border border-emerald-200/60 rounded-xl p-3 flex items-start gap-2.5 text-xs text-slate-700">
                     <Zap className="w-4 h-4 text-[#32aa15] shrink-0 mt-0.5" />
                     <span>
@@ -233,7 +301,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold uppercase tracking-wider text-slate-700">
                         Full Name *
@@ -263,7 +331,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold uppercase tracking-wider text-slate-700">
                         Email Address *
@@ -293,7 +361,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold uppercase tracking-wider text-slate-700">
                         Planned Investment Range
@@ -351,7 +419,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
 
               {/* FORM 2: LANDOWNER PARTNER FORM */}
               {activeTab === 'landowner' && (
-                <form onSubmit={handleLandownerSubmit} className="space-y-4">
+                <form onSubmit={handleLandownerSubmit} className="space-y-3">
                   <div className="bg-emerald-50/70 border border-emerald-200/60 rounded-xl p-3 flex items-start gap-2.5 text-xs text-slate-700">
                     <MapPin className="w-4 h-4 text-[#32aa15] shrink-0 mt-0.5" />
                     <span>
@@ -359,7 +427,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold uppercase tracking-wider text-slate-700">
                         Property Owner / Name *
@@ -389,7 +457,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold uppercase tracking-wider text-slate-700">
                         Email Address *
@@ -419,7 +487,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold uppercase tracking-wider text-slate-700">
                         Property Type
@@ -453,7 +521,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold uppercase tracking-wider text-slate-700">
                         Power / Grid Connection
@@ -528,6 +596,7 @@ export const PartnerModal: React.FC<PartnerModalProps> = ({
           )}
         </div>
 
+        </div>
       </div>
     </div>
   );

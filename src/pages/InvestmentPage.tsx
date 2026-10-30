@@ -5,7 +5,6 @@ import {
   CheckCircle2,
   ChevronRight,
   Download,
-  Leaf,
   FileText,
   Store,
   Calculator,
@@ -115,7 +114,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
             </p>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[62px] font-black text-white tracking-tight leading-[1.06] font-['Wix_Madefor_Display',sans-serif]">
+            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold text-white tracking-tight leading-[1.08] font-['Plus_Jakarta_Sans',sans-serif]">
               Invest Together.
               <br />
               <span className="text-[#32aa15]">Power a Greener Tomorrow.</span>
@@ -158,7 +157,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
               <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block">
                 WHY INVEST IN EV CHARGING?
               </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-snug font-['Wix_Madefor_Display',sans-serif]">
+              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
                 A High-Growth Opportunity
                 <br />
                 for a <span className="text-[#32aa15]">Cleaner Future</span>
@@ -248,7 +247,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
             <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-2">
               OUR INVESTMENT MODEL
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight font-['Wix_Madefor_Display',sans-serif]">
+            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
               Shared Investment. Shared Success.
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm mt-2 max-w-2xl mx-auto leading-relaxed">
@@ -534,7 +533,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
             <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-1">
               ROI CALCULATOR
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight font-['Wix_Madefor_Display',sans-serif]">
+            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
               Calculate Your ROI Potential
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
@@ -800,7 +799,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
             <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-2">
               HOW TO GET STARTED
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight font-['Wix_Madefor_Display',sans-serif]">
+            <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
               Simple Steps to Your EV Charging Business
             </h2>
           </div>
@@ -892,7 +891,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
 
             {/* Left Content */}
             <div className="relative z-20 max-w-xl space-y-3 sm:space-y-4">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight font-['Wix_Madefor_Display',sans-serif] text-white leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold tracking-tight font-['Wix_Madefor_Display',sans-serif] text-white leading-[1.15] sm:leading-[1.18]">
                 Ready to Invest in the
                 <br />
                 <span className="text-[#32aa15]">Future of Mobility?</span>
@@ -918,31 +917,6 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({ openModalWithOpt
                   <span>Download Brochure</span>
                   <Download className="w-4 h-4" />
                 </button>
-              </div>
-            </div>
-
-            {/* Right Floating Frosted Card with Badges */}
-            <div className="relative z-20 hidden md:flex flex-col gap-3.5 p-4 sm:p-5 rounded-2xl bg-black/55 backdrop-blur-md border border-white/15 shadow-2xl w-52 sm:w-60 shrink-0">
-              {/* Item 1: Clean Energy Today */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#32aa15]/20 border border-[#32aa15]/40 flex items-center justify-center shrink-0">
-                  <Leaf className="w-5 h-5 text-[#32aa15]" />
-                </div>
-                <div>
-                  <p className="text-xs sm:text-sm font-bold text-white leading-tight">Clean Energy</p>
-                  <p className="text-[11px] sm:text-xs text-slate-300">Today</p>
-                </div>
-              </div>
-
-              {/* Item 2: Stronger Tomorrow */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#32aa15]/20 border border-[#32aa15]/40 flex items-center justify-center shrink-0">
-                  <BarChart3 className="w-5 h-5 text-[#32aa15]" />
-                </div>
-                <div>
-                  <p className="text-xs sm:text-sm font-bold text-white leading-tight">Stronger</p>
-                  <p className="text-[11px] sm:text-xs text-slate-300">Tomorrow</p>
-                </div>
               </div>
             </div>
 
