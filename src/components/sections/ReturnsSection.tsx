@@ -37,7 +37,7 @@ export const ReturnsSection: React.FC<ReturnsSectionProps> = ({ openModalWithOpt
           <div className="bg-[#d1e7a7] rounded-[28px] sm:rounded-[32px] p-4 sm:p-6 md:p-8 shadow-xl border border-[#32aa15]/20 transition-shadow duration-300 hover:shadow-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-5 sm:gap-6 lg:gap-8">
               {/* Return summary card */}
-              <div className="bg-white rounded-[24px] sm:rounded-[26px] p-5 sm:p-7 shadow-sm border border-emerald-100/80 flex flex-col justify-between">
+              <div className="bg-white rounded-[24px] sm:rounded-[26px] p-5 sm:p-7 shadow-sm border border-emerald-100/80 flex flex-col justify-between lg:min-h-[400px]">
                 <div>
                   <div className="flex items-center justify-between gap-4 mb-3">
                     <div>
@@ -53,7 +53,7 @@ export const ReturnsSection: React.FC<ReturnsSectionProps> = ({ openModalWithOpt
                     </div>
                   </div>
 
-                  <p className="text-slate-500 text-sm font-medium mb-6">
+                  <p className="max-w-sm text-slate-500 text-sm font-medium leading-relaxed mb-6">
                     High annual yield potential backed by long-term EV charging growth.
                   </p>
                 </div>
@@ -91,19 +91,18 @@ export const ReturnsSection: React.FC<ReturnsSectionProps> = ({ openModalWithOpt
                   </div>
                 ))}
                 </div>
-              </div>
-            </div>
 
-            {/* Bottom CTA Button */}
-            <div className="pt-5 sm:pt-6">
-              <button
-                type="button"
-                onClick={() => openModalWithOption('Option A: 28% Percentage Return')}
-                className="w-full py-4 px-6 bg-[#171E23] hover:bg-[#32aa15] text-white font-bold text-sm sm:text-base rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
-              >
-                <span>CHOOSE PERCENTAGE MODEL</span>
-                <ArrowRight className="w-5 h-5 transition-transform hover:translate-x-1" />
-              </button>
+                <div className="pt-5 sm:pt-6">
+                  <button
+                    type="button"
+                    onClick={() => openModalWithOption('Option A: 28% Percentage Return')}
+                    className="w-full py-4 px-6 bg-[#171E23] hover:bg-[#32aa15] text-white font-bold text-sm sm:text-base rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer"
+                  >
+                    <span>CHOOSE PERCENTAGE MODEL</span>
+                    <ArrowRight className="w-5 h-5 transition-transform hover:translate-x-1" />
+                  </button>
+                </div>
+              </div>
             </div>
 
           </div>

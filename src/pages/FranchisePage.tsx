@@ -366,60 +366,56 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
               <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-5 gap-y-5">
 
                 {/* Tile 1: Cafeteria & Restaurants */}
-                <div className="group">
-                  <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] border border-slate-200/80 shadow-md">
-                    <img
-                      src="/hub_amenity_cafe.jpg"
-                      alt="Cafeteria & Restaurants"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                  <div className="mt-2.5 flex items-center gap-2 text-[#32aa15]">
+                <div className="relative group rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] border border-slate-200/80 shadow-md">
+                  <img
+                    src="/hub_amenity_cafe.jpg"
+                    alt="Cafeteria & Restaurants"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/75 to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-3.5 flex items-center gap-2 text-white drop-shadow-md">
                     <Store className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 stroke-[2.2]" />
                     <span className="font-bold text-sm sm:text-base">Cafeteria &amp; Restaurants</span>
                   </div>
                 </div>
 
                 {/* Tile 2: Wi-Fi & Workspaces */}
-                <div className="group">
-                  <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] border border-slate-200/80 shadow-md">
-                    <img
-                      src="/hub_amenity_workspace.jpg"
-                      alt="Wi-Fi & Workspaces"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                  <div className="mt-2.5 flex items-center gap-2 text-[#32aa15]">
+                <div className="relative group rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] border border-slate-200/80 shadow-md">
+                  <img
+                    src="/hub_amenity_workspace.jpg"
+                    alt="Wi-Fi & Workspaces"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/75 to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-3.5 flex items-center gap-2 text-white drop-shadow-md">
                     <Monitor className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 stroke-[2.2]" />
                     <span className="font-bold text-sm sm:text-base">Wi-Fi &amp; Workspaces</span>
                   </div>
                 </div>
 
                 {/* Tile 3: Rooms & Rest Facilities */}
-                <div className="group">
-                  <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] border border-slate-200/80 shadow-md">
-                    <img
-                      src="/hub_amenity_rest_room.jpg"
-                      alt="Rooms & Rest Facilities"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                  <div className="mt-2.5 flex items-center gap-2 text-[#32aa15]">
+                <div className="relative group rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] border border-slate-200/80 shadow-md">
+                  <img
+                    src="/hub_amenity_rest_room.jpg"
+                    alt="Rooms & Rest Facilities"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/75 to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-3.5 flex items-center gap-2 text-white drop-shadow-md">
                     <Bed className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 stroke-[2.2]" />
                     <span className="font-bold text-sm sm:text-base">Rooms &amp; Rest Facilities</span>
                   </div>
                 </div>
 
                 {/* Tile 4: Gaming Area & Playzone */}
-                <div className="group">
-                  <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] border border-slate-200/80 shadow-md">
-                    <img
-                      src="/hub_amenity_gaming.jpg"
-                      alt="Gaming Area & Playzone"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                  <div className="mt-2.5 flex items-center gap-2 text-[#32aa15]">
+                <div className="relative group rounded-2xl sm:rounded-3xl overflow-hidden h-[200px] sm:h-[220px] lg:h-[240px] border border-slate-200/80 shadow-md">
+                  <img
+                    src="/hub_amenity_gaming.jpg"
+                    alt="Gaming Area & Playzone"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/75 to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-3.5 flex items-center gap-2 text-white drop-shadow-md">
                     <Gamepad2 className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 stroke-[2.2]" />
                     <span className="font-bold text-sm sm:text-base">Gaming Area &amp; Playzone</span>
                   </div>

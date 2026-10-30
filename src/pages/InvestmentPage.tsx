@@ -12,7 +12,10 @@ import {
   Shield,
   UserCheck,
   Compass,
-  Home
+  Home,
+  BarChart3,
+  CircleDollarSign,
+  Leaf
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { RoiCalculatorSection } from '../components/sections/RoiCalculatorSection';
@@ -133,56 +136,61 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
                 <span>YOUR INVESTMENT, MULTIPLE BENEFITS</span>
               </div>
 
-              <div className="space-y-4 sm:space-y-4.5">
+              <div className="space-y-4 sm:space-y-5">
 
                 {/* Benefit 1 */}
-                <div className="flex items-center gap-3.5 sm:gap-4 group">
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 text-[#32aa15] flex items-center justify-center shrink-0">
-                    <UserCheck className="w-5 h-5 sm:w-6 sm:h-6 text-[#32aa15] stroke-[2.2]" />
+                <div className="flex items-start gap-4 sm:gap-5 group">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 text-[#32aa15] flex items-center justify-center shrink-0">
+                    <UserCheck className="w-6 h-6 sm:w-7 sm:h-7 text-[#32aa15] stroke-[2.2]" />
                   </div>
-                  <p className="text-sm sm:text-[15px] text-slate-700 leading-normal">
-                    <strong className="font-bold text-slate-900">Shared investment</strong> – You invest only half the cost.
-                  </p>
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-slate-900 text-sm sm:text-base">Shared investment</h3>
+                    <p className="mt-1 text-sm sm:text-base text-slate-600 leading-relaxed">You invest only half the cost.</p>
+                  </div>
                 </div>
 
                 {/* Benefit 2 */}
-                <div className="flex items-center gap-3.5 sm:gap-4 group">
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 text-[#32aa15] flex items-center justify-center shrink-0">
-                    <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-[#32aa15] stroke-[2.2]" />
+                <div className="flex items-start gap-4 sm:gap-5 group">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 text-[#32aa15] flex items-center justify-center shrink-0">
+                    <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7 text-[#32aa15] stroke-[2.2]" />
                   </div>
-                  <p className="text-sm sm:text-[15px] text-slate-700 leading-normal">
-                    <strong className="font-bold text-slate-900">Hassle-free maintenance</strong> – Evoltek takes care of setup, operations and station maintenance.
-                  </p>
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-slate-900 text-sm sm:text-base">Hassle-free maintenance</h3>
+                    <p className="mt-1 text-sm sm:text-base text-slate-600 leading-relaxed">Evoltek takes care of setup, operations and station maintenance.</p>
+                  </div>
                 </div>
 
                 {/* Benefit 3 */}
-                <div className="flex items-center gap-3.5 sm:gap-4 group">
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 text-[#32aa15] flex items-center justify-center shrink-0">
-                    <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-[#32aa15] stroke-[2.2]" />
+                <div className="flex items-start gap-4 sm:gap-5 group">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 text-[#32aa15] flex items-center justify-center shrink-0">
+                    <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-[#32aa15] stroke-[2.2]" />
                   </div>
-                  <p className="text-sm sm:text-[15px] text-slate-700 leading-normal">
-                    <strong className="font-bold text-slate-900">Secure agreement</strong> – 10-year agreement with renewal option.
-                  </p>
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-slate-900 text-sm sm:text-base">Secure agreement</h3>
+                    <p className="mt-1 text-sm sm:text-base text-slate-600 leading-relaxed">10-year agreement with renewal option.</p>
+                  </div>
                 </div>
 
                 {/* Benefit 4 */}
-                <div className="flex items-center gap-3.5 sm:gap-4 group">
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 text-[#32aa15] flex items-center justify-center shrink-0">
-                    <Compass className="w-5 h-5 sm:w-6 sm:h-6 text-[#32aa15] stroke-[2.2]" />
+                <div className="flex items-start gap-4 sm:gap-5 group">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 text-[#32aa15] flex items-center justify-center shrink-0">
+                    <Compass className="w-6 h-6 sm:w-7 sm:h-7 text-[#32aa15] stroke-[2.2]" />
                   </div>
-                  <p className="text-sm sm:text-[15px] text-slate-700 leading-normal">
-                    <strong className="font-bold text-slate-900">Transparency</strong> – Track your station's performance through the Evoltek mobile app.
-                  </p>
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-slate-900 text-sm sm:text-base">Transparency</h3>
+                    <p className="mt-1 text-sm sm:text-base text-slate-600 leading-relaxed">Track your station's performance through the Evoltek mobile app.</p>
+                  </div>
                 </div>
 
                 {/* Benefit 5 */}
-                <div className="flex items-center gap-3.5 sm:gap-4 group">
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 text-[#32aa15] flex items-center justify-center shrink-0">
-                    <Store className="w-5 h-5 sm:w-6 sm:h-6 text-[#32aa15] stroke-[2.2]" />
+                <div className="flex items-start gap-4 sm:gap-5 group">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 text-[#32aa15] flex items-center justify-center shrink-0">
+                    <Store className="w-6 h-6 sm:w-7 sm:h-7 text-[#32aa15] stroke-[2.2]" />
                   </div>
-                  <p className="text-sm sm:text-[15px] text-slate-700 leading-normal">
-                    <strong className="font-bold text-slate-900">Extra income potential</strong> – Highway hubs can include cafeteria, restaurant or gaming area.
-                  </p>
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-slate-900 text-sm sm:text-base">Extra income potential</h3>
+                    <p className="mt-1 text-sm sm:text-base text-slate-600 leading-relaxed">Highway hubs can include cafeteria, restaurant or gaming area.</p>
+                  </div>
                 </div>
 
               </div>
@@ -313,12 +321,8 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
 
               {/* Card 1 */}
               <div className="flex items-start gap-3.5 rounded-2xl border border-[#32aa15]/25 bg-[#d1e7a7] p-4 sm:p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#32aa15]/50 hover:shadow-md">
-                <div className="w-14 h-14 shrink-0 rounded-xl bg-[#f0f9e8] flex items-center justify-center">
-                  <img
-                    src="/icon_3d_scalable_network.png"
-                    alt="High Growth Potential"
-                    className="w-11 h-11 object-contain filter drop-shadow-sm"
-                  />
+                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+                  <BarChart3 className="w-9 h-9 text-[#32aa15] stroke-[1.8]" aria-hidden="true" />
                 </div>
                 <div className="min-w-0">
                   <h3 className="font-bold text-slate-900 text-sm sm:text-base font-['Wix_Madefor_Display',sans-serif]">High Growth Potential</h3>
@@ -330,12 +334,8 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
 
               {/* Card 2 */}
               <div className="flex items-start gap-3.5 rounded-2xl border border-[#32aa15]/25 bg-[#d1e7a7] p-4 sm:p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#32aa15]/50 hover:shadow-md">
-                <div className="w-14 h-14 shrink-0 rounded-xl bg-[#f0f9e8] flex items-center justify-center">
-                  <img
-                    src="/icon_3d_flexible_returns.jpg"
-                    alt="Attractive Returns"
-                    className="w-11 h-11 object-contain filter drop-shadow-sm"
-                  />
+                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+                  <CircleDollarSign className="w-9 h-9 text-[#32aa15] stroke-[1.8]" aria-hidden="true" />
                 </div>
                 <div className="min-w-0">
                   <h3 className="font-bold text-slate-900 text-sm sm:text-base font-['Wix_Madefor_Display',sans-serif]">Attractive Returns</h3>
@@ -347,12 +347,8 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
 
               {/* Card 3 */}
               <div className="flex items-start gap-3.5 rounded-2xl border border-[#32aa15]/25 bg-[#d1e7a7] p-4 sm:p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#32aa15]/50 hover:shadow-md">
-                <div className="w-14 h-14 shrink-0 rounded-xl bg-[#f0f9e8] flex items-center justify-center">
-                  <img
-                    src="/icon_3d_val_sustainability.png"
-                    alt="Future-Proof Investment"
-                    className="w-11 h-11 object-contain filter drop-shadow-sm"
-                  />
+                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+                  <Leaf className="w-9 h-9 text-[#32aa15] stroke-[1.8]" aria-hidden="true" />
                 </div>
                 <div className="min-w-0">
                   <h3 className="font-bold text-slate-900 text-sm sm:text-base font-['Wix_Madefor_Display',sans-serif]">Future-Proof Investment</h3>
@@ -364,12 +360,8 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
 
               {/* Card 4 */}
               <div className="flex items-start gap-3.5 rounded-2xl border border-[#32aa15]/25 bg-[#d1e7a7] p-4 sm:p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#32aa15]/50 hover:shadow-md">
-                <div className="w-14 h-14 shrink-0 rounded-xl bg-[#f0f9e8] flex items-center justify-center">
-                  <img
-                    src="/icon_3d_val_partnership.png"
-                    alt="Partner With Experts"
-                    className="w-11 h-11 object-contain filter drop-shadow-sm"
-                  />
+                <div className="w-14 h-14 shrink-0 flex items-center justify-center">
+                  <Handshake className="w-9 h-9 text-[#32aa15] stroke-[1.8]" aria-hidden="true" />
                 </div>
                 <div className="min-w-0">
                   <h3 className="font-bold text-slate-900 text-sm sm:text-base font-['Wix_Madefor_Display',sans-serif]">Partner With Experts</h3>

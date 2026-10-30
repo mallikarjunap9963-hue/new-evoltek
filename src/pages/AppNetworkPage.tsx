@@ -150,7 +150,7 @@ export const AppNetworkPage: React.FC<AppNetworkPageProps> = ({ openModalWithOpt
       {/* =========================================================================
           2. APP FEATURES: "A Smarter Charging Experience"
           ========================================================================= */}
-      <section className="w-full bg-white py-10 sm:py-16">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
@@ -159,13 +159,16 @@ export const AppNetworkPage: React.FC<AppNetworkPageProps> = ({ openModalWithOpt
             <div className="lg:col-span-6 space-y-6">
               
               <div>
-                <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-1">
-                  APP FEATURES
-                </span>
+                <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em] mb-1">
+                  <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                  </svg>
+                  <span>APP FEATURES</span>
+                </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
                   A Smarter <span className="text-[#32aa15]">Charging Experience</span>
                 </h2>
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed pt-1.5">
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed pt-1.5 font-normal">
                   The Evoltek mobile app is designed to make EV charging simple, convenient and reliable for every driver.
                 </p>
               </div>
@@ -174,53 +177,53 @@ export const AppNetworkPage: React.FC<AppNetworkPageProps> = ({ openModalWithOpt
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                 
                 {/* Feature 1 */}
-                <div className="bg-[#f9fbf9] rounded-2xl p-4 sm:p-5 border border-[#32aa15]/35 shadow-xs hover:border-[#32aa15] hover:shadow-md transition-all group">
-                  <div className="w-12 h-12 rounded-full bg-[#e8fbf0] text-[#00c04b] flex items-center justify-center mb-3 shadow-2xs group-hover:scale-105 transition-transform">
-                    <MapPin className="w-6 h-6 text-[#00c04b] stroke-[2.2]" />
+                <div className="bg-[#d1e7a7] rounded-2xl p-4 sm:p-5 border border-[#c3dc9b] shadow-xs hover:border-[#32aa15] hover:shadow-md transition-all group">
+                  <div className="w-12 h-12 rounded-full bg-white/70 text-[#32aa15] flex items-center justify-center mb-3 shadow-2xs group-hover:scale-105 transition-transform">
+                    <MapPin className="w-6 h-6 text-[#32aa15] stroke-[2.2]" />
                   </div>
-                  <h3 className="text-xs sm:text-sm font-bold text-slate-900 font-['Wix_Madefor_Display',sans-serif]">
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 font-['Wix_Madefor_Display',sans-serif]">
                     Find Charging Stations
                   </h3>
-                  <p className="text-slate-500 text-[11px] sm:text-xs mt-1 leading-snug">
+                  <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
                     Locate nearby Evoltek stations on the map.
                   </p>
                 </div>
 
                 {/* Feature 2 */}
-                <div className="bg-[#f9fbf9] rounded-2xl p-4 sm:p-5 border border-[#32aa15]/35 shadow-xs hover:border-[#32aa15] hover:shadow-md transition-all group">
-                  <div className="w-12 h-12 rounded-full bg-[#e8fbf0] text-[#00c04b] flex items-center justify-center mb-3 shadow-2xs group-hover:scale-105 transition-transform">
-                    <Zap className="w-6 h-6 text-[#00c04b] stroke-[2.2]" />
+                <div className="bg-[#d1e7a7] rounded-2xl p-4 sm:p-5 border border-[#c3dc9b] shadow-xs hover:border-[#32aa15] hover:shadow-md transition-all group">
+                  <div className="w-12 h-12 rounded-full bg-white/70 text-[#32aa15] flex items-center justify-center mb-3 shadow-2xs group-hover:scale-105 transition-transform">
+                    <Zap className="w-6 h-6 text-[#32aa15] stroke-[2.2]" />
                   </div>
-                  <h3 className="text-xs sm:text-sm font-bold text-slate-900 font-['Wix_Madefor_Display',sans-serif]">
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 font-['Wix_Madefor_Display',sans-serif]">
                     Live Availability
                   </h3>
-                  <p className="text-slate-500 text-[11px] sm:text-xs mt-1 leading-snug">
+                  <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
                     Check real-time charger status and power type.
                   </p>
                 </div>
 
                 {/* Feature 3 */}
-                <div className="bg-[#f9fbf9] rounded-2xl p-4 sm:p-5 border border-[#32aa15]/35 shadow-xs hover:border-[#32aa15] hover:shadow-md transition-all group">
-                  <div className="w-12 h-12 rounded-full bg-[#e8fbf0] text-[#00c04b] flex items-center justify-center mb-3 shadow-2xs group-hover:scale-105 transition-transform">
-                    <Calendar className="w-6 h-6 text-[#00c04b] stroke-[2.2]" />
+                <div className="bg-[#d1e7a7] rounded-2xl p-4 sm:p-5 border border-[#c3dc9b] shadow-xs hover:border-[#32aa15] hover:shadow-md transition-all group">
+                  <div className="w-12 h-12 rounded-full bg-white/70 text-[#32aa15] flex items-center justify-center mb-3 shadow-2xs group-hover:scale-105 transition-transform">
+                    <Calendar className="w-6 h-6 text-[#32aa15] stroke-[2.2]" />
                   </div>
-                  <h3 className="text-xs sm:text-sm font-bold text-slate-900 font-['Wix_Madefor_Display',sans-serif]">
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 font-['Wix_Madefor_Display',sans-serif]">
                     Book Your Slot
                   </h3>
-                  <p className="text-slate-500 text-[11px] sm:text-xs mt-1 leading-snug">
+                  <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
                     Reserve a charger before you arrive.
                   </p>
                 </div>
 
                 {/* Feature 4 */}
-                <div className="bg-[#f9fbf9] rounded-2xl p-4 sm:p-5 border border-[#32aa15]/35 shadow-xs hover:border-[#32aa15] hover:shadow-md transition-all group">
-                  <div className="w-12 h-12 rounded-full bg-[#e8fbf0] text-[#00c04b] flex items-center justify-center mb-3 shadow-2xs group-hover:scale-105 transition-transform">
-                    <CreditCard className="w-6 h-6 text-[#00c04b] stroke-[2.2]" />
+                <div className="bg-[#d1e7a7] rounded-2xl p-4 sm:p-5 border border-[#c3dc9b] shadow-xs hover:border-[#32aa15] hover:shadow-md transition-all group">
+                  <div className="w-12 h-12 rounded-full bg-white/70 text-[#32aa15] flex items-center justify-center mb-3 shadow-2xs group-hover:scale-105 transition-transform">
+                    <CreditCard className="w-6 h-6 text-[#32aa15] stroke-[2.2]" />
                   </div>
-                  <h3 className="text-xs sm:text-sm font-bold text-slate-900 font-['Wix_Madefor_Display',sans-serif]">
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 font-['Wix_Madefor_Display',sans-serif]">
                     Secure Payments
                   </h3>
-                  <p className="text-slate-500 text-[11px] sm:text-xs mt-1 leading-snug">
+                  <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
                     Multiple payment options with a safe and secure system.
                   </p>
                 </div>
@@ -249,7 +252,7 @@ export const AppNetworkPage: React.FC<AppNetworkPageProps> = ({ openModalWithOpt
       {/* =========================================================================
           3. OUR CHARGING NETWORK: "Growing Across Cities & Highways"
           ========================================================================= */}
-      <section className="w-full bg-white py-10 sm:py-16">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Main Card Container Matching Mockup */}
@@ -259,9 +262,12 @@ export const AppNetworkPage: React.FC<AppNetworkPageProps> = ({ openModalWithOpt
               {/* Left Column: Heading, Subtitle, 4 Large Stats & Button (5 cols) */}
               <div className="lg:col-span-5 space-y-6">
                 <div>
-                  <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-1.5">
-                    OUR CHARGING NETWORK
-                  </span>
+                  <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em] mb-1.5">
+                    <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                    </svg>
+                    <span>OUR CHARGING NETWORK</span>
+                  </div>
                   <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
                     Growing Across
                     <br />
@@ -277,57 +283,57 @@ export const AppNetworkPage: React.FC<AppNetworkPageProps> = ({ openModalWithOpt
                   
                   {/* Stat 1 */}
                   <div className="space-y-1.5 group">
-                    <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#e8fbf0] text-[#00c04b] flex items-center justify-center mb-2.5 shadow-2xs group-hover:scale-105 transition-transform">
-                      <MapPin className="w-6 h-6 text-[#00c04b] stroke-[2.2]" />
+                    <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#e8fbf0] text-[#32aa15] flex items-center justify-center mb-2.5 shadow-2xs group-hover:scale-105 transition-transform">
+                      <MapPin className="w-6 h-6 text-[#32aa15] stroke-[2.2]" />
                     </div>
                     <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-slate-900 font-['Wix_Madefor_Display',sans-serif] tracking-tight leading-none">
                       50+
                     </div>
-                    <p className="text-slate-600 text-xs sm:text-sm leading-snug font-medium pt-1">
+                    <p className="text-slate-600 text-sm sm:text-base leading-snug font-medium pt-1">
                       Charging Locations
-                      <span className="text-slate-400 block text-[11px] sm:text-xs font-normal">(Deployed &amp; Growing)</span>
+                      <span className="text-slate-500 block text-xs sm:text-sm font-normal">(Deployed &amp; Growing)</span>
                     </p>
                   </div>
 
                   {/* Stat 2 */}
                   <div className="space-y-1.5 border-l-2 border-slate-200/80 pl-6 sm:pl-8 group">
-                    <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#e8fbf0] text-[#00c04b] flex items-center justify-center mb-2.5 shadow-2xs group-hover:scale-105 transition-transform">
-                      <Fuel className="w-6 h-6 text-[#00c04b] stroke-[2.2]" />
+                    <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#e8fbf0] text-[#32aa15] flex items-center justify-center mb-2.5 shadow-2xs group-hover:scale-105 transition-transform">
+                      <Fuel className="w-6 h-6 text-[#32aa15] stroke-[2.2]" />
                     </div>
                     <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-slate-900 font-['Wix_Madefor_Display',sans-serif] tracking-tight leading-none">
                       200+
                     </div>
-                    <p className="text-slate-600 text-xs sm:text-sm leading-snug font-medium pt-1">
+                    <p className="text-slate-600 text-sm sm:text-base leading-snug font-medium pt-1">
                       DC &amp; AC Chargers
-                      <span className="text-slate-400 block text-[11px] sm:text-xs font-normal">Installed</span>
+                      <span className="text-slate-500 block text-xs sm:text-sm font-normal">Installed</span>
                     </p>
                   </div>
 
                   {/* Stat 3 */}
                   <div className="space-y-1.5 pt-1 group">
-                    <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#e8fbf0] text-[#00c04b] flex items-center justify-center mb-2.5 shadow-2xs group-hover:scale-105 transition-transform">
-                      <Globe className="w-6 h-6 text-[#00c04b] stroke-[2.2]" />
+                    <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#e8fbf0] text-[#32aa15] flex items-center justify-center mb-2.5 shadow-2xs group-hover:scale-105 transition-transform">
+                      <Globe className="w-6 h-6 text-[#32aa15] stroke-[2.2]" />
                     </div>
                     <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-slate-900 font-['Wix_Madefor_Display',sans-serif] tracking-tight leading-none">
                       25+
                     </div>
-                    <p className="text-slate-600 text-xs sm:text-sm leading-snug font-medium pt-1">
+                    <p className="text-slate-600 text-sm sm:text-base leading-snug font-medium pt-1">
                       Partner Collaborations
-                      <span className="text-slate-400 block text-[11px] sm:text-xs font-normal">Across India</span>
+                      <span className="text-slate-500 block text-xs sm:text-sm font-normal">Across India</span>
                     </p>
                   </div>
 
                   {/* Stat 4 */}
                   <div className="space-y-1.5 border-l-2 border-slate-200/80 pl-6 sm:pl-8 pt-1 group">
-                    <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#e8fbf0] text-[#00c04b] flex items-center justify-center mb-2.5 shadow-2xs group-hover:scale-105 transition-transform">
-                      <Clock className="w-6 h-6 text-[#00c04b] stroke-[2.2]" />
+                    <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#e8fbf0] text-[#32aa15] flex items-center justify-center mb-2.5 shadow-2xs group-hover:scale-105 transition-transform">
+                      <Clock className="w-6 h-6 text-[#32aa15] stroke-[2.2]" />
                     </div>
                     <div className="text-3xl sm:text-4xl lg:text-[42px] font-black text-slate-900 font-['Wix_Madefor_Display',sans-serif] tracking-tight leading-none">
                       24/7
                     </div>
-                    <p className="text-slate-600 text-xs sm:text-sm leading-snug font-medium pt-1">
+                    <p className="text-slate-600 text-sm sm:text-base leading-snug font-medium pt-1">
                       Monitoring &amp; Support
-                      <span className="text-slate-400 block text-[11px] sm:text-xs font-normal">Always On</span>
+                      <span className="text-slate-500 block text-xs sm:text-sm font-normal">Always On</span>
                     </p>
                   </div>
 
@@ -410,13 +416,16 @@ export const AppNetworkPage: React.FC<AppNetworkPageProps> = ({ openModalWithOpt
       {/* =========================================================================
           4. FOR EV DRIVERS: "Why Use the Evoltek App?"
           ========================================================================= */}
-      <section className="w-full bg-white py-10 sm:py-14">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="mb-6 sm:mb-8 text-center sm:text-left">
-            <span className="text-[#32aa15] text-xs font-bold uppercase tracking-wider block mb-1">
-              FOR EV DRIVERS
-            </span>
+            <div className="inline-flex items-center gap-2.5 text-[#32aa15] text-xs sm:text-sm font-bold uppercase tracking-[0.2em] mb-1">
+              <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+              <span>FOR EV DRIVERS</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#1C2029] tracking-tight leading-[1.15] sm:leading-[1.18] font-['Wix_Madefor_Display',sans-serif]">
               Why Use the Evoltek App?
             </h2>
@@ -427,14 +436,14 @@ export const AppNetworkPage: React.FC<AppNetworkPageProps> = ({ openModalWithOpt
             
             {/* Card 1: Easy & Convenient */}
             <div className="bg-[#f9fbf9] rounded-2xl p-4 sm:p-5 border border-slate-100/90 shadow-2xs flex items-center gap-3.5 group hover:border-[#32aa15]/40 hover:shadow-md transition-all">
-              <div className="w-12 h-12 rounded-full bg-[#e8fbf0] text-[#00c04b] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-2xs">
-                <Car className="w-6 h-6 text-[#00c04b] stroke-[2.2]" />
+              <div className="w-12 h-12 rounded-full bg-[#e8fbf0] text-[#32aa15] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-2xs">
+                <Car className="w-6 h-6 text-[#32aa15] stroke-[2.2]" />
               </div>
               <div>
-                <h3 className="font-bold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">
+                <h3 className="font-bold text-slate-900 text-sm sm:text-base font-['Wix_Madefor_Display',sans-serif]">
                   Easy &amp; Convenient
                 </h3>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-0.5 leading-snug">
+                <p className="text-slate-600 text-xs sm:text-sm mt-0.5 leading-relaxed">
                   Find, book and pay in a few taps.
                 </p>
               </div>
@@ -442,14 +451,14 @@ export const AppNetworkPage: React.FC<AppNetworkPageProps> = ({ openModalWithOpt
 
             {/* Card 2: Reliable Network */}
             <div className="bg-[#f9fbf9] rounded-2xl p-4 sm:p-5 border border-slate-100/90 shadow-2xs flex items-center gap-3.5 group hover:border-[#32aa15]/40 hover:shadow-md transition-all">
-              <div className="w-12 h-12 rounded-full bg-[#e8fbf0] text-[#00c04b] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-2xs">
-                <Zap className="w-6 h-6 text-[#00c04b] stroke-[2.2]" />
+              <div className="w-12 h-12 rounded-full bg-[#e8fbf0] text-[#32aa15] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-2xs">
+                <Zap className="w-6 h-6 text-[#32aa15] stroke-[2.2]" />
               </div>
               <div>
-                <h3 className="font-bold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">
+                <h3 className="font-bold text-slate-900 text-sm sm:text-base font-['Wix_Madefor_Display',sans-serif]">
                   Reliable Network
                 </h3>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-0.5 leading-snug">
+                <p className="text-slate-600 text-xs sm:text-sm mt-0.5 leading-relaxed">
                   Fast and high-power charging options.
                 </p>
               </div>
@@ -457,14 +466,14 @@ export const AppNetworkPage: React.FC<AppNetworkPageProps> = ({ openModalWithOpt
 
             {/* Card 3: Transparent Payments */}
             <div className="bg-[#f9fbf9] rounded-2xl p-4 sm:p-5 border border-slate-100/90 shadow-2xs flex items-center gap-3.5 group hover:border-[#32aa15]/40 hover:shadow-md transition-all">
-              <div className="w-12 h-12 rounded-full bg-[#e8fbf0] text-[#00c04b] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-2xs">
-                <ShieldCheck className="w-6 h-6 text-[#00c04b] stroke-[2.2]" />
+              <div className="w-12 h-12 rounded-full bg-[#e8fbf0] text-[#32aa15] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-2xs">
+                <ShieldCheck className="w-6 h-6 text-[#32aa15] stroke-[2.2]" />
               </div>
               <div>
-                <h3 className="font-bold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">
+                <h3 className="font-bold text-slate-900 text-sm sm:text-base font-['Wix_Madefor_Display',sans-serif]">
                   Transparent Payments
                 </h3>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-0.5 leading-snug">
+                <p className="text-slate-600 text-xs sm:text-sm mt-0.5 leading-relaxed">
                   Clear pricing with digital invoices.
                 </p>
               </div>
@@ -472,14 +481,14 @@ export const AppNetworkPage: React.FC<AppNetworkPageProps> = ({ openModalWithOpt
 
             {/* Card 4: Always Supported */}
             <div className="bg-[#f9fbf9] rounded-2xl p-4 sm:p-5 border border-slate-100/90 shadow-2xs flex items-center gap-3.5 group hover:border-[#32aa15]/40 hover:shadow-md transition-all">
-              <div className="w-12 h-12 rounded-full bg-[#e8fbf0] text-[#00c04b] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-2xs">
-                <Headphones className="w-6 h-6 text-[#00c04b] stroke-[2.2]" />
+              <div className="w-12 h-12 rounded-full bg-[#e8fbf0] text-[#32aa15] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-2xs">
+                <Headphones className="w-6 h-6 text-[#32aa15] stroke-[2.2]" />
               </div>
               <div>
-                <h3 className="font-bold text-slate-900 text-xs sm:text-sm font-['Wix_Madefor_Display',sans-serif]">
+                <h3 className="font-bold text-slate-900 text-sm sm:text-base font-['Wix_Madefor_Display',sans-serif]">
                   Always Supported
                 </h3>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-0.5 leading-snug">
+                <p className="text-slate-600 text-xs sm:text-sm mt-0.5 leading-relaxed">
                   24/7 customer assistance.
                 </p>
               </div>

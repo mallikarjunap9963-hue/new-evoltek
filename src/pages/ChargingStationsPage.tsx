@@ -301,22 +301,22 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     className="max-h-full max-w-full object-contain filter drop-shadow-md"
                   />
                 </div>
-                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-center mb-1">
+                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-left mb-1">
                   60 kW DC Charger
                 </h3>
               </div>
               <div className="mt-1 space-y-2 pt-1 border-t border-slate-100 text-[11px] sm:text-xs">
                 <div className="flex items-center gap-2 text-slate-700">
                   <Zap className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
-                  <span className="font-medium">60 kW</span>
+                  <span className="font-semibold text-slate-800">60 kW</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-700">
                   <Fuel className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
-                  <span className="font-medium">Dual Connectors</span>
+                  <span className="font-semibold text-slate-800">Dual Connectors</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-700">
                   <Building2 className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
-                  <span className="font-medium">Ideal for City Locations</span>
+                  <span className="font-semibold text-slate-800">Ideal for City Locations</span>
                 </div>
               </div>
             </div>
@@ -331,22 +331,22 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     className="max-h-full max-w-full object-contain filter drop-shadow-md"
                   />
                 </div>
-                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-center mb-1">
+                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-left mb-1">
                   120 kW DC Charger
                 </h3>
               </div>
               <div className="mt-1 space-y-2 pt-1 border-t border-slate-100 text-[11px] sm:text-xs">
                 <div className="flex items-center gap-2 text-slate-700">
                   <Zap className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
-                  <span className="font-medium">120 kW</span>
+                  <span className="font-semibold text-slate-800">120 kW</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-700">
                   <Fuel className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
-                  <span className="font-medium">Dual Connectors</span>
+                  <span className="font-semibold text-slate-800">Dual Connectors</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-700">
                   <Navigation className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
-                  <span className="font-medium">For City &amp; Highway</span>
+                  <span className="font-semibold text-slate-800">For City &amp; Highway</span>
                 </div>
               </div>
             </div>
@@ -361,22 +361,22 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     className="max-h-full max-w-full object-contain filter drop-shadow-md"
                   />
                 </div>
-                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-center mb-1">
+                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-left mb-1">
                   240 kW DC Charger
                 </h3>
               </div>
               <div className="mt-1 space-y-2 pt-1 border-t border-slate-100 text-[11px] sm:text-xs">
                 <div className="flex items-center gap-2 text-slate-700">
                   <Zap className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
-                  <span className="font-medium">240 kW</span>
+                  <span className="font-semibold text-slate-800">240 kW</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-700">
                   <Fuel className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
-                  <span className="font-medium">Dual Connectors</span>
+                  <span className="font-semibold text-slate-800">Dual Connectors</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-700">
                   <Navigation className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
-                  <span className="font-medium">For Highway Stations</span>
+                  <span className="font-semibold text-slate-800">For Highway Stations</span>
                 </div>
               </div>
             </div>
@@ -391,22 +391,22 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     className="max-h-full max-w-full object-contain filter drop-shadow-md"
                   />
                 </div>
-                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-center mb-1">
+                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-left mb-1">
                   360 kW DC Charger
                 </h3>
               </div>
               <div className="mt-1 space-y-2 pt-1 border-t border-slate-100 text-[11px] sm:text-xs">
                 <div className="flex items-center gap-2 text-slate-700">
                   <Zap className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
-                  <span className="font-medium">360 kW</span>
+                  <span className="font-semibold text-slate-800">360 kW</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-700">
                   <Fuel className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
-                  <span className="font-medium">Multiple Connectors</span>
+                  <span className="font-semibold text-slate-800">Multiple Connectors</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-700">
                   <Navigation className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
-                  <span className="font-medium">For Highway Hubs</span>
+                  <span className="font-semibold text-slate-800">For Highway Hubs</span>
                 </div>
               </div>
             </div>
@@ -421,22 +421,22 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
                     className="max-h-full max-w-full object-contain filter drop-shadow-md"
                   />
                 </div>
-                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-center mb-1">
+                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base group-hover:text-[#32aa15] transition-colors font-['Wix_Madefor_Display',sans-serif] text-left mb-1">
                   480 kW DC Charger
                 </h3>
               </div>
               <div className="mt-1 space-y-2 pt-1 border-t border-slate-100 text-[11px] sm:text-xs">
                 <div className="flex items-center gap-2 text-slate-700">
                   <Zap className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
-                  <span className="font-medium">480 kW</span>
+                  <span className="font-semibold text-slate-800">480 kW</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-700">
                   <Fuel className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
-                  <span className="font-medium">Multiple Connectors</span>
+                  <span className="font-semibold text-slate-800">Multiple Connectors</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-700">
                   <Navigation className="w-3.5 h-3.5 text-[#32aa15] shrink-0" />
-                  <span className="font-medium">For Future-Ready Highway Stations</span>
+                  <span className="font-semibold text-slate-800">For Future-Ready Highway Stations</span>
                 </div>
               </div>
             </div>
