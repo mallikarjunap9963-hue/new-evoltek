@@ -39,10 +39,10 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <>
+    <div className="sticky top-0 z-50">
       {/* TOP WHITE NAVIGATION HEADER */}
       <header
-        className={`sticky top-0 left-0 right-0 z-50 w-full shrink-0 bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80 transition-all duration-300 py-0 text-slate-900 rounded-none ${
+        className={`relative w-full shrink-0 bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80 transition-all duration-300 py-0 text-slate-900 rounded-none ${
           isScrolled ? 'shadow-lg bg-white/98' : ''
         }`}
       >
@@ -97,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({
       {mobileMenuOpen && (
         <div
           id="mobile-primary-navigation"
-          className="lg:hidden bg-white border-b border-slate-200 px-6 py-5 animate-in slide-in-from-top duration-200 text-slate-900 absolute top-[68px] left-0 right-0 z-40 shadow-xl rounded-b-2xl"
+          className="lg:hidden absolute top-full left-0 right-0 z-40 bg-white border-b border-slate-200 px-6 py-5 animate-in slide-in-from-top duration-200 text-slate-900 shadow-xl rounded-b-2xl"
         >
           <nav aria-label="Mobile navigation" className="space-y-1">
             {NAV_LINKS.map((link) => {
@@ -134,6 +134,6 @@ export const Header: React.FC<HeaderProps> = ({
           )}
         </div>
       )}
-    </>
+    </div>
   );
 };

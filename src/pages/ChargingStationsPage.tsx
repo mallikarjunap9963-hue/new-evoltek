@@ -83,28 +83,27 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
               className="bg-white rounded-[28px] border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#32aa15]/50 transition-all duration-300 overflow-hidden flex flex-col justify-between"
             >
               {/* Upper Section: Half Content, Half Bleed Image with Soft Gradient Fade */}
-              <div className="relative min-h-[300px] sm:min-h-[330px] flex items-center overflow-hidden">
+              <div className="relative min-h-[340px] sm:min-h-[330px] flex items-center overflow-hidden">
                 {/* Right side bleed image */}
-                <div className="absolute right-0 top-0 bottom-0 w-[55%] sm:w-[58%] h-full">
+                <div className="absolute inset-0 sm:inset-y-0 sm:left-auto sm:right-0 sm:w-[58%] h-full">
                   <img
                     src="/highway charger.png"
                     alt="Highway Charging Station"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-[65%_center] sm:object-center"
                   />
-                  {/* Seamless fade gradient overlay from white into image */}
-                  <div className="absolute inset-y-0 left-0 w-24 sm:w-36 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/25 pointer-events-none sm:inset-y-0 sm:left-0 sm:right-auto sm:w-36 sm:bg-gradient-to-r sm:from-white sm:via-white/80 sm:to-transparent" />
                 </div>
 
                 {/* Left side content */}
-                <div className="relative z-10 w-full sm:w-[55%] p-6 sm:p-8 space-y-3 bg-gradient-to-r from-white via-white sm:via-white/95 to-transparent">
+                <div className="relative z-10 w-[90%] sm:w-[55%] p-5 sm:p-8 space-y-3 bg-transparent sm:bg-gradient-to-r sm:from-white sm:via-white/95 sm:to-transparent">
                   <span className="text-[#32aa15] font-extrabold text-[11px] sm:text-xs tracking-wider uppercase block">
                     HIGHWAY CHARGING STATION
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-[1.15] font-['Wix_Madefor_Display',sans-serif]">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white sm:text-slate-900 tracking-tight leading-[1.15] font-['Wix_Madefor_Display',sans-serif]">
                     Built for <br />
                     <span className="text-[#32aa15]">Longer Journeys</span>
                   </h3>
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-xs sm:max-w-sm">
+                  <p className="text-white/90 sm:text-slate-600 text-xs sm:text-sm leading-relaxed max-w-xs sm:max-w-sm">
                     Strategically located on highways, our charging stations provide high-speed charging along with traveller-friendly amenities, making long journeys comfortable and convenient.
                   </p>
                   <div className="pt-2">
@@ -175,28 +174,27 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
               className="bg-white rounded-[28px] border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-[#32aa15]/50 transition-all duration-300 overflow-hidden flex flex-col justify-between"
             >
               {/* Upper Section: Half Content, Half Bleed Image with Soft Gradient Fade */}
-              <div className="relative min-h-[300px] sm:min-h-[330px] flex items-center overflow-hidden">
+              <div className="relative min-h-[340px] sm:min-h-[330px] flex items-center overflow-hidden">
                 {/* Right side bleed image */}
-                <div className="absolute right-0 top-0 bottom-0 w-[55%] sm:w-[58%] h-full">
+                <div className="absolute inset-0 sm:inset-y-0 sm:left-auto sm:right-0 sm:w-[58%] h-full">
                   <img
                     src="/city chareger.png"
                     alt="City Charging Station"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-[65%_center] sm:object-center"
                   />
-                  {/* Seamless fade gradient overlay from white into image */}
-                  <div className="absolute inset-y-0 left-0 w-24 sm:w-36 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/25 pointer-events-none sm:inset-y-0 sm:left-0 sm:right-auto sm:w-36 sm:bg-gradient-to-r sm:from-white sm:via-white/80 sm:to-transparent" />
                 </div>
 
                 {/* Left side content */}
-                <div className="relative z-10 w-full sm:w-[52%] p-6 sm:p-8 space-y-3 bg-gradient-to-r from-white via-white sm:via-white/95 to-transparent">
+                <div className="relative z-10 w-[90%] sm:w-[52%] p-5 sm:p-8 space-y-3 bg-transparent sm:bg-gradient-to-r sm:from-white sm:via-white/95 sm:to-transparent">
                   <span className="text-[#32aa15] font-extrabold text-[11px] sm:text-xs tracking-wider uppercase block">
                     CITY CHARGING STATION
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-[1.15] font-['Wix_Madefor_Display',sans-serif]">
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white sm:text-slate-900 tracking-tight leading-[1.15] font-['Wix_Madefor_Display',sans-serif]">
                     Convenient <br />
                     <span className="text-[#32aa15]">Charging in the City</span>
                   </h3>
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-xs sm:max-w-sm">
+                  <p className="text-white/90 sm:text-slate-600 text-xs sm:text-sm leading-relaxed max-w-xs sm:max-w-sm">
                     Located in prime city areas such as malls, offices, residential complexes and public places, our city charging stations provide reliable and fast charging for daily commuters.
                   </p>
                   <div className="pt-2">

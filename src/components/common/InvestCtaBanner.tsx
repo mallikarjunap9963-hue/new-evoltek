@@ -15,7 +15,7 @@ export const InvestCtaBanner: React.FC<InvestCtaBannerProps> = ({
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         
         <div
-          className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden min-h-[250px] sm:min-h-[290px] lg:min-h-[330px] shadow-2xl bg-cover bg-[position:center_70%] bg-no-repeat flex items-center justify-between p-6 sm:p-10 lg:p-12 text-white"
+          className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden min-h-[250px] sm:min-h-[290px] lg:min-h-[330px] shadow-2xl bg-cover bg-[position:center_70%] bg-no-repeat flex items-center justify-between p-4 sm:p-10 lg:p-12 text-white"
           style={{ backgroundImage: `url('/breadcrumb.png')` }}
         >
           {/* Left Directional Dark Gradient Overlay for Crisp Text Readability */}
@@ -34,23 +34,23 @@ export const InvestCtaBanner: React.FC<InvestCtaBannerProps> = ({
               Partner with EVOLTEK and build a profitable, sustainable EV charging business.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-1">
+            <div className="flex flex-nowrap items-center gap-2 pt-1">
               <button
                 type="button"
                 onClick={() => openModalWithOption('Partner With Us')}
-                className="inline-flex items-center gap-2 px-6 py-2.5 sm:py-3 rounded-full bg-[#32aa15] hover:bg-[#288c10] text-white text-xs sm:text-sm font-bold shadow-lg hover:shadow-[#32aa15]/40 transition-all cursor-pointer"
+                className="inline-flex min-w-0 items-center justify-center gap-1.5 px-3 py-2 sm:gap-2 sm:px-6 sm:py-3 rounded-full bg-[#32aa15] hover:bg-[#288c10] text-white text-[10px] sm:text-sm font-bold shadow-lg hover:shadow-[#32aa15]/40 transition-all cursor-pointer whitespace-nowrap"
               >
                 <span>Partner With Us</span>
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
               </button>
 
               <button
                 type="button"
                 onClick={() => openModalWithOption('Download Brochure')}
-                className="inline-flex items-center gap-2 px-5 py-2.5 sm:py-3 rounded-full bg-black/40 hover:bg-black/60 text-white border border-white/20 text-xs sm:text-sm font-bold backdrop-blur-sm transition-all cursor-pointer"
+                className="inline-flex min-w-0 items-center justify-center gap-1.5 px-3 py-2 sm:gap-2 sm:px-5 sm:py-3 rounded-full bg-black/40 hover:bg-black/60 text-white border border-white/20 text-[10px] sm:text-sm font-bold backdrop-blur-sm transition-all cursor-pointer whitespace-nowrap"
               >
                 <span>Download Brochure</span>
-                <Download className="w-4 h-4" />
+                <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
               </button>
             </div>
           </div>
