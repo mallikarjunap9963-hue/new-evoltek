@@ -383,8 +383,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
       </section>
 
       {/* 5. DRIVING THE FUTURE OF MOBILITY (CINEMATIC INTERACTIVE BANNER - SLEEK COMPACT SIZE) */}
-      <section ref={statsRef} className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 my-8 sm:my-12">
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/20 min-h-[380px] sm:min-h-[400px] lg:min-h-[430px] flex flex-col justify-center items-center py-8 sm:py-10 lg:py-12 px-4 sm:px-6 lg:px-8">
+      <section ref={statsRef} className="w-full bg-white py-12">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/20 min-h-[380px] sm:min-h-[400px] lg:min-h-[430px] flex flex-col justify-center items-center py-8 sm:py-10 lg:py-12 px-4 sm:px-6 lg:px-8">
           {/* Background Image: Sunset EV station with car */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
@@ -492,6 +493,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
 
             </div>
 
+          </div>
           </div>
         </div>
       </section>

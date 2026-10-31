@@ -3,7 +3,7 @@ import { Eye, Target } from 'lucide-react';
 
 export const VisionMissionSection: React.FC = () => {
   return (
-    <section className="w-full py-10 sm:py-14 font-['Plus_Jakarta_Sans',sans-serif]">
+    <section className="w-full py-12 font-['Plus_Jakarta_Sans',sans-serif]">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 w-full items-stretch">
 

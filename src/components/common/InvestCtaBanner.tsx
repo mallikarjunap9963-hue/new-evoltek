@@ -8,7 +8,7 @@ interface InvestCtaBannerProps {
 
 export const InvestCtaBanner: React.FC<InvestCtaBannerProps> = ({
   openModalWithOption,
-  className = 'py-8 sm:py-12'
+  className = 'py-12'
 }) => {
   return (
     <section className={`w-full bg-white ${className}`}>

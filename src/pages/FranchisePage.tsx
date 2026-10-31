@@ -31,7 +31,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
       {/* =========================================================================
           1. HERO SECTION: "Build Your Future. Power the Change." (AboutPage Cinematic Style)
           ========================================================================= */}
-      <section className="relative w-full text-white overflow-hidden pt-14 sm:pt-20 lg:pt-24 pb-20 sm:pb-28 lg:pb-32 bg-[#040906]">
+      <section className="relative w-full text-white overflow-hidden py-12 sm:py-14 lg:py-16 bg-[#040906]">
         {/* Background EV Charging Station with Official EVOLTEK DC Fast Charger */}
         <div
           className="absolute inset-0 bg-cover bg-center sm:bg-[position:78%_center] bg-no-repeat pointer-events-none brightness-105"
@@ -86,7 +86,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
       {/* =========================================================================
           3. OUR FRANCHISE MODELS: "Choose the Right Model for Your Goals"
           ========================================================================= */}
-      <section className="w-full bg-white py-8 sm:py-12">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="mb-6 sm:mb-8">
@@ -277,7 +277,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
       {/* =========================================================================
           4. WHAT YOU GET AS AN EVOLTEK FRANCHISE PARTNER
           ========================================================================= */}
-      <section className="w-full bg-white py-8 sm:py-12">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="mb-6 sm:mb-8 text-center sm:text-left">
@@ -367,7 +367,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
       {/* =========================================================================
           5. MORE THAN JUST CHARGING: "Create a Charging Hub. Create More Opportunities."
           ========================================================================= */}
-      <section className="w-full bg-white py-8 sm:py-12">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-slate-900 relative">
@@ -474,7 +474,7 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
       {/* =========================================================================
           6. OUR FRANCHISE PROCESS
           ========================================================================= */}
-      <section className="w-full bg-white py-8 sm:py-12">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">

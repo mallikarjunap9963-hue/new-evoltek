@@ -22,7 +22,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
       {/* =========================================================================
           1. HERO BANNER WITH OFFICIAL EVOLTEK DC FAST CHARGER & WHITE SUV
           ========================================================================= */}
-      <section className="relative w-full text-white overflow-hidden pt-12 sm:pt-16 lg:pt-18 pb-10 sm:pb-12 lg:pb-14 bg-[#040906]">
+      <section className="relative w-full text-white overflow-hidden py-12 sm:py-14 lg:py-16 bg-[#040906]">
         {/* Background EV Charging Station Scene */}
         <div
           className="absolute inset-0 bg-cover bg-center sm:bg-[position:78%_center] bg-no-repeat pointer-events-none brightness-105"
@@ -73,7 +73,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
       {/* =========================================================================
           2. HIGHWAY & CITY CHARGING STATIONS SHOWCASE (HALF CONTENT, HALF IMAGE)
           ========================================================================= */}
-      <section className="w-full bg-white py-8 sm:py-10">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
 
@@ -267,7 +267,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
       {/* =========================================================================
           4. OUR CHARGING EQUIPMENT - "A Range of Charging Solutions" (5 CHARGERS)
           ========================================================================= */}
-      <section className="w-full bg-white py-8">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Section Header */}
@@ -448,7 +448,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
       {/* =========================================================================
           5. EV HUBS - "More Than Just Charging" (INCREASED SIZE & 5 AMENITIES)
           ========================================================================= */}
-      <section className="w-full bg-white pt-12 pb-6 sm:pt-16 sm:pb-8 lg:pt-18 lg:pb-6">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
 
@@ -584,7 +584,7 @@ export const ChargingStationsPage: React.FC<ChargingStationsPageProps> = ({ open
         </div>
       </section>
 
-      <InvestCtaBanner openModalWithOption={openModalWithOption} className="py-4 sm:py-6" />
+      <InvestCtaBanner openModalWithOption={openModalWithOption} />
 
     </div>
   );

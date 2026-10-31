@@ -63,7 +63,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
       {/* =========================================================================
           1. HERO SECTION: "Invest Together. Power a Greener Tomorrow."
           ========================================================================= */}
-      <section className="relative w-full text-white overflow-hidden pt-12 sm:pt-16 lg:pt-20 pb-12 sm:pb-16 lg:pb-20 bg-[#040906]">
+      <section className="relative w-full text-white overflow-hidden py-12 sm:py-14 lg:py-16 bg-[#040906]">
         {/* Background EV Charging Station Scene at Twilight */}
         <div
           className="absolute inset-0 bg-cover bg-center sm:bg-[position:78%_center] bg-no-repeat pointer-events-none brightness-105"
@@ -115,7 +115,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
       {/* =========================================================================
           4. YOUR INVESTMENT, MULTIPLE BENEFITS & STATION SHOWCASE
           ========================================================================= */}
-      <section className="w-full bg-white py-8 sm:py-12">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
 
@@ -206,7 +206,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
       {/* =========================================================================
           5. RETURNS AND AGREEMENT & "INVEST IN CLEAN ENERGY" BANNER
           ========================================================================= */}
-      <section className="w-full bg-white py-8 sm:py-12">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
 
@@ -299,7 +299,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
       {/* =========================================================================
           6. WHY INVEST IN EV CHARGING?
           ========================================================================= */}
-      <section className="w-full bg-white py-10 sm:py-14">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
@@ -386,7 +386,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
       {/* =========================================================================
           7. OUR INVESTMENT MODEL: "Shared Investment. Shared Success."
           ========================================================================= */}
-      <section className="w-full bg-white py-8 sm:py-12">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-5xl mx-auto space-y-2.5 mb-6 sm:mb-8">
@@ -528,7 +528,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
       {/* =========================================================================
           9. HOW TO GET STARTED ("Simple Steps to Your EV Charging Business")
           ========================================================================= */}
-      <section className="w-full bg-white py-8 sm:py-12">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-5xl mx-auto space-y-2.5 mb-10 sm:mb-14 lg:mb-16">
@@ -611,7 +611,7 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
       {/* =========================================================================
           10. BOTTOM CALL-TO-ACTION BANNER ("Ready to Invest in the Future of Mobility?")
           ========================================================================= */}
-      <section className="w-full bg-white py-8 sm:py-12">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
           <div

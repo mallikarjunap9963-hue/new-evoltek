@@ -164,7 +164,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
       {/* ========================================================================= */}
       {/* 2. TWO-COLUMN: FORM (LEFT) + VISIT OUR OFFICE & MAP (RIGHT) */}
       {/* ========================================================================= */}
-      <section className="w-full bg-white py-8 sm:py-10">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-start">
 
@@ -554,7 +554,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ openModalWithOption })
       {/* =========================================================================
           5. BOTTOM CALL-TO-ACTION BANNER ("Ready to Invest in the Future of Mobility?")
           ========================================================================= */}
-      <section className="w-full bg-white py-8 sm:py-12">
+      <section className="w-full bg-white py-12">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
           <div
