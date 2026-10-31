@@ -53,9 +53,18 @@ export const ReturnsSection: React.FC<ReturnsSectionProps> = ({ openModalWithOpt
                     </div>
                   </div>
 
-                  <p className="max-w-sm text-slate-500 text-sm font-medium leading-relaxed mb-6">
+                  <p className="max-w-sm text-slate-500 text-sm font-medium leading-relaxed mb-3 sm:mb-4">
                     High annual yield potential backed by long-term EV charging growth.
                   </p>
+                </div>
+
+                {/* 3D Growth Chart Visual */}
+                <div className="my-auto py-2 sm:py-3 flex items-center justify-center w-full group">
+                  <img
+                    src="/returns_percentage_growth.png"
+                    alt="EV Charging Revenue Growth"
+                    className="w-full max-w-[310px] sm:max-w-[350px] md:max-w-[380px] h-auto object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
 
                 {/* Giant Metric Display */}

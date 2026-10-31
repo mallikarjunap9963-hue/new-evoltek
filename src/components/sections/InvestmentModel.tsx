@@ -88,39 +88,14 @@ export const InvestmentModel: React.FC = () => {
             {/* Bottom 4 Feature Columns - 2 per row on Mobile, 4 on Desktop */}
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-6 border-t border-emerald-200/60 w-full relative z-10 text-center">
 
+              {/* 1. Shared Investment */}
               <div className="flex flex-col items-center p-3 space-y-2 group">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 mb-1 flex items-center justify-center">
-                  <svg className="w-full h-full group-hover:scale-110 transition-transform duration-300 drop-shadow-md" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <linearGradient id="sharedGrad1" x1="8" y1="12" x2="56" y2="52" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#22c55e" />
-                        <stop offset="1" stopColor="#15803d" />
-                      </linearGradient>
-                      <linearGradient id="sharedGrad2" x1="16" y1="8" x2="48" y2="40" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#fbbf24" />
-                        <stop offset="1" stopColor="#d97706" />
-                      </linearGradient>
-                    </defs>
-
-                    {/* 3D Base Platform */}
-                    <circle cx="32" cy="35" r="25" fill="#14532d" />
-                    <circle cx="32" cy="31" r="25" fill="url(#sharedGrad1)" />
-
-                    {/* Left 3D Coin (Evoltek 50%) */}
-                    <ellipse cx="23" cy="32" rx="12" ry="12" fill="#b45309" />
-                    <circle cx="23" cy="29" r="12" fill="url(#sharedGrad2)" />
-                    <circle cx="23" cy="29" r="9.5" stroke="#fef08a" strokeWidth="1.2" strokeDasharray="2 2" fill="none" />
-                    <text x="23" y="33" textAnchor="middle" fill="#78350f" fontSize="8.5" fontWeight="900" fontFamily="sans-serif">50%</text>
-
-                    {/* Right 3D Coin (Investor 50%) */}
-                    <ellipse cx="41" cy="38" rx="12" ry="12" fill="#064e3b" />
-                    <circle cx="41" cy="35" r="12" fill="#4ade80" />
-                    <circle cx="41" cy="35" r="9.5" stroke="#ffffff" strokeWidth="1.2" strokeDasharray="2 2" fill="none" />
-                    <text x="41" y="39" textAnchor="middle" fill="#064e3b" fontSize="8.5" fontWeight="900" fontFamily="sans-serif">50%</text>
-
-                    {/* Center 3D Growth Sparkle Star */}
-                    <path d="M32 15L34.5 21.5L41 24L34.5 26.5L32 33L29.5 26.5L23 24L29.5 21.5L32 15Z" fill="#fef08a" />
-                  </svg>
+                <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mb-2 flex items-center justify-center">
+                  <img
+                    src="/icon_3d_shared_investment_green.png"
+                    alt="Shared Investment"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-md"
+                  />
                 </div>
                 <h4 className="text-base sm:text-lg font-bold text-[#1C2029] leading-snug font-['Wix_Madefor_Display',sans-serif]">
                   Shared Investment
@@ -130,13 +105,13 @@ export const InvestmentModel: React.FC = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col items-center p-3 space-y-2 pt-4 sm:pt-3 group">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 mb-1 flex items-center justify-center">
+              {/* 2. Hassle-free Maintenance */}
+              <div className="flex flex-col items-center p-3 space-y-2 group">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mb-2 flex items-center justify-center">
                   <img
-                    src="/feat_maintenance.jpg"
-                    onError={(e) => { e.currentTarget.src = '/icon_3d_hassle_free.jpg'; }}
+                    src="/icon_3d_hassle_free_green.png"
                     alt="Hassle-free Maintenance"
-                    className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-md"
                   />
                 </div>
                 <h4 className="text-base sm:text-lg font-bold text-[#1C2029] leading-snug font-['Wix_Madefor_Display',sans-serif]">
@@ -147,13 +122,13 @@ export const InvestmentModel: React.FC = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col items-center p-3 space-y-2 pt-4 sm:pt-3 group">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 mb-1 flex items-center justify-center">
+              {/* 3. Secure Agreements */}
+              <div className="flex flex-col items-center p-3 space-y-2 group">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mb-2 flex items-center justify-center">
                   <img
-                    src="/feat_agreements.jpg"
-                    onError={(e) => { e.currentTarget.src = '/icon_3d_long_term.jpg'; }}
+                    src="/icon_3d_secure_agreements_green.png"
                     alt="Secure Agreements"
-                    className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-md"
                   />
                 </div>
                 <h4 className="text-base sm:text-lg font-bold text-[#1C2029] leading-snug font-['Wix_Madefor_Display',sans-serif]">
@@ -164,46 +139,14 @@ export const InvestmentModel: React.FC = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col items-center p-3 space-y-2 pt-4 sm:pt-3 group">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 mb-1 flex items-center justify-center">
-                  <svg className="w-full h-full group-hover:scale-110 transition-transform duration-300 drop-shadow-md" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <linearGradient id="phoneBodyGrad" x1="18" y1="5" x2="46" y2="55" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#334155" />
-                        <stop offset="1" stopColor="#0f172a" />
-                      </linearGradient>
-                      <linearGradient id="phoneScreenGrad" x1="20" y1="8" x2="44" y2="52" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#064e3b" />
-                        <stop offset="1" stopColor="#022c22" />
-                      </linearGradient>
-                    </defs>
-
-                    {/* Outer Phone Shadow / Base */}
-                    <rect x="18" y="7" width="28" height="50" rx="6" fill="#020617" opacity="0.3" />
-
-                    {/* Phone Body Frame */}
-                    <rect x="18" y="5" width="28" height="50" rx="6" fill="url(#phoneBodyGrad)" stroke="#475569" strokeWidth="1.5" />
-
-                    {/* Inner App Screen */}
-                    <rect x="20" y="8" width="24" height="44" rx="4" fill="url(#phoneScreenGrad)" stroke="#10b981" strokeWidth="0.8" />
-
-                    {/* Top Speaker / Dynamic Notch */}
-                    <rect x="27" y="10" width="10" height="2" rx="1" fill="#0f172a" />
-
-                    {/* EV Charging Status Card */}
-                    <rect x="23" y="15" width="18" height="9" rx="2" fill="#065f46" stroke="#34d399" strokeWidth="0.8" />
-                    <path d="M30 17L28.5 20.5H31.5L30 23" stroke="#38c838" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-
-                    {/* Analytics Bar Chart */}
-                    <rect x="23" y="36" width="3.5" height="7" rx="1" fill="#10b981" opacity="0.6" />
-                    <rect x="28.5" y="32" width="3.5" height="11" rx="1" fill="#34d399" opacity="0.8" />
-                    <rect x="34" y="28" width="3.5" height="15" rx="1" fill="#38c838" />
-                    <rect x="39.5" y="34" width="3.5" height="9" rx="1" fill="#10b981" opacity="0.7" />
-
-                    {/* Upward Growth Trend Line with Glowing Star Node */}
-                    <path d="M22 33Q28 29 34 24T41 26" stroke="#5eead4" strokeWidth="1.8" strokeLinecap="round" fill="none" />
-                    <circle cx="41" cy="26" r="1.5" fill="#fef08a" />
-                  </svg>
+              {/* 4. Transparency with App */}
+              <div className="flex flex-col items-center p-3 space-y-2 group">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mb-2 flex items-center justify-center">
+                  <img
+                    src="/icon_3d_app_transparency_green.png"
+                    alt="Transparency with App"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-md"
+                  />
                 </div>
                 <h4 className="text-base sm:text-lg font-bold text-[#1C2029] leading-snug font-['Wix_Madefor_Display',sans-serif]">
                   Transparency with App

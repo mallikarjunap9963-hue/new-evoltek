@@ -2,6 +2,7 @@ import React from 'react';
 import {
   ShieldCheck,
   Users,
+  Check,
   CheckCircle2,
   ChevronRight,
   Download,
@@ -140,10 +141,10 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
 
                 {/* Benefit 1 */}
                 <div className="flex items-start gap-4 sm:gap-5 group">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 text-[#32aa15] flex items-center justify-center shrink-0">
-                    <UserCheck className="w-6 h-6 sm:w-7 sm:h-7 text-[#32aa15] stroke-[2.2]" />
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#eaf7ea] text-[#15803d] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-2xs">
+                    <UserCheck className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.3]" />
                   </div>
-                  <div className="min-w-0">
+                  <div className="min-w-0 pt-0.5">
                     <h3 className="font-bold text-slate-900 text-sm sm:text-base">Shared investment</h3>
                     <p className="mt-1 text-sm sm:text-base text-slate-600 leading-relaxed">You invest only half the cost.</p>
                   </div>
@@ -151,10 +152,10 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
 
                 {/* Benefit 2 */}
                 <div className="flex items-start gap-4 sm:gap-5 group">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 text-[#32aa15] flex items-center justify-center shrink-0">
-                    <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7 text-[#32aa15] stroke-[2.2]" />
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#eaf7ea] text-[#15803d] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-2xs">
+                    <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.3]" />
                   </div>
-                  <div className="min-w-0">
+                  <div className="min-w-0 pt-0.5">
                     <h3 className="font-bold text-slate-900 text-sm sm:text-base">Hassle-free maintenance</h3>
                     <p className="mt-1 text-sm sm:text-base text-slate-600 leading-relaxed">Evoltek takes care of setup, operations and station maintenance.</p>
                   </div>
@@ -162,10 +163,10 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
 
                 {/* Benefit 3 */}
                 <div className="flex items-start gap-4 sm:gap-5 group">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 text-[#32aa15] flex items-center justify-center shrink-0">
-                    <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-[#32aa15] stroke-[2.2]" />
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#eaf7ea] text-[#15803d] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-2xs">
+                    <Shield className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.3]" />
                   </div>
-                  <div className="min-w-0">
+                  <div className="min-w-0 pt-0.5">
                     <h3 className="font-bold text-slate-900 text-sm sm:text-base">Secure agreement</h3>
                     <p className="mt-1 text-sm sm:text-base text-slate-600 leading-relaxed">10-year agreement with renewal option.</p>
                   </div>
@@ -173,10 +174,10 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
 
                 {/* Benefit 4 */}
                 <div className="flex items-start gap-4 sm:gap-5 group">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 text-[#32aa15] flex items-center justify-center shrink-0">
-                    <Compass className="w-6 h-6 sm:w-7 sm:h-7 text-[#32aa15] stroke-[2.2]" />
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#eaf7ea] text-[#15803d] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-2xs">
+                    <Compass className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.3]" />
                   </div>
-                  <div className="min-w-0">
+                  <div className="min-w-0 pt-0.5">
                     <h3 className="font-bold text-slate-900 text-sm sm:text-base">Transparency</h3>
                     <p className="mt-1 text-sm sm:text-base text-slate-600 leading-relaxed">Track your station's performance through the Evoltek mobile app.</p>
                   </div>
@@ -184,10 +185,10 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
 
                 {/* Benefit 5 */}
                 <div className="flex items-start gap-4 sm:gap-5 group">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 text-[#32aa15] flex items-center justify-center shrink-0">
-                    <Store className="w-6 h-6 sm:w-7 sm:h-7 text-[#32aa15] stroke-[2.2]" />
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#eaf7ea] text-[#15803d] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-2xs">
+                    <Store className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.3]" />
                   </div>
-                  <div className="min-w-0">
+                  <div className="min-w-0 pt-0.5">
                     <h3 className="font-bold text-slate-900 text-sm sm:text-base">Extra income potential</h3>
                     <p className="mt-1 text-sm sm:text-base text-slate-600 leading-relaxed">Highway hubs can include cafeteria, restaurant or gaming area.</p>
                   </div>
@@ -238,13 +239,17 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
                         28% Return
                       </h3>
 
-                      <ul className="space-y-1.5 text-xs sm:text-sm text-slate-700 pt-1">
-                        <li className="flex items-center gap-2 font-medium">
-                          <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0" />
+                      <ul className="space-y-2 text-xs sm:text-sm text-slate-700 pt-1">
+                        <li className="flex items-center gap-2.5 font-medium">
+                          <div className="w-4.5 h-4.5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 shadow-2xs">
+                            <Check className="w-2.5 h-2.5 stroke-[3]" />
+                          </div>
                           <span>10-year agreement</span>
                         </li>
-                        <li className="flex items-center gap-2 font-medium">
-                          <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0" />
+                        <li className="flex items-center gap-2.5 font-medium">
+                          <div className="w-4.5 h-4.5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 shadow-2xs">
+                            <Check className="w-2.5 h-2.5 stroke-[3]" />
+                          </div>
                           <span>Renewal after 10 years</span>
                         </li>
                       </ul>
@@ -425,15 +430,21 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
 
                     <ul className="space-y-3 text-sm sm:text-[15px] font-medium text-slate-800">
                       <li className="flex items-start gap-2.5 leading-snug">
-                        <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0 mt-0.5" />
+                        <div className="w-5 h-5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                          <Check className="w-3 h-3 stroke-[3]" />
+                        </div>
                         <span className="min-w-0">Co-invests</span>
                       </li>
                       <li className="flex items-start gap-2.5 leading-snug">
-                        <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0 mt-0.5" />
+                        <div className="w-5 h-5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                          <Check className="w-3 h-3 stroke-[3]" />
+                        </div>
                         <span className="min-w-0">Sets up and runs the station</span>
                       </li>
                       <li className="flex items-start gap-2.5 leading-snug">
-                        <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0 mt-0.5" />
+                        <div className="w-5 h-5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                          <Check className="w-3 h-3 stroke-[3]" />
+                        </div>
                         <span className="min-w-0">Handles operations and maintenance</span>
                       </li>
                     </ul>
@@ -464,15 +475,21 @@ export const InvestmentPage: React.FC<InvestmentPageProps> = ({
 
                     <ul className="space-y-3 text-sm sm:text-[15px] font-medium text-slate-800">
                       <li className="flex items-start gap-2.5 leading-snug">
-                        <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0 mt-0.5" />
+                        <div className="w-5 h-5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                          <Check className="w-3 h-3 stroke-[3]" />
+                        </div>
                         <span className="min-w-0">Co-invests</span>
                       </li>
                       <li className="flex items-start gap-2.5 leading-snug">
-                        <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0 mt-0.5" />
+                        <div className="w-5 h-5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                          <Check className="w-3 h-3 stroke-[3]" />
+                        </div>
                         <span className="min-w-0">Provides location and capital</span>
                       </li>
                       <li className="flex items-start gap-2.5 leading-snug">
-                        <CheckCircle2 className="w-4.5 h-4.5 text-[#32aa15] fill-[#32aa15] text-white shrink-0 mt-0.5" />
+                        <div className="w-5 h-5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                          <Check className="w-3 h-3 stroke-[3]" />
+                        </div>
                         <span className="min-w-0">Earns attractive returns</span>
                       </li>
                     </ul>

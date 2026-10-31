@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Store,
   MapPin,
+  Check,
   CheckCircle2,
   ChevronRight,
   FileText,
@@ -132,22 +133,42 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
                     </div>
                   </div>
 
-                  <ul className="space-y-2 text-xs sm:text-sm text-slate-700 pt-2 border-t border-slate-100">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#15803d] fill-[#15803d] text-white shrink-0 mt-0.5" />
-                      <span><strong>Space Required:</strong> Minimum 2,000 Sq. Ft.</span>
+                  <ul className="space-y-3 text-xs sm:text-sm pt-3 sm:pt-4 border-t border-slate-100">
+                    <li className="flex items-start gap-2.5 group/item">
+                      <div className="w-5 h-5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs group-hover/item:scale-110 transition-transform">
+                        <Check className="w-3 h-3 stroke-[3]" />
+                      </div>
+                      <div className="leading-snug sm:leading-relaxed">
+                        <span className="font-bold text-slate-900">Space Required:</span>{' '}
+                        <span className="text-slate-600 font-medium">Minimum 2,000 Sq. Ft.</span>
+                      </div>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#15803d] fill-[#15803d] text-white shrink-0 mt-0.5" />
-                      <span><strong>Charging Capacity:</strong> 60 kW – 480 kW</span>
+                    <li className="flex items-start gap-2.5 group/item">
+                      <div className="w-5 h-5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs group-hover/item:scale-110 transition-transform">
+                        <Check className="w-3 h-3 stroke-[3]" />
+                      </div>
+                      <div className="leading-snug sm:leading-relaxed">
+                        <span className="font-bold text-slate-900">Charging Capacity:</span>{' '}
+                        <span className="text-slate-600 font-medium">60 kW – 480 kW</span>
+                      </div>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#15803d] fill-[#15803d] text-white shrink-0 mt-0.5" />
-                      <span><strong>Charger Type:</strong> DC Fast Charging</span>
+                    <li className="flex items-start gap-2.5 group/item">
+                      <div className="w-5 h-5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs group-hover/item:scale-110 transition-transform">
+                        <Check className="w-3 h-3 stroke-[3]" />
+                      </div>
+                      <div className="leading-snug sm:leading-relaxed">
+                        <span className="font-bold text-slate-900">Charger Type:</span>{' '}
+                        <span className="text-slate-600 font-medium">DC Fast Charging</span>
+                      </div>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#15803d] fill-[#15803d] text-white shrink-0 mt-0.5" />
-                      <span><strong>Suitable For:</strong> City areas &amp; high footfall locations</span>
+                    <li className="flex items-start gap-2.5 group/item">
+                      <div className="w-5 h-5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs group-hover/item:scale-110 transition-transform">
+                        <Check className="w-3 h-3 stroke-[3]" />
+                      </div>
+                      <div className="leading-snug sm:leading-relaxed">
+                        <span className="font-bold text-slate-900">Suitable For:</span>{' '}
+                        <span className="text-slate-600 font-medium">City areas &amp; high footfall locations</span>
+                      </div>
                     </li>
                   </ul>
                 </div>
@@ -194,22 +215,42 @@ export const FranchisePage: React.FC<FranchisePageProps> = ({ openModalWithOptio
                     </div>
                   </div>
 
-                  <ul className="space-y-2 text-xs sm:text-sm text-slate-700 pt-2 border-t border-slate-100">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#15803d] fill-[#15803d] text-white shrink-0 mt-0.5" />
-                      <span><strong>Space Required:</strong> Minimum 1 Acre</span>
+                  <ul className="space-y-3 text-xs sm:text-sm pt-3 sm:pt-4 border-t border-slate-100">
+                    <li className="flex items-start gap-2.5 group/item">
+                      <div className="w-5 h-5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs group-hover/item:scale-110 transition-transform">
+                        <Check className="w-3 h-3 stroke-[3]" />
+                      </div>
+                      <div className="leading-snug sm:leading-relaxed">
+                        <span className="font-bold text-slate-900">Space Required:</span>{' '}
+                        <span className="text-slate-600 font-medium">Minimum 1 Acre</span>
+                      </div>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#15803d] fill-[#15803d] text-white shrink-0 mt-0.5" />
-                      <span><strong>Charging Capacity:</strong> 60 kW – 480 kW</span>
+                    <li className="flex items-start gap-2.5 group/item">
+                      <div className="w-5 h-5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs group-hover/item:scale-110 transition-transform">
+                        <Check className="w-3 h-3 stroke-[3]" />
+                      </div>
+                      <div className="leading-snug sm:leading-relaxed">
+                        <span className="font-bold text-slate-900">Charging Capacity:</span>{' '}
+                        <span className="text-slate-600 font-medium">60 kW – 480 kW</span>
+                      </div>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#15803d] fill-[#15803d] text-white shrink-0 mt-0.5" />
-                      <span><strong>Charger Type:</strong> DC Fast Charging</span>
+                    <li className="flex items-start gap-2.5 group/item">
+                      <div className="w-5 h-5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs group-hover/item:scale-110 transition-transform">
+                        <Check className="w-3 h-3 stroke-[3]" />
+                      </div>
+                      <div className="leading-snug sm:leading-relaxed">
+                        <span className="font-bold text-slate-900">Charger Type:</span>{' '}
+                        <span className="text-slate-600 font-medium">DC Fast Charging</span>
+                      </div>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#15803d] fill-[#15803d] text-white shrink-0 mt-0.5" />
-                      <span><strong>Suitable For:</strong> Highways &amp; long-distance travel hubs</span>
+                    <li className="flex items-start gap-2.5 group/item">
+                      <div className="w-5 h-5 rounded-full bg-[#32aa15] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-2xs group-hover/item:scale-110 transition-transform">
+                        <Check className="w-3 h-3 stroke-[3]" />
+                      </div>
+                      <div className="leading-snug sm:leading-relaxed">
+                        <span className="font-bold text-slate-900">Suitable For:</span>{' '}
+                        <span className="text-slate-600 font-medium">Highways &amp; long-distance travel hubs</span>
+                      </div>
                     </li>
                   </ul>
                 </div>
