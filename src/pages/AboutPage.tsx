@@ -336,39 +336,39 @@ export const AboutPage: React.FC<AboutPageProps> = ({ openModalWithOption }) => 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {[
               {
-                iconSrc: '/icon_3d_val_sustainability.png',
+                iconSrc: '/icon_3d_val_sustainability_green.png',
                 title: 'Sustainability',
                 desc: 'We build a cleaner, greener tomorrow with sustainable practices and a healthier planet for future generations.'
               },
               {
-                iconSrc: '/icon_3d_val_reliability.png',
+                iconSrc: '/icon_3d_val_reliability_green.png',
                 title: 'Reliability',
                 desc: 'Dependable infrastructure and services you can count on, always.'
               },
               {
-                iconSrc: '/icon_3d_val_innovation.png',
+                iconSrc: '/icon_3d_val_innovation_green.png',
                 title: 'Innovation',
                 desc: 'We turn new ideas into real solutions and deliver smarter, cleaner outcomes.'
               },
               {
-                iconSrc: '/icon_3d_val_partnership.png',
+                iconSrc: '/icon_3d_val_partnership_green.png',
                 title: 'Partnership',
                 desc: 'We grow together with our partners, customers and communities.'
               }
             ].map((val, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-[22px] p-5 sm:p-6 text-center flex flex-col items-center justify-start gap-2 group cursor-pointer transition-all duration-300 min-h-[280px] border-2 border-slate-200/80 hover:border-[#00b853] shadow-sm hover:shadow-xl hover:shadow-[#00b853]/15 hover:-translate-y-1.5"
+                className="bg-white rounded-[22px] p-5 sm:p-6 text-center flex flex-col items-center justify-start gap-2 group cursor-pointer transition-all duration-300 min-h-[290px] border-2 border-slate-200/80 hover:border-[#32aa15] shadow-sm hover:shadow-xl hover:shadow-[#32aa15]/15 hover:-translate-y-1.5"
               >
-                <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 shrink-0 flex items-center justify-center mb-1 group-hover:scale-110 transition-transform duration-300">
                   <img
                     src={val.iconSrc}
                     alt={val.title}
-                    className="w-full h-full object-contain filter drop-shadow-sm"
+                    className="w-full h-full object-contain filter drop-shadow-md"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-start gap-2">
-                  <h4 className="text-base sm:text-lg font-bold font-['Wix_Madefor_Display',sans-serif] text-slate-900 group-hover:text-[#00b853] transition-colors duration-300">
+                  <h4 className="text-base sm:text-lg font-bold font-['Wix_Madefor_Display',sans-serif] text-slate-900 group-hover:text-[#32aa15] transition-colors duration-300">
                     {val.title}
                   </h4>
                   <p className="text-[13px] sm:text-[13.5px] text-slate-600 leading-relaxed font-medium max-w-[220px]">
