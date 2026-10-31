@@ -3,7 +3,6 @@ import {
   ShieldCheck,
   Users,
   Check,
-  CheckCircle2,
   ChevronRight,
   Download,
   FileText,

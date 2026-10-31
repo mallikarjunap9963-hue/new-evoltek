@@ -3,7 +3,6 @@ import {
   Store,
   MapPin,
   Check,
-  CheckCircle2,
   ChevronRight,
   FileText,
   Users,
